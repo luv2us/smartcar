@@ -60,7 +60,7 @@ int core0_main(void)
 
     pit_ms_init(CCU60_CH0, 5);
 
-//    seekfree_assistant_interface_init(SEEKFREE_ASSISTANT_DEBUG_UART);
+    seekfree_assistant_interface_init(SEEKFREE_ASSISTANT_DEBUG_UART);
     seekfree_assistant_oscilloscope_struct oscilloscope_data;
     oscilloscope_data.data[0] =0;
     oscilloscope_data.channel_num = 2;
