@@ -50,7 +50,7 @@ typedef enum
 }seekfree_assistant_transfer_device_enum;
 
 
-void    seekfree_assistant_interface_init(seekfree_assistant_transfer_device_enum transfer_device);
+void    seekfree_assistant_interface_init   (seekfree_assistant_transfer_device_enum transfer_device);
 
 
 

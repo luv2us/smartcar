@@ -1,49 +1,71 @@
 /*********************************************************************************************************************
-* TC264 Opensourec Library 即（TC264 开源库）是一个基于官方 SDK 接口的第三方开源库
+* RT1064DVL6A Opensourec Library 即（RT1064DVL6A 开源库）是一个基于官方 SDK 接口的第三方开源库
 * Copyright (c) 2022 SEEKFREE 逐飞科技
-*
-* 本文件是 TC264 开源库的一部分
-*
-* TC264 开源库 是免费软件
+* 
+* 本文件是 RT1064DVL6A 开源库的一部分
+* 
+* RT1064DVL6A 开源库 是免费软件
 * 您可以根据自由软件基金会发布的 GPL（GNU General Public License，即 GNU通用公共许可证）的条款
 * 即 GPL 的第3版（即 GPL3.0）或（您选择的）任何后来的版本，重新发布和/或修改它
-*
+* 
 * 本开源库的发布是希望它能发挥作用，但并未对其作任何的保证
 * 甚至没有隐含的适销性或适合特定用途的保证
 * 更多细节请参见 GPL
-*
+* 
 * 您应该在收到本开源库的同时收到一份 GPL 的副本
 * 如果没有，请参阅<https://www.gnu.org/licenses/>
-*
+* 
 * 额外注明：
 * 本开源库使用 GPL3.0 开源许可证协议 以上许可申明为译文版本
 * 许可申明英文版在 libraries/doc 文件夹下的 GPL3_permission_statement.txt 文件中
 * 许可证副本在 libraries 文件夹下 即该文件夹下的 LICENSE 文件
 * 欢迎各位使用并传播本程序 但修改内容时必须保留逐飞科技的版权声明（即本声明）
-*
+* 
 * 文件名称          seekfree_assistant
 * 公司名称          成都逐飞科技有限公司
 * 版本信息          查看 libraries/doc 文件夹内 version 文件 版本说明
-* 开发环境          ADS v1.9.4
-* 适用平台          TC264D
+* 开发环境          IAR 8.32.4 or MDK 5.33
+* 适用平台          RT1064DVL6A
 * 店铺链接          https://seekfree.taobao.com/
-*
+* 
 * 修改记录
-* 日期              作者                备注
-* 2023-11-29      pudding             first version
+* 日期             作者             备注
+* 2024-1-11        SeekFree         first version
 ********************************************************************************************************************/
-#include "zf_common_fifo.h"
+
+#include "zf_common_debug.h"
+
 #include "seekfree_assistant.h"
 
-seekfree_assistant_oscilloscope_struct          seekfree_assistant_oscilloscope_data;                         // 虚拟示波器数据
-static seekfree_assistant_camera_struct         seekfree_assistant_camera_data;                               // 图像上位机协议数据
-static seekfree_assistant_camera_dot_struct     seekfree_assistant_camera_dot_data;                           // 图像上位机打点协议数据
-static seekfree_assistant_camera_buffer_struct  seekfree_assistant_camera_buffer;                             // 图像以及边界缓冲区信息
 
-static fifo_obj_struct  seekfree_assistant_fifo;
-static uint8        seekfree_assistant_buffer[SEEKFREE_ASSISTANT_BUFFER_SIZE];                                  // 数据存放数组
-float               seekfree_assistant_parameter[SEEKFREE_ASSISTANT_SET_PARAMETR_COUNT] = {0};                  // 保存接收到的参数
-vuint8              seekfree_assistant_parameter_update_flag[SEEKFREE_ASSISTANT_SET_PARAMETR_COUNT] = {0};      // 参数更新标志位
+extern uint32 seekfree_assistant_transfer       (const uint8 *buff, uint32 length);
+extern uint32 seekfree_assistant_receive        (uint8 *buff, uint32 length);
+
+#if (1 == SEEKFREE_ASSISTANT_SET_PARAMETR_ENABLE)
+#include "zf_common_fifo.h"
+static uint8        seekfree_assistant_buffer[SEEKFREE_ASSISTANT_BUFFER_SIZE];                                      // FIFO缓冲区
+static fifo_struct  seekfree_assistant_fifo =                                                                       // FIFO结构体
+{   
+    .buffer    = seekfree_assistant_buffer, 
+    .execution = FIFO_IDLE, 
+    .type      = FIFO_DATA_8BIT,    
+    .head      = 0, 
+    .end       = 0, 
+    .size      = SEEKFREE_ASSISTANT_BUFFER_SIZE,    
+    .max       = SEEKFREE_ASSISTANT_BUFFER_SIZE,    
+};  
+#endif
+
+static seekfree_assistant_camera_struct         seekfree_assistant_camera_data;                                     // 图像上位机协议数据
+static seekfree_assistant_camera_dot_struct     seekfree_assistant_camera_dot_data;                                 // 图像上位机打点协议数据
+static seekfree_assistant_camera_buffer_struct  seekfree_assistant_camera_buffer;                                   // 图像以及边界缓冲区信息
+
+seekfree_assistant_transfer_callback_function   seekfree_assistant_transfer_callback = seekfree_assistant_transfer; // 数据发送函数指针
+seekfree_assistant_receive_callback_function    seekfree_assistant_receive_callback  = seekfree_assistant_receive;  // 数据接收函数指针
+
+seekfree_assistant_oscilloscope_struct          seekfree_assistant_oscilloscope_data;                               // 虚拟示波器数据
+float   seekfree_assistant_parameter[SEEKFREE_ASSISTANT_SET_PARAMETR_COUNT] = {0};                                  // 保存接收到的参数
+vuint8  seekfree_assistant_parameter_update_flag[SEEKFREE_ASSISTANT_SET_PARAMETR_COUNT] = {0};                      // 参数更新标志位
 
 //-------------------------------------------------------------------------------------------------------------------
 // 函数简介     逐飞助手求和函数
@@ -87,7 +109,7 @@ void seekfree_assistant_camera_data_send (seekfree_assistant_image_type_enum cam
     seekfree_assistant_camera_data.image_height   = height;
 
     // 首先发送帧头、功能、摄像头类型、以及宽度高度等信息
-    seekfree_assistant_transfer((const uint8 *)&seekfree_assistant_camera_data, sizeof(seekfree_assistant_camera_struct));
+    seekfree_assistant_transfer_callback((const uint8 *)&seekfree_assistant_camera_data, sizeof(seekfree_assistant_camera_struct));
 
     // 根据摄像头类型计算图像大小
     switch(camera_type)
@@ -111,9 +133,8 @@ void seekfree_assistant_camera_data_send (seekfree_assistant_image_type_enum cam
     // 发送图像数据
     if(NULL != image_addr)
     {
-        seekfree_assistant_transfer(image_addr, image_size);
+        seekfree_assistant_transfer_callback(image_addr, image_size);
     }
-
 }
 
 //-------------------------------------------------------------------------------------------------------------------
@@ -139,16 +160,15 @@ void seekfree_assistant_camera_dot_send (seekfree_assistant_camera_buffer_struct
         dot_bytes *= 2;
     }
 
-
     // 首先发送帧头、功能、边界编号、坐标长度、点个数
-    seekfree_assistant_transfer((const uint8 *)&seekfree_assistant_camera_dot_data, sizeof(seekfree_assistant_camera_dot_struct));
+    seekfree_assistant_transfer_callback((const uint8 *)&seekfree_assistant_camera_dot_data, sizeof(seekfree_assistant_camera_dot_struct));
 
     for(i=0; i < SEEKFREE_ASSISTANT_CAMERA_MAX_BOUNDARY; i++)
     {
         // 判断是否发送横坐标数据
         if(NULL != buffer->boundary_x[i])
         {
-            seekfree_assistant_transfer((const uint8 *)buffer->boundary_x[i], dot_bytes);
+            seekfree_assistant_transfer_callback((const uint8 *)buffer->boundary_x[i], dot_bytes);
         }
 
         // 判断是否发送纵坐标数据
@@ -156,10 +176,9 @@ void seekfree_assistant_camera_dot_send (seekfree_assistant_camera_buffer_struct
         {
             // 如果没有纵坐标数据，则表示每一行只有一个边界
             // 指定了横纵坐标数据，这种方式可以实现同一行多个边界的情况，例如搜线算法能够搜索出回弯。
-            seekfree_assistant_transfer((const uint8 *)buffer->boundary_y[i], dot_bytes);
+            seekfree_assistant_transfer_callback((const uint8 *)buffer->boundary_y[i], dot_bytes);
         }
     }
-
 }
 
 //-------------------------------------------------------------------------------------------------------------------
@@ -193,7 +212,7 @@ void seekfree_assistant_oscilloscope_send (seekfree_assistant_oscilloscope_struc
 
     // 数据在调用本函数之前，由用户将需要发送的数据写入seekfree_assistant_oscilloscope_data.data[]
 
-    seekfree_assistant_transfer((const uint8 *)seekfree_assistant_oscilloscope, packet_size);
+    seekfree_assistant_transfer_callback((const uint8 *)seekfree_assistant_oscilloscope, packet_size);
 }
 
 //-------------------------------------------------------------------------------------------------------------------
@@ -364,12 +383,14 @@ void seekfree_assistant_camera_send (void)
     }
 }
 
+
 //-------------------------------------------------------------------------------------------------------------------
 // 函数简介     逐飞助手解析接收到的数据
 // 参数说明     void
 // 返回参数     void
 // 使用示例     函数只需要放到周期运行的PIT中断或者主循环即可
 //-------------------------------------------------------------------------------------------------------------------
+#if (1 == SEEKFREE_ASSISTANT_SET_PARAMETR_ENABLE)
 void seekfree_assistant_data_analysis (void)
 {
     uint8  temp_sum;
@@ -380,13 +401,12 @@ void seekfree_assistant_data_analysis (void)
     uint32  temp_buffer[SEEKFREE_ASSISTANT_BUFFER_SIZE / 4];
 
     // 尝试读取数据, 如果不是自定义的传输方式则从接收回调中读取数据
-    read_length = seekfree_assistant_receive((uint8 *)temp_buffer, SEEKFREE_ASSISTANT_BUFFER_SIZE);
+    read_length = seekfree_assistant_receive_callback((uint8 *)temp_buffer, SEEKFREE_ASSISTANT_BUFFER_SIZE);
     if(read_length)
     {
         // 将读取到的数据写入FIFO
         fifo_write_buffer(&seekfree_assistant_fifo, (uint8 *)temp_buffer, read_length);
     }
-
 
     while(sizeof(seekfree_assistant_parameter_struct) <= fifo_used(&seekfree_assistant_fifo))
     {
@@ -416,21 +436,11 @@ void seekfree_assistant_data_analysis (void)
             }
         }
 
-
         // 丢弃无需使用的数据
         fifo_read_buffer(&seekfree_assistant_fifo, (uint8 *)temp_buffer, &read_length, FIFO_READ_AND_CLEAN);
     }
 }
+#endif
 
-//-------------------------------------------------------------------------------------------------------------------
-// 函数简介     逐飞助手 初始化
-// 参数说明
-// 返回参数     void
-// 使用示例
-//-------------------------------------------------------------------------------------------------------------------
-ZF_WEAK void seekfree_assistant_init ()
-{
-    fifo_init(&seekfree_assistant_fifo, FIFO_DATA_8BIT, seekfree_assistant_buffer, SEEKFREE_ASSISTANT_BUFFER_SIZE);
-}
 
 
