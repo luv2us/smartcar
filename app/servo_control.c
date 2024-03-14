@@ -48,8 +48,8 @@ void servo_init(void)
 int PD_Camera(float expect_val, float err) // 舵机PD调节
 {
     float u;
-    float P = 1.98; // 参数需自行整定，这里仅作为参考
-    float D = 1.632;
+    float P =  0.65;//1.98; // 参数需自行整定，这里仅作为参考
+    float D =  0  ;//1.632;
     volatile static float error_current, error_last;
     float ek, ek1;
     error_current = err - expect_val;

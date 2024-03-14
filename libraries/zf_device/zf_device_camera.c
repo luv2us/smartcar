@@ -1144,7 +1144,7 @@ void ips200_bin_updownside(uint8_t imageOut[2][LCDW])
 void Show_Camera_Info(void)
 {
 
-    //ips200_show_gray_image(0, 0, ImageSide[0], LCDW, LCDH, LCDW, LCDH, Threshold);
+    ips200_show_gray_image(0, 0, ImageSide[0], LCDW, LCDH, LCDW, LCDH, Threshold);
     // ips200_draw_line(80, 0, 80, 119, RGB565_PURPLE);
 
     //ips200_bin_roadside(ImageSide);

@@ -40,6 +40,7 @@
 // 本例程是开源库空工程 可用作移植或者测试各类内外设
 // 本例程是开源库空工程 可用作移植或者测试各类内外设
 // 本例程是开源库空工程 可用作移植或者测试各类内外设
+int i,j=0;
 
 // **************************** 代码区域 ****************************
 int core0_main(void)
@@ -63,18 +64,29 @@ int core0_main(void)
     seekfree_assistant_interface_init(SEEKFREE_ASSISTANT_DEBUG_UART);
     seekfree_assistant_oscilloscope_struct oscilloscope_data;
     oscilloscope_data.data[0] =0;
-    oscilloscope_data.channel_num = 2;
+    oscilloscope_data.channel_num = 5;
     // 等待所有核心初始化完毕
     cpu_wait_event_ready();
     while (TRUE)
     {
         Show_Camera_Info();
-
-        MotorDuty1 = (sint32)PidIncCtrl(&LSpeed_PID, (float)(500 - encoder_L)); // 速度闭环
-        MotorDuty2 = (sint32)PidIncCtrl(&RSpeed_PID, (float)(500 - encoder_R)); // 速度闭环
+//       i++;
+//       if(i>=160){i=0;j++;}
+//       if(j%4==1){Target_Speed1=180;Target_Speed2=180;}
+//       if(j%4==2){Target_Speed1=250;Target_Speed2=250;}
+//       if(j%4==3){Target_Speed1=300;Target_Speed2=300;}
+//       if(j%4==0){Target_Speed1=480;Target_Speed2=480;}
+        MotorDuty1 = (sint16)PidIncCtrl(&LSpeed_PID, (float)(40 - encoder_L)); // 速度闭环
+        MotorDuty2 = (sint16)PidIncCtrl(&RSpeed_PID, (float)( 40- encoder_R)); // 速度闭环
 
         seekfree_assistant_oscilloscope_send(&oscilloscope_data);
 
+
+        oscilloscope_data.data[0] =MotorDuty1;
+        oscilloscope_data.data[1] =encoder_L;
+        oscilloscope_data.data[2] =MotorDuty2;
+        oscilloscope_data.data[3] =encoder_R;
+        oscilloscope_data.data[4] =Target_Speed1;
         if (MotorDuty1 > 9999)
                 MotorDuty1 = 9999;
         else if (MotorDuty1 < -9999)
@@ -88,6 +100,7 @@ int core0_main(void)
         if (MotorDuty2 > 9999)
             MotorDuty2 = 9999;
         else if (MotorDuty2 < -9999)
+
             MotorDuty2 = -9999;
         if (RSpeed_PID.out > 9999)
             RSpeed_PID.out = 9999;

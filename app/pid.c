@@ -36,13 +36,13 @@ void Pid_Value(void)
 {
     //速度V                  //50(/5)    50(/7)      60(/7)       70(/7)
     //左轮电机PID参数
-    LSpeed_PID.kp = 40;//205;    //235       230         205             215
-    LSpeed_PID.ki = 0.5;//1.0;    //1.0       1.0         1.0             1.0
-    LSpeed_PID.kd = 0;//0.5;    //0.5       0.5         0.5             0.5
+    LSpeed_PID.kp = 10;//205;    //235       230         205             215
+    LSpeed_PID.ki = 9;//1.0;    //1.0       1.0         1.0             1.0
+    LSpeed_PID.kd = 10;//0.5;    //0.5       0.5         0.5             0.5
     //右轮电机PID参数
-    RSpeed_PID.kp = 40;// 205;    //235       230         205             215
-    RSpeed_PID.ki = 0.5;//1.0;    //1.0       1.0         1.0             1.0
-    RSpeed_PID.kd = 0;//0.5;    //0.5       0.5         0.5             0.5
+    RSpeed_PID.kp = 10;// 205;    //235       230         205             215
+    RSpeed_PID.ki =9;//1.0;    //1.0       1.0         1.0             1.0
+    RSpeed_PID.kd = 10;//0.5;    //0.5       0.5         0.5             0.5
 }
 // pid参数初始化函数
 void PidInit(pid_param_t * pid)
