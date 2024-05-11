@@ -1,37 +1,37 @@
 /*********************************************************************************************************************
- * TC264 Opensourec Library ¼´£¨TC264 ¿ªÔ´¿â£©ÊÇÒ»¸ö»ùÓÚ¹Ù·½ SDK ½Ó¿ÚµÄµÚÈı·½¿ªÔ´¿â
- * Copyright (c) 2022 SEEKFREE Öğ·É¿Æ¼¼
+ * TC264 Opensourec Library å³ï¼ˆTC264 å¼€æºåº“ï¼‰æ˜¯ä¸€ä¸ªåŸºäºå®˜æ–¹ SDK æ¥å£çš„ç¬¬ä¸‰æ–¹å¼€æºåº“
+ * Copyright (c) 2022 SEEKFREE é€é£ç§‘æŠ€
  *
- * ±¾ÎÄ¼şÊÇ TC264 ¿ªÔ´¿âµÄÒ»²¿·Ö
+ * æœ¬æ–‡ä»¶æ˜¯ TC264 å¼€æºåº“çš„ä¸€éƒ¨åˆ†
  *
- * TC264 ¿ªÔ´¿â ÊÇÃâ·ÑÈí¼ş
- * Äú¿ÉÒÔ¸ù¾İ×ÔÓÉÈí¼ş»ù½ğ»á·¢²¼µÄ GPL£¨GNU General Public License£¬¼´ GNUÍ¨ÓÃ¹«¹²Ğí¿ÉÖ¤£©µÄÌõ¿î
- * ¼´ GPL µÄµÚ3°æ£¨¼´ GPL3.0£©»ò£¨ÄúÑ¡ÔñµÄ£©ÈÎºÎºóÀ´µÄ°æ±¾£¬ÖØĞÂ·¢²¼ºÍ/»òĞŞ¸ÄËü
+ * TC264 å¼€æºåº“ æ˜¯å…è´¹è½¯ä»¶
+ * æ‚¨å¯ä»¥æ ¹æ®è‡ªç”±è½¯ä»¶åŸºé‡‘ä¼šå‘å¸ƒçš„ GPLï¼ˆGNU General Public Licenseï¼Œå³ GNUé€šç”¨å…¬å…±è®¸å¯è¯ï¼‰çš„æ¡æ¬¾
+ * å³ GPL çš„ç¬¬3ç‰ˆï¼ˆå³ GPL3.0ï¼‰æˆ–ï¼ˆæ‚¨é€‰æ‹©çš„ï¼‰ä»»ä½•åæ¥çš„ç‰ˆæœ¬ï¼Œé‡æ–°å‘å¸ƒå’Œ/æˆ–ä¿®æ”¹å®ƒ
  *
- * ±¾¿ªÔ´¿âµÄ·¢²¼ÊÇÏ£ÍûËüÄÜ·¢»Ó×÷ÓÃ£¬µ«²¢Î´¶ÔÆä×÷ÈÎºÎµÄ±£Ö¤
- * ÉõÖÁÃ»ÓĞÒşº¬µÄÊÊÏúĞÔ»òÊÊºÏÌØ¶¨ÓÃÍ¾µÄ±£Ö¤
- * ¸ü¶àÏ¸½ÚÇë²Î¼û GPL
+ * æœ¬å¼€æºåº“çš„å‘å¸ƒæ˜¯å¸Œæœ›å®ƒèƒ½å‘æŒ¥ä½œç”¨ï¼Œä½†å¹¶æœªå¯¹å…¶ä½œä»»ä½•çš„ä¿è¯
+ * ç”šè‡³æ²¡æœ‰éšå«çš„é€‚é”€æ€§æˆ–é€‚åˆç‰¹å®šç”¨é€”çš„ä¿è¯
+ * æ›´å¤šç»†èŠ‚è¯·å‚è§ GPL
  *
- * ÄúÓ¦¸ÃÔÚÊÕµ½±¾¿ªÔ´¿âµÄÍ¬Ê±ÊÕµ½Ò»·İ GPL µÄ¸±±¾
- * Èç¹ûÃ»ÓĞ£¬Çë²ÎÔÄ<https://www.gnu.org/licenses/>
+ * æ‚¨åº”è¯¥åœ¨æ”¶åˆ°æœ¬å¼€æºåº“çš„åŒæ—¶æ”¶åˆ°ä¸€ä»½ GPL çš„å‰¯æœ¬
+ * å¦‚æœæ²¡æœ‰ï¼Œè¯·å‚é˜…<https://www.gnu.org/licenses/>
  *
- * ¶îÍâ×¢Ã÷£º
- * ±¾¿ªÔ´¿âÊ¹ÓÃ GPL3.0 ¿ªÔ´Ğí¿ÉÖ¤Ğ­Òé ÒÔÉÏĞí¿ÉÉêÃ÷ÎªÒëÎÄ°æ±¾
- * Ğí¿ÉÉêÃ÷Ó¢ÎÄ°æÔÚ libraries/doc ÎÄ¼ş¼ĞÏÂµÄ GPL3_permission_statement.txt ÎÄ¼şÖĞ
- * Ğí¿ÉÖ¤¸±±¾ÔÚ libraries ÎÄ¼ş¼ĞÏÂ ¼´¸ÃÎÄ¼ş¼ĞÏÂµÄ LICENSE ÎÄ¼ş
- * »¶Ó­¸÷Î»Ê¹ÓÃ²¢´«²¥±¾³ÌĞò µ«ĞŞ¸ÄÄÚÈİÊ±±ØĞë±£ÁôÖğ·É¿Æ¼¼µÄ°æÈ¨ÉùÃ÷£¨¼´±¾ÉùÃ÷£©
+ * é¢å¤–æ³¨æ˜ï¼š
+ * æœ¬å¼€æºåº“ä½¿ç”¨ GPL3.0 å¼€æºè®¸å¯è¯åè®® ä»¥ä¸Šè®¸å¯ç”³æ˜ä¸ºè¯‘æ–‡ç‰ˆæœ¬
+ * è®¸å¯ç”³æ˜è‹±æ–‡ç‰ˆåœ¨ libraries/doc æ–‡ä»¶å¤¹ä¸‹çš„ GPL3_permission_statement.txt æ–‡ä»¶ä¸­
+ * è®¸å¯è¯å‰¯æœ¬åœ¨ libraries æ–‡ä»¶å¤¹ä¸‹ å³è¯¥æ–‡ä»¶å¤¹ä¸‹çš„ LICENSE æ–‡ä»¶
+ * æ¬¢è¿å„ä½ä½¿ç”¨å¹¶ä¼ æ’­æœ¬ç¨‹åº ä½†ä¿®æ”¹å†…å®¹æ—¶å¿…é¡»ä¿ç•™é€é£ç§‘æŠ€çš„ç‰ˆæƒå£°æ˜ï¼ˆå³æœ¬å£°æ˜ï¼‰
  *
- * ÎÄ¼şÃû³Æ          zf_device_camera
- * ¹«Ë¾Ãû³Æ          ³É¶¼Öğ·É¿Æ¼¼ÓĞÏŞ¹«Ë¾
- * °æ±¾ĞÅÏ¢          ²é¿´ libraries/doc ÎÄ¼ş¼ĞÄÚ version ÎÄ¼ş °æ±¾ËµÃ÷
- * ¿ª·¢»·¾³          ADS v1.9.4
- * ÊÊÓÃÆ½Ì¨          TC264D
- * µêÆÌÁ´½Ó          https://seekfree.taobao.com/
+ * æ–‡ä»¶åç§°          zf_device_camera
+ * å…¬å¸åç§°          æˆéƒ½é€é£ç§‘æŠ€æœ‰é™å…¬å¸
+ * ç‰ˆæœ¬ä¿¡æ¯          æŸ¥çœ‹ libraries/doc æ–‡ä»¶å¤¹å†… version æ–‡ä»¶ ç‰ˆæœ¬è¯´æ˜
+ * å¼€å‘ç¯å¢ƒ          ADS v1.9.4
+ * é€‚ç”¨å¹³å°          TC264D
+ * åº—é“ºé“¾æ¥          https://seekfree.taobao.com/
  *
- * ĞŞ¸Ä¼ÇÂ¼
- * ÈÕÆÚ              ×÷Õß                ±¸×¢
+ * ä¿®æ”¹è®°å½•
+ * æ—¥æœŸ              ä½œè€…                å¤‡æ³¨
  * 2022-09-15       pudding           first version
- * 2023-04-25       pudding           Ôö¼ÓÖĞÎÄ×¢ÊÍËµÃ÷
+ * 2023-04-25       pudding           å¢åŠ ä¸­æ–‡æ³¨é‡Šè¯´æ˜
  ********************************************************************************************************************/
 
 #include "zf_common_debug.h"
@@ -45,50 +45,54 @@
 #include "zf_device_camera.h"
 #include "zf_device_ips200.h"
 #include "zf_common_font.h"
+#include "zf_device_imu660ra.h"
+#include "zf_driver_delay.h"
+#include "ENA.h"
 
-fifo_obj_struct camera_receiver_fifo;                               // ¶¨ÒåÉãÏñÍ·½ÓÊÕÊı¾İfifo½á¹¹Ìå
-uint8 camera_receiver_buffer[CAMERA_RECEIVER_BUFFER_SIZE];          // ¶¨ÒåÉãÏñÍ·½ÓÊÕÊı¾İ»º³åÇø
-uint8 camera_send_image_frame_header[4] = {0x00, 0xFF, 0x01, 0x01}; // ¶¨ÒåÉãÏñÍ·Êı¾İ·¢ËÍµ½ÉÏÎ»»úµÄÖ¡Í·
-/** Ñ¹ËõºóÖ®ºóÓÃÓÚ´æ·ÅÆÁÄ»ÏÔÊ¾Êı¾İ  */
+fifo_obj_struct camera_receiver_fifo;                               // å®šä¹‰æ‘„åƒå¤´æ¥æ”¶æ•°æ®fifoç»“æ„ä½“
+uint8 camera_receiver_buffer[CAMERA_RECEIVER_BUFFER_SIZE];          // å®šä¹‰æ‘„åƒå¤´æ¥æ”¶æ•°æ®ç¼“å†²åŒº
+uint8 camera_send_image_frame_header[4] = {0x00, 0xFF, 0x01, 0x01}; // å®šä¹‰æ‘„åƒå¤´æ•°æ®å‘é€åˆ°ä¸Šä½æœºçš„å¸§å¤´
+
+/* å›¾åƒ*/
 unsigned char Image_Use[LCDH][LCDW];
-unsigned char Threshold = 0;
 unsigned char Bin_Image[LCDH][LCDW];
-/** ¶şÖµ»¯ºóÓÃÓÚOLEDÏÔÊ¾µÄÊı¾İ */
+uint8_t ImageSide[LCDH][2];      // å·¦å³è¾¹çº¿æ•°ç»„
+uint8_t ImageSide_last[LCDH][2]; // å·¦å³è¾¹çº¿æ•°ç»„å‰¯æœ¬
+uint8_t UpdowmSide[2][LCDW];     // ä¸Šä¸‹è¾¹çº¿æ•°ç»„
+uint8_t Roadwide[LCDH];          // èµ›é“å®½åº¦
 
-uint8_t ImageSide[LCDH][2];      // ×óÓÒ±ßÏßÊı×é
-uint8_t ImageSide_last[LCDH][2]; // ÉÏÕÅÍ¼Æ¬×óÓÒ±ßÏßÊı×é
-uint8_t UpdowmSide[2][LCDW];     // ÉÏÏÂ±ßÏßÊı×é
-uint8_t Roadwide[LCDH];          // ÈüµÀ¿í¶È
-/**  @brief    Ö÷ÅÜĞĞ  */
-#define ROAD_MAIN_ROW 44
-
-/**  @brief    Ê¹ÓÃÆğÊ¼ĞĞ  */
+seektypedef seektype=normal;
+/**  @brief    ä¸»è·‘è¡Œ  */
+#define ROAD_MAIN_ROW 60//50//44
+/**  @brief    ä½¿ç”¨èµ·å§‹è¡Œ  */
 #define ROAD_START_ROW 115
-
-/**  @brief    Ê¹ÓÃ½áÊøĞĞ  */
+/**  @brief    ä½¿ç”¨ç»“æŸè¡Œ  */
 #define ROAD_END_ROW 10
+
+
 extern unsigned char motor_flag;
-//
 uint8_t Crossroad_Flag = 0;
-//
+unsigned char Threshold = 0;
+uint8_t R_CircleFlag = 0; // å³ç¯å²›æ ‡å¿—ä½
+uint8_t L_CircleFlag = 0; // å·¦ç¯å²›æ ‡å¿—ä½
+uint8_t miss_Flag = 0;    // ä¸¢çº¿æ ‡å¿—ä½ 1å·¦ä¸¢ 2å³ä¸¢
+
 uint8_t leftup[2];
 uint8_t rightup[2];
-uint8_t R_CircleFlag = 0; // ÓÒ»·µº±êÖ¾Î»
-uint8_t L_CircleFlag = 0; // ×ó»·µº±êÖ¾Î»
-uint8_t miss_Flag = 0;    // ¶ªÏß±êÖ¾Î» 1×ó¶ª 2ÓÒ¶ª
+
 uint8_t turnonpoint[2][3];
-
 uint8_t Lpointx = 0, Lpointy = 0, Rpointx = 0, Rpointy = 0;
-
+//uint8 lastpointy=0;
 sint16 g_sSteeringError = 0;
 uint8_t Servo_P = 11;
+uint8 found_round_flag=0;
 extern float error_servo;
 
 //-------------------------------------------------------------------------------------------------------------------
-// º¯Êı¼ò½é       ÉãÏñÍ·¶ş½øÖÆÍ¼ÏñÊı¾İ½âÑ¹ÎªÊ®Áù½øÖÆ°ËÎ»Êı¾İ Ğ¡×ê·çÓÃ
-// ²ÎÊıËµÃ÷       *data1          ÉãÏñÍ·Í¼ÏñÊı×é
-// ²ÎÊıËµÃ÷       *data2          ´æ·Å½âÑ¹Êı¾İµÄµØÖ·
-// ²ÎÊıËµÃ÷       image_size      Í¼ÏñµÄ´óĞ¡
+// å‡½æ•°ç®€ä»‹       æ‘„åƒå¤´äºŒè¿›åˆ¶å›¾åƒæ•°æ®è§£å‹ä¸ºåå…­è¿›åˆ¶å…«ä½æ•°æ® å°é’»é£ç”¨
+// å‚æ•°è¯´æ˜       *data1          æ‘„åƒå¤´å›¾åƒæ•°ç»„
+// å‚æ•°è¯´æ˜       *data2          å­˜æ”¾è§£å‹æ•°æ®çš„åœ°å€
+// å‚æ•°è¯´æ˜       image_size      å›¾åƒçš„å¤§å°
 // @return      void
 // Sample usage:   camera_binary_image_decompression(&ov7725_image_binary[0][0], &data_buffer[0][0], OV7725_SIZE);
 //-------------------------------------------------------------------------------------------------------------------
@@ -110,29 +114,29 @@ void camera_binary_image_decompression(const uint8 *data1, uint8 *data2, uint32 
 }
 
 //-------------------------------------------------------------------------------------------------------------------
-// º¯Êı¼ò½é       ÉãÏñÍ·Í¼Ïñ·¢ËÍÖÁÉÏÎ»»ú²é¿´Í¼Ïñ
-// ²ÎÊıËµÃ÷       uartn           Ê¹ÓÃµÄ´®¿ÚºÅ
-// ²ÎÊıËµÃ÷       *image_addr     ĞèÒª·¢ËÍµÄÍ¼ÏñµØÖ·
-// ²ÎÊıËµÃ÷       image_size      Í¼ÏñµÄ´óĞ¡
+// å‡½æ•°ç®€ä»‹       æ‘„åƒå¤´å›¾åƒå‘é€è‡³ä¸Šä½æœºæŸ¥çœ‹å›¾åƒ
+// å‚æ•°è¯´æ˜       uartn           ä½¿ç”¨çš„ä¸²å£å·
+// å‚æ•°è¯´æ˜       *image_addr     éœ€è¦å‘é€çš„å›¾åƒåœ°å€
+// å‚æ•°è¯´æ˜       image_size      å›¾åƒçš„å¤§å°
 // @return      void
 // Sample usage:                camera_send_image(DEBUG_UART_INDEX, &mt9v03x_image[0][0], MT9V03X_IMAGE_SIZE);
 //-------------------------------------------------------------------------------------------------------------------
 void camera_send_image(uart_index_enum uartn, const uint8 *image_addr, uint32 image_size)
 {
     zf_assert(NULL != image_addr);
-    // ·¢ËÍÃüÁî
+    // å‘é€å‘½ä»¤
     uart_write_buffer(uartn, camera_send_image_frame_header, 4);
 
-    // ·¢ËÍÍ¼Ïñ
+    // å‘é€å›¾åƒ
     uart_write_buffer(uartn, (uint8 *)image_addr, image_size);
 }
 
 //-------------------------------------------------------------------------------------------------------------------
-// º¯Êı¼ò½é     ÉãÏñÍ·´®¿Ú FIFO ³õÊ¼»¯
-// ²ÎÊıËµÃ÷     void
-// ·µ»Ø²ÎÊı     void
-// Ê¹ÓÃÊ¾Àı     camera_fifo_init();
-// ±¸×¢ĞÅÏ¢
+// å‡½æ•°ç®€ä»‹     æ‘„åƒå¤´ä¸²å£ FIFO åˆå§‹åŒ–
+// å‚æ•°è¯´æ˜     void
+// è¿”å›å‚æ•°     void
+// ä½¿ç”¨ç¤ºä¾‹     camera_fifo_init();
+// å¤‡æ³¨ä¿¡æ¯
 //-------------------------------------------------------------------------------------------------------------------
 void camera_fifo_init(void)
 {
@@ -140,15 +144,20 @@ void camera_fifo_init(void)
 }
 
 //-------------------------------------------------------------------------------------------------------------------
-// º¯Êı¼ò½é       ÉãÏñÍ·²É¼¯³õÊ¼»¯
-// ²ÎÊıËµÃ÷       image_size      Í¼ÏñµÄ´óĞ¡
+// å‡½æ•°ç®€ä»‹       æ‘„åƒå¤´é‡‡é›†åˆå§‹åŒ–
+// å‚æ•°è¯´æ˜       image_size      å›¾åƒçš„å¤§å°
 // @return      void
-// ²ÎÊıËµÃ÷       image_size      Í¼ÏñµÄ´óĞ¡
-// ²ÎÊıËµÃ÷       data_addr       Êı¾İÀ´Ô´ÍâÉèµØÖ·
-// ²ÎÊıËµÃ÷       buffer_addr     Í¼Ïñ»º³åÇøµØÖ·
+// å‚æ•°è¯´æ˜       image_size      å›¾åƒçš„å¤§å°
+// å‚æ•°è¯´æ˜       data_addr       æ•°æ®æ¥æºå¤–è®¾åœ°å€
+// å‚æ•°è¯´æ˜       buffer_addr     å›¾åƒç¼“å†²åŒºåœ°å€
 // @return      void
 // Sample usage:                camera_init();
 //-------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
 float my_abs(float x)
 {
     if (x >= 0)
@@ -156,14 +165,19 @@ float my_abs(float x)
     else
         return -x;
 }
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
 uint8 camera_init(uint8 *source_addr, uint8 *destination_addr, uint16 image_size)
 {
     uint8 num;
     uint8 link_list_num;
     switch (camera_type)
     {
-    case CAMERA_BIN_IIC:  // IIC Ğ¡×ê·ç
-    case CAMERA_BIN_UART: // UART Ğ¡×ê·ç
+    case CAMERA_BIN_IIC:  // IIC å°é’»é£
+    case CAMERA_BIN_UART: // UART å°é’»é£
         for (num = 0; num < 8; num++)
         {
             gpio_init((gpio_pin_enum)(OV7725_DATA_PIN + num), GPI, GPIO_LOW, GPI_FLOATING_IN);
@@ -174,9 +188,9 @@ uint8 camera_init(uint8 *source_addr, uint8 *destination_addr, uint16 image_size
                                  OV7725_PCLK_PIN,
                                  EXTI_TRIGGER_FALLING,
                                  image_size);
-        exti_init(OV7725_VSYNC_PIN, EXTI_TRIGGER_FALLING); // ³õÊ¼»¯³¡ÖĞ¶Ï£¬²¢ÉèÖÃÎªÏÂ½µÑØ´¥·¢ÖĞ¶Ï
+        exti_init(OV7725_VSYNC_PIN, EXTI_TRIGGER_FALLING); // åˆå§‹åŒ–åœºä¸­æ–­ï¼Œå¹¶è®¾ç½®ä¸ºä¸‹é™æ²¿è§¦å‘ä¸­æ–­
         break;
-    case CAMERA_GRAYSCALE: // ×Ü×ê·ç
+    case CAMERA_GRAYSCALE: // æ€»é’»é£
         for (num = 0; num < 8; num++)
         {
             gpio_init((gpio_pin_enum)(MT9V03X_DATA_PIN + num), GPI, GPIO_LOW, GPI_FLOATING_IN);
@@ -186,11 +200,11 @@ uint8 camera_init(uint8 *source_addr, uint8 *destination_addr, uint16 image_size
                                  destination_addr,
                                  MT9V03X_PCLK_PIN,
                                  EXTI_TRIGGER_RISING,
-                                 image_size); // Èç¹û³¬Æµµ½300M µ¹ÊıµÚ¶ş¸ö²ÎÊıÇëÉèÖÃÎªFALLING
+                                 image_size); // å¦‚æœè¶…é¢‘åˆ°300M å€’æ•°ç¬¬äºŒä¸ªå‚æ•°è¯·è®¾ç½®ä¸ºFALLING
 
-        exti_init(MT9V03X_VSYNC_PIN, EXTI_TRIGGER_FALLING); // ³õÊ¼»¯³¡ÖĞ¶Ï£¬²¢ÉèÖÃÎªÏÂ½µÑØ´¥·¢ÖĞ¶Ï
+        exti_init(MT9V03X_VSYNC_PIN, EXTI_TRIGGER_FALLING); // åˆå§‹åŒ–åœºä¸­æ–­ï¼Œå¹¶è®¾ç½®ä¸ºä¸‹é™æ²¿è§¦å‘ä¸­æ–­
         break;
-    case CAMERA_COLOR: // ÁèÍ«
+    case CAMERA_COLOR: // å‡Œç³
         for (num = 0; num < 8; num++)
         {
             gpio_init((gpio_pin_enum)(SCC8660_DATA_PIN + num), GPI, GPIO_LOW, GPI_FLOATING_IN);
@@ -201,15 +215,20 @@ uint8 camera_init(uint8 *source_addr, uint8 *destination_addr, uint16 image_size
                                  destination_addr,
                                  SCC8660_PCLK_PIN,
                                  EXTI_TRIGGER_RISING,
-                                 image_size); // Èç¹û³¬Æµµ½300M µ¹ÊıµÚ¶ş¸ö²ÎÊıÇëÉèÖÃÎªFALLING
+                                 image_size); // å¦‚æœè¶…é¢‘åˆ°300M å€’æ•°ç¬¬äºŒä¸ªå‚æ•°è¯·è®¾ç½®ä¸ºFALLING
 
-        exti_init(SCC8660_VSYNC_PIN, EXTI_TRIGGER_FALLING); // ³õÊ¼»¯³¡ÖĞ¶Ï£¬²¢ÉèÖÃÎªÏÂ½µÑØ´¥·¢ÖĞ¶Ï
+        exti_init(SCC8660_VSYNC_PIN, EXTI_TRIGGER_FALLING); // åˆå§‹åŒ–åœºä¸­æ–­ï¼Œå¹¶è®¾ç½®ä¸ºä¸‹é™æ²¿è§¦å‘ä¸­æ–­
         break;
     default:
         break;
     }
     return link_list_num;
 }
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
 void Get_Use_Image(void)
 {
     short i = 0, j = 0, row = 0, line = 0;
@@ -217,160 +236,21 @@ void Get_Use_Image(void)
     {
         for (j = 0; j <= LCDW; j++)
         {
-            Image_Use[row][line] = mt9v03x_image[i][j + 14];
+            Image_Use[row][line] = mt9v03x_image[i][j + 14];//åŸæœ¬160 ç°åœ¨å˜180
             line++;
         }
         line = 0;
         row++;
     }
 }
-short GetOSTU(unsigned char tmImage[LCDH][LCDW])
-{
-    signed short i, j;
-    unsigned long Amount = 0;
-    unsigned long PixelBack = 0;
-    unsigned long PixelshortegralBack = 0;
-    unsigned long Pixelshortegral = 0;
-    signed long PixelshortegralFore = 0;
-    signed long PixelFore = 0;
-    float OmegaBack, OmegaFore, MicroBack, MicroFore, SigmaB, Sigma; // Àà¼ä·½²î;
-    signed short MinValue, MaxValue;
-    signed short Threshold = 0;
-    unsigned char HistoGram[256]; //
-
-    for (j = 0; j < 256; j++)
-        HistoGram[j] = 0; // ³õÊ¼»¯»Ò¶ÈÖ±·½Í¼
-
-    for (j = 0; j < LCDH; j++)
-    {
-        for (i = 0; i < LCDW; i++)
-        {
-            HistoGram[tmImage[j][i]]++; // Í³¼Æ»Ò¶È¼¶ÖĞÃ¿¸öÏñËØÔÚÕû·ùÍ¼ÏñÖĞµÄ¸öÊı
-        }
-    }
-
-    for (MinValue = 0; MinValue < 256 && HistoGram[MinValue] == 0; MinValue++)
-        ; // »ñÈ¡×îĞ¡»Ò¶ÈµÄÖµ
-    for (MaxValue = 255; MaxValue > MinValue && HistoGram[MinValue] == 0; MaxValue--)
-        ; // »ñÈ¡×î´ó»Ò¶ÈµÄÖµ
-
-    if (MaxValue == MinValue)
-        return MaxValue; // Í¼ÏñÖĞÖ»ÓĞÒ»¸öÑÕÉ«
-    if (MinValue + 1 == MaxValue)
-        return MinValue; // Í¼ÏñÖĞÖ»ÓĞ¶ş¸öÑÕÉ«
-
-    for (j = MinValue; j <= MaxValue; j++)
-        Amount += HistoGram[j]; //  ÏñËØ×ÜÊı
-
-    Pixelshortegral = 0;
-    for (j = MinValue; j <= MaxValue; j++)
-    {
-        Pixelshortegral += HistoGram[j] * j; // »Ò¶ÈÖµ×ÜÊı
-    }
-    SigmaB = -1;
-    for (j = MinValue; j < MaxValue; j++)
-    {
-        PixelBack = PixelBack + HistoGram[j];                                              // Ç°¾°ÏñËØµãÊı
-        PixelFore = Amount - PixelBack;                                                    // ±³¾°ÏñËØµãÊı
-        OmegaBack = (float)PixelBack / Amount;                                             // Ç°¾°ÏñËØ°Ù·Ö±È
-        OmegaFore = (float)PixelFore / Amount;                                             // ±³¾°ÏñËØ°Ù·Ö±È
-        PixelshortegralBack += HistoGram[j] * j;                                           // Ç°¾°»Ò¶ÈÖµ
-        PixelshortegralFore = Pixelshortegral - PixelshortegralBack;                       // ±³¾°»Ò¶ÈÖµ
-        MicroBack = (float)PixelshortegralBack / PixelBack;                                // Ç°¾°»Ò¶È°Ù·Ö±È
-        MicroFore = (float)PixelshortegralFore / PixelFore;                                // ±³¾°»Ò¶È°Ù·Ö±È
-        Sigma = OmegaBack * OmegaFore * (MicroBack - MicroFore) * (MicroBack - MicroFore); // ¼ÆËãÀà¼ä·½²î
-        if (Sigma > SigmaB)                                                                // ±éÀú×î´óµÄÀà¼ä·½²îg //ÕÒ³ö×î´óÀà¼ä·½²îÒÔ¼°¶ÔÓ¦µÄãĞÖµ
-        {
-            SigmaB = Sigma;
-            Threshold = j;
-        }
-    }
-    return Threshold; // ·µ»Ø×î¼ÑãĞÖµ;
-}
-/*
-double computeEntropy(int histogram[], int totalPixels)
-{
-    double entropy = 0.0;
-
-    for (int i = 0; i < 256; i++)
-    {
-        if (histogram[i] > 0)
-        {
-            double probability = (double)histogram[i] / totalPixels;
-            entropy -= probability * log2(probability);
-        }
-    }
-
-    return entropy;
-}
-
-*/
-/*
-// KapurËã·¨Ñ¡ÔñãĞÖµ
-int kapurThreshold(uint8 tmImage[LCDH][LCDW])
-{
-    int bestThreshold = 0;
-    double maxEntropy = 0.0;
-    int totalPixels = LCDW * LCDH;
-    unsigned char HistoGram[256];
 
 
-    //¼ÆËã»Ò¶ÈÖ±·½Í¼
-    for (int j = 0; j < LCDH; j++)
-    {
-        for (int i = 0; i < LCDW; i++)
-        {
-            HistoGram[tmImage[j][i]]++; // Í³¼Æ»Ò¶È¼¶ÖĞÃ¿¸öÏñËØÔÚÕû·ùÍ¼ÏñÖĞµÄ¸öÊı
-        }
-    }
-    //¼ÆËã½áÊø
-
-    for (int t = 0; t < 256; t++)
-    {
-        int histogramLow[256] = {0};
-        int histogramHigh[256] = {0};
-
-        // ·Ö±ğ¼ÆËãµÍÓÚºÍ¸ßÓÚãĞÖµtµÄÏñËØÊıÄ¿
-        int totalLow = 0;
-        int totalHigh = 0;
-        for (int i = 0; i < 256; i++)
-        {
-            if (i <= t)
-            {
-                histogramLow[i] = HistoGram[i];
-                totalLow += HistoGram[i];
-            }
-            else
-            {
-                histogramHigh[i] = HistoGram[i];
-                totalHigh += HistoGram[i];
-            }
-        }
-
-        // ¼ÆËãµÍÓÚºÍ¸ßÓÚãĞÖµtµÄĞÅÏ¢ìØ
-        double entropyLow = computeEntropy(histogramLow, totalLow);
-        double entropyHigh = computeEntropy(histogramHigh, totalHigh);
-
-        // ¼ÆËã×ÜµÄĞÅÏ¢ìØ
-        double totalEntropy = (totalLow * entropyLow + totalHigh * entropyHigh) / totalPixels;
-
-        // ¸üĞÂ×î´óĞÅÏ¢ìØ¼°¶ÔÓ¦µÄãĞÖµ
-        if (totalEntropy > maxEntropy)
-        {
-            maxEntropy = totalEntropy;
-            bestThreshold = t;
-        }
-    }
-
-    return bestThreshold;
-}
-*/
 
 /*!
- * @brief    »ùÓÚsoble±ßÑØ¼ì²âËã×ÓµÄÒ»ÖÖ×Ô¶¯ãĞÖµ±ßÑØ¼ì²â
+ * @brief    åŸºäºsobleè¾¹æ²¿æ£€æµ‹ç®—å­çš„ä¸€ç§è‡ªåŠ¨é˜ˆå€¼è¾¹æ²¿æ£€æµ‹
  *
- * @param    imageIn    ÊäÈëÊı×é
- *           imageOut   Êä³öÊı×é      ±£´æµÄ¶şÖµ»¯ºóµÄ±ßÑØĞÅÏ¢
+ * @param    imageIn    è¾“å…¥æ•°ç»„
+ *           imageOut   è¾“å‡ºæ•°ç»„      ä¿å­˜çš„äºŒå€¼åŒ–åçš„è¾¹æ²¿ä¿¡æ¯
  *
  * @return
  *
@@ -382,7 +262,7 @@ int kapurThreshold(uint8 tmImage[LCDH][LCDW])
  */
 void lq_sobelAutoThreshold(unsigned char imageIn[LCDH][LCDW], unsigned char imageOut[LCDH][LCDW])
 {
-    /** ¾í»ıºË´óĞ¡ */
+    /** å·ç§¯æ ¸å¤§å° */
     short KERNEL_SIZE = 3;
     short xStart = KERNEL_SIZE / 2;
     short xEnd = LCDW - KERNEL_SIZE / 2;
@@ -394,7 +274,7 @@ void lq_sobelAutoThreshold(unsigned char imageIn[LCDH][LCDW], unsigned char imag
     {
         for (j = xStart; j < xEnd; j++)
         {
-            /* ¼ÆËã²»Í¬·½ÏòÌİ¶È·ùÖµ  */
+            /* è®¡ç®—ä¸åŒæ–¹å‘æ¢¯åº¦å¹…å€¼  */
             temp[0] = -(short)imageIn[i - 1][j - 1] + (short)imageIn[i - 1][j + 1]   //{{-1, 0, 1},
                       - (short)imageIn[i][j - 1] + (short)imageIn[i][j + 1]          // {-1, 0, 1},
                       - (short)imageIn[i + 1][j - 1] + (short)imageIn[i + 1][j + 1]; // {-1, 0, 1}};
@@ -416,7 +296,7 @@ void lq_sobelAutoThreshold(unsigned char imageIn[LCDH][LCDW], unsigned char imag
             temp[2] = abs(temp[2]);
             temp[3] = abs(temp[3]);
 
-            /* ÕÒ³öÌİ¶È·ùÖµ×î´óÖµ  */
+            /* æ‰¾å‡ºæ¢¯åº¦å¹…å€¼æœ€å¤§å€¼  */
             for (k = 1; k < 4; k++)
             {
                 if (temp[0] < temp[k])
@@ -425,7 +305,7 @@ void lq_sobelAutoThreshold(unsigned char imageIn[LCDH][LCDW], unsigned char imag
                 }
             }
 
-            /* Ê¹ÓÃÏñËØµãÁÚÓòÄÚÏñËØµãÖ®ºÍµÄÒ»¶¨±ÈÀı    ×÷ÎªãĞÖµ  */
+            /* ä½¿ç”¨åƒç´ ç‚¹é‚»åŸŸå†…åƒç´ ç‚¹ä¹‹å’Œçš„ä¸€å®šæ¯”ä¾‹    ä½œä¸ºé˜ˆå€¼  */
             temp[3] = (short)imageIn[i - 1][j - 1] + (short)imageIn[i - 1][j] + (short)imageIn[i - 1][j + 1] + (short)imageIn[i][j - 1] + (short)imageIn[i][j] + (short)imageIn[i][j + 1] + (short)imageIn[i + 1][j - 1] + (short)imageIn[i + 1][j] + (short)imageIn[i + 1][j + 1];
 
             if (temp[0] > temp[3] / 12.0f)
@@ -444,70 +324,13 @@ void lq_sobelAutoThreshold(unsigned char imageIn[LCDH][LCDW], unsigned char imag
 int pixelCount[GrayScale];
 float pixelPro[GrayScale];
 
-unsigned char my_adapt_threshold(uint8 *image, uint16 col, uint16 row)
-{
 
-    uint16 width = col;
-    uint16 height = row;
-
-    int i, j, pixelSum = width * height / 4;
-
-    uint8 *data = image; // Ö¸ÏòÏñËØÊı¾İµÄÖ¸Õë
-    for (i = 0; i < GrayScale; i++)
-    {
-        pixelCount[i] = 0;
-        pixelPro[i] = 0;
-    }
-
-    uint32 gray_sum = 0;
-    // Í³¼Æ»Ò¶È¼¶ÖĞÃ¿¸öÏñËØÔÚÕû·ùÍ¼ÏñÖĞµÄ¸öÊı
-    for (i = 0; i < height; i += 2)
-    {
-        for (j = 0; j < width; j += 2)
-        {
-            pixelCount[(int)data[i * width + j]]++; // ½«µ±Ç°µÄµãµÄÏñËØÖµ×÷Îª¼ÆÊıÊı×éµÄÏÂ±ê
-            gray_sum += (int)data[i * width + j];   // »Ò¶ÈÖµ×ÜºÍ
-        }
-    }
-
-    // ¼ÆËãÃ¿¸öÏñËØÖµµÄµãÔÚÕû·ùÍ¼ÏñÖĞµÄ±ÈÀı
-
-    for (i = 0; i < GrayScale; i++)
-    {
-        pixelPro[i] = (float)pixelCount[i] / pixelSum;
-    }
-
-    // ±éÀú»Ò¶È¼¶[0,255]
-    float w0, w1, u0tmp, u1tmp, u0, u1, u, deltaTmp, deltaMax = 0;
-
-    w0 = w1 = u0tmp = u1tmp = u0 = u1 = u = deltaTmp = 0;
-    for (j = 0; j < GrayScale; j++)
-    {
-
-        w0 += pixelPro[j];        // ±³¾°²¿·ÖÃ¿¸ö»Ò¶ÈÖµµÄÏñËØµãËùÕ¼±ÈÀıÖ®ºÍ   ¼´±³¾°²¿·ÖµÄ±ÈÀı
-        u0tmp += j * pixelPro[j]; // ±³¾°²¿·Ö       Ã¿¸ö»Ò¶ÈÖµµÄµãµÄ±ÈÀı *»Ò¶ÈÖµ
-
-        w1 = 1 - w0;
-        u1tmp = gray_sum / pixelSum - u0tmp;
-
-        u0 = u0tmp / w0;   // ±³¾°Æ½¾ù»Ò¶È
-        u1 = u1tmp / w1;   // Ç°¾°Æ½¾ù»Ò¶È
-        u = u0tmp + u1tmp; // È«¾ÖÆ½¾ù»Ò¶È
-        deltaTmp = w0 * pow((u0 - u), 2) + w1 * pow((u1 - u), 2);
-        if (deltaTmp > deltaMax)
-        {
-            deltaMax = deltaTmp;
-            Threshold = (unsigned char)j;
-        }
-        if (deltaTmp < deltaMax)
-        {
-            break;
-        }
-    }
-    return Threshold;
-}
 #define HISTOGRAM_SIZE 256
-
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
 void computeHistogram(unsigned char image[LCDH][LCDW], int histogram[])
 {
     for (int i = 0; i < LCDH; i++)
@@ -518,7 +341,59 @@ void computeHistogram(unsigned char image[LCDH][LCDW], int histogram[])
         }
     }
 }
-int otsuThreshold(unsigned char image[LCDH][LCDW])
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
+//int otsuThreshold(unsigned char image[LCDH][LCDW])
+//{
+//    int histogram[HISTOGRAM_SIZE] = {0};
+//    computeHistogram(image, histogram);
+//
+//    int totalPixels = LCDH * LCDW;
+//    double sum = 0.0, sumB = 0.0;
+//    double varMax = 0.0;
+//    int threshold = 0;
+//
+//    // è®¡ç®—ç°åº¦å¹³å‡å€¼
+//    for (int t = 0; t < HISTOGRAM_SIZE; t++)
+//    {
+//        sum += t * histogram[t];
+//    }
+//
+//    for (int t = 0; t < HISTOGRAM_SIZE; t++)
+//    {
+//        double wB = 0, wF = 0;
+//        double varBetween, meanB, meanF;
+//
+//        wB += histogram[t];
+//        wF = totalPixels - wB;
+//        if (wF == 0)
+//            break;
+//
+//        sumB += (double)(t * histogram[t]);
+//
+//        meanB = sumB / wB;
+//        meanF = (sum - sumB) / wF;
+//
+//        varBetween = (double)wB * (double)wF * (meanB - meanF) * (meanB - meanF);
+//
+//        if (varBetween > varMax)
+//        {
+//            varMax = varBetween;
+//            threshold = t;
+//        }
+//    }
+//
+//    return threshold;
+//}
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
+int otsuThreshold1(unsigned char image[LCDH][LCDW])
 {
     int histogram[HISTOGRAM_SIZE] = {0};
     computeHistogram(image, histogram);
@@ -528,12 +403,13 @@ int otsuThreshold(unsigned char image[LCDH][LCDW])
     double varMax = 0.0;
     int threshold = 0;
 
-    // ¼ÆËã»Ò¶ÈÆ½¾ùÖµ
+    // è®¡ç®—ç°åº¦å¹³å‡å€¼å’Œæ€»å’Œ
     for (int t = 0; t < HISTOGRAM_SIZE; t++)
     {
         sum += t * histogram[t];
     }
 
+    // è®¡ç®—é˜ˆå€¼
     for (int t = 0; t < HISTOGRAM_SIZE; t++)
     {
         double wB = 0, wF = 0;
@@ -549,7 +425,7 @@ int otsuThreshold(unsigned char image[LCDH][LCDW])
         meanB = sumB / wB;
         meanF = (sum - sumB) / wF;
 
-        varBetween = (double)wB * (double)wF * (meanB - meanF) * (meanB - meanF);
+        varBetween = wB * wF * (meanB - meanF) * (meanB - meanF);
 
         if (varBetween > varMax)
         {
@@ -560,23 +436,28 @@ int otsuThreshold(unsigned char image[LCDH][LCDW])
 
     return threshold;
 }
-#define white 1
+
+#define white 255
 #define black 0
-void Get_Bin_Image(uint8 mode) // ¶ÔÍ¼Ïñ¶şÖµ»¯
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
+void Get_Bin_Image(uint8 mode) // å¯¹å›¾åƒäºŒå€¼åŒ–
 {
 
     // unsigned short i = 0, j = 0;
     switch (mode)
     {
-    case 1: // ´ó½ò·¨ãĞÖµ
-            // Threshold = (unsigned char)GetOSTU(Image_Use); /* longqiu */
-        // my_adapt_threshold(Image_Use[0], LCDW, LCDH);
-        Threshold = (unsigned char)otsuThreshold(Image_Use);
-        for (int i = 0; i < LCDH; i++)
+    case 1: // å¤§æ´¥æ³•é˜ˆå€¼
+
+        Threshold = (unsigned char)otsuThreshold1(Image_Use);
+        for (int i = 1; i < LCDH - 1; i++)
         {
-            for (int j = 0; j < LCDW; j++)
+            for (int j = 1; j < LCDW - 1; j++)
             {
-                if (Image_Use[i][j] > Threshold) // ÊıÖµÔ½´ó£¬ÏÔÊ¾µÄÄÚÈİÔ½¶à£¬½ÏÇ³µÄÍ¼ÏñÒ²ÄÜÏÔÊ¾³öÀ´
+                if (Image_Use[i][j] > (Threshold)) // æ•°å€¼è¶Šå¤§ï¼Œæ˜¾ç¤ºçš„å†…å®¹è¶Šå¤šï¼Œè¾ƒæµ…çš„å›¾åƒä¹Ÿèƒ½æ˜¾ç¤ºå‡ºæ¥
                     Bin_Image[i][j] = white;
                 else
                     Bin_Image[i][j] = black;
@@ -600,7 +481,7 @@ void Get_Bin_Image(uint8 mode) // ¶ÔÍ¼Ïñ¶şÖµ»¯
     {
         for (j = 0; j < LCDW; j++)
         {
-            if (Image_Use[i][j] > Threshold) // ÊıÖµÔ½´ó£¬ÏÔÊ¾µÄÄÚÈİÔ½¶à£¬½ÏÇ³µÄÍ¼ÏñÒ²ÄÜÏÔÊ¾³öÀ´
+            if (Image_Use[i][j] > Threshold) // æ•°å€¼è¶Šå¤§ï¼Œæ˜¾ç¤ºçš„å†…å®¹è¶Šå¤šï¼Œè¾ƒæµ…çš„å›¾åƒä¹Ÿèƒ½æ˜¾ç¤ºå‡ºæ¥
                 Bin_Image[i][j] = 1;
             else
                 Bin_Image[i][j] = 0;
@@ -608,10 +489,15 @@ void Get_Bin_Image(uint8 mode) // ¶ÔÍ¼Ïñ¶şÖµ»¯
     }
     */
 }
-void Bin_Image_Filter(void) // ¶ÔÍ¼Ïñ½øĞĞÂË²¨
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
+void Bin_Image_Filter(void) // å¯¹å›¾åƒè¿›è¡Œæ»¤æ³¢
 {
-    sint16 nr; // ĞĞ
-    sint16 nc; // ÁĞ
+    sint16 nr; // è¡Œ
+    sint16 nc; // åˆ—
     for (nr = 1; nr < LCDH - 1; nr++)
     {
         for (nc = 1; nc < LCDW - 1; nc = nc + 1)
@@ -627,20 +513,56 @@ void Bin_Image_Filter(void) // ¶ÔÍ¼Ïñ½øĞĞÂË²¨
         }
     }
 }
+#define threshold_max   255*6//5æ­¤å‚æ•°å¯æ ¹æ®è‡ªå·±çš„éœ€æ±‚è°ƒèŠ‚
+#define threshold_min   255*3//2æ­¤å‚æ•°å¯æ ¹æ®è‡ªå·±çš„éœ€æ±‚è°ƒèŠ‚
+void image_filter(void)//å½¢æ€å­¦æ»¤æ³¢ï¼Œç®€å•æ¥è¯´å°±æ˜¯è†¨èƒ€å’Œè…èš€çš„æ€æƒ³
+{
+    uint16 i, j;
+    uint32 num = 0;
+
+
+    for (i = 1; i < LCDH - 1; i++)
+    {
+        for (j = 1; j < (LCDW - 1); j++)
+        {
+            //ç»Ÿè®¡å…«ä¸ªæ–¹å‘çš„åƒç´ å€¼
+            num =
+                    Bin_Image[i - 1][j - 1] + Bin_Image[i - 1][j] + Bin_Image[i - 1][j + 1]
+                + Bin_Image[i][j - 1] + Bin_Image[i][j + 1]
+                + Bin_Image[i + 1][j - 1] + Bin_Image[i + 1][j] + Bin_Image[i + 1][j + 1];
+
+
+            if (num >= threshold_max && Bin_Image[i][j] == 0)
+            {
+
+                Bin_Image[i][j] = 255;//ç™½  å¯ä»¥ææˆå®å®šä¹‰ï¼Œæ–¹ä¾¿æ›´æ”¹
+
+            }
+            if (num <= threshold_min && Bin_Image[i][j] == 255)
+            {
+
+                Bin_Image[i][j] = 0;//é»‘
+
+            }
+
+        }
+    }
+
+}
 /*!
- * @brief    ÅĞ¶ÏÊÇ·ñ¶ªÏß
+ * @brief    åˆ¤æ–­æ˜¯å¦ä¸¢çº¿
  *
- * @param    imageInput £º ¶şÖµÍ¼ÏñĞÅÏ¢
- * @param    imageOut   £º ±ßÏßÊı×é
- * @param    lineIndex  £º ĞĞ
+ * @param    imageInput ï¼š äºŒå€¼å›¾åƒä¿¡æ¯
+ * @param    imageOut   ï¼š è¾¹çº¿æ•°ç»„
+ * @param    lineIndex  ï¼š è¡Œ
  *
- * @return   0£ºÃ»ÓĞ¶ªÏß   1:×ó±ß¶ªÏß  2£ºÓÒ±ß¶ªÏß  3£º ×óÓÒ¶¼¶ªÏß   4£º´íÎó
+ * @return   0ï¼šæ²¡æœ‰ä¸¢çº¿   1:å·¦è¾¹ä¸¢çº¿  2ï¼šå³è¾¹ä¸¢çº¿  3ï¼š å·¦å³éƒ½ä¸¢çº¿   4ï¼šé”™è¯¯
  *
  * @note
  *
  * @see
  *
- * @date     2020/6/24 ĞÇÆÚÈı
+ * @date     2020/6/24 æ˜ŸæœŸä¸‰
  */
 uint8_t RoadIsNoSide(uint8_t imageInput[LCDH][LCDW], uint8_t imageOut[LCDH][2], uint8_t lineIndex)
 {
@@ -648,8 +570,8 @@ uint8_t RoadIsNoSide(uint8_t imageInput[LCDH][LCDW], uint8_t imageOut[LCDH][2], 
     uint8_t i = 0;
     static uint8_t last = 78;
     imageOut[lineIndex][0] = 0;
-    imageOut[lineIndex][1] = 159;
-    /* ÓÃ¾àÀëĞ¡³µ±È½Ï½üµÄĞĞ ÅĞ¶ÏÊÇ·ñ¶ªÏß */
+    imageOut[lineIndex][1] =LCDW-1 ;
+    /* ç”¨è·ç¦»å°è½¦æ¯”è¾ƒè¿‘çš„è¡Œ åˆ¤æ–­æ˜¯å¦ä¸¢çº¿ */
     for (i = last; i > 1; i--)
     {
         if (!imageInput[lineIndex][i])
@@ -660,11 +582,11 @@ uint8_t RoadIsNoSide(uint8_t imageInput[LCDH][LCDW], uint8_t imageOut[LCDH][2], 
     }
     if (i == 1)
     {
-        /* ×ó±ß½ç¶ªÏß */
+        /* å·¦è¾¹ç•Œä¸¢çº¿ */
         state = 1;
     }
 
-    for (i = last; i < 159; i++)
+    for (i = last; i < LCDW-1; i++)
     {
         if (!imageInput[lineIndex][i])
         {
@@ -672,14 +594,14 @@ uint8_t RoadIsNoSide(uint8_t imageInput[LCDH][LCDW], uint8_t imageOut[LCDH][2], 
             break;
         }
     }
-    if (i == 159)
+    if (i == LCDW-1)
     {
-        /* ×óÓÒ±ß½ç¶ªÏß */
+        /* å·¦å³è¾¹ç•Œä¸¢çº¿ */
         if (state == 1)
         {
             state = 3;
         }
-        /* ÓÒ±ß½ç¶ªÏß */
+        /* å³è¾¹ç•Œä¸¢çº¿ */
         else
         {
             state = 2;
@@ -691,420 +613,536 @@ uint8_t RoadIsNoSide(uint8_t imageInput[LCDH][LCDW], uint8_t imageOut[LCDH][2], 
     }
     return state;
 }
-void RoadNoSideProcess(uint8_t imageInput[LCDH][LCDW], uint8_t imageOut[LCDH][2], uint8_t mode, uint8_t lineIndex)
-{
-    uint8_t i = 0, j = 0, count = 0;
-    switch (mode)
-    {
-    case 1:
-        for (i = imageOut[lineIndex][1]; i > 1; i--)
-        {
-            count++;
-            for (j = lineIndex; j > ROAD_END_ROW && lineIndex > count; j--)
-            {
-                if (imageInput[j][i])
-                {
-                    imageOut[lineIndex - count][0] = 0;
-                    imageOut[lineIndex - count][1] = i;
-                    break;
-                }
-            }
-        }
-        break;
-    case 2:
-        for (i = imageOut[lineIndex][0]; i < 159; i++)
-        {
-            count++;
-            for (j = lineIndex; j > ROAD_END_ROW && lineIndex > count; j--)
-            {
-                if (imageInput[j][i])
-                {
-                    imageOut[lineIndex - count][0] = i;
-                    imageOut[lineIndex - count][1] = 159;
-                    break;
-                }
-            }
-        }
-        break;
-    }
-}
-//int line=0;
-//int list=0;
-//void image_scan()
-//{
-// for(line=120;line>=40;line--)
-// {
-//   for(list=93;list<188;list++)
-//   {
-//    if((image_deal[line][list-2]==white)&&(image_deal[line][list-1]==black)
-//       &&(image_deal[line][list]==black))
-//     {
-//       rightline[line]=list;
-//        break;
-//     }
-//   }
+//----------------------------------------------------------
 //
-//   for(list=93;list>1;list--)
-//   {
-//    if((image_deal[line][list]==black)&&(image_deal[line][list+1]==black)
-//        &&(image_deal[line][list+2]==white))
-//     {
-//       leftline[line]=list;
-//      break;
-//     }
-//   }
-//    road_width[line]=my_abs(leftline[line],rightline[line]);
-//    centerline[line]=(rightline[line]+leftline[line])/2;
-//  }
-//}
+//
+//
+//----------------------------------------------------------
+void RoadNoSideProcess(uint8_t imageInput[LCDH][LCDW], uint8_t imageOut[LCDH][2], uint8_t mode, uint8_t lineIndex)
+    {
+        uint8_t i = 0, j = 0, count = 0;
+        switch (mode)
+        {
+        case 1:
+            for (i = imageOut[lineIndex][1]; i > 1; i--)
+            {
+                count++;
+                for (j = lineIndex; j > ROAD_END_ROW && lineIndex > count; j--)
+                {
+                    if (imageInput[j][i])
+                    {
+                        imageOut[lineIndex - count][0] = 0;
+                        imageOut[lineIndex - count][1] = i;
+                        break;
+                    }
+                }
+            }
+            break;
+        case 2:
+            for (i = imageOut[lineIndex][0]; i < LCDW-1; i++)
+            {
+                count++;
+                for (j = lineIndex; j > ROAD_END_ROW && lineIndex > count; j--)
+                {
+                    if (imageInput[j][i])
+                    {
+                        imageOut[lineIndex - count][0] = i;
+                        imageOut[lineIndex - count][1] = LCDW-1;
+                        break;
+                    }
+                }
+            }
+            break;
+        }
+    }
+
 uint8_t right_line_lost,left_line_lost;
 uint8_t Right_Lost_Flag[LCDH]={0};
 uint8_t Left_Lost_Flag[LCDH]={0};
-void Find_Boundry(uint8_t imageOut[LCDH][2])//´ÓÖĞ¼äÍùÁ½±ßËÑË÷ÖĞÏß
-{
-    int i,j;
-    static int left_border=0,right_border=0,mid=LCDW/2,last_mid=LCDW/2;
-    right_line_lost=0;
-    left_line_lost=0;
-    //ÆğÊ¼µãºÏÀíĞÔÅĞ¶Ï
-    if(Bin_Image[MT9V03X_H-1][LCDW/2]==0x00)//ÆÁÄ»ÖĞÏßÊÇºÚµÄ»°
-    {
-        if(Bin_Image[MT9V03X_H-1][LCDW/4]==0xff)//¿´¿´×ó1/4ÊÇ²»ÊÇ°×
-        {
-            last_mid=LCDW/4;//¸ü¸ÄËÑË÷ÆğÊ¼µã
-        }
-        else if(Bin_Image[MT9V03X_H-1][LCDW/4*3]==0xff)//¿´¿´ÓÒ1/4ÊÇ²»ÊÇ°×
-        {
-            last_mid=LCDW/4*3;//¸ü¸ÄËÑË÷ÆğÊ¼µã
-        }
-    }
-    //¿ªÊ¼Ñ²±ß
-    for(i=MT9V03X_H-1;i>=0;i--)//´Ó×îµ×ÏÂÍùÉÏÉ¨Ãè
-    {
-        for(j=last_mid;j<LCDW-3;j++)//ÍùÓÒÉ¨Ãè
-        {
-            if(Bin_Image[i][j]==0xff&&Bin_Image[i][j+1]==0x00&&Bin_Image[i][j+2]==0x00)//°×ºÚºÚ£¬ÕÒµ½ÓÒ±ß½ç
-            {
-                right_border=j;
-                Right_Lost_Flag[i]=0; //ÓÒ¶ªÏßÊı×é£¬¶ªÏßÖÃ1£¬²»¶ªÏßÖÃ0
-                break;//Ìø³ö£¬ÕÒµ½±¾ĞĞ±ß½ç¾ÍÃ»±ØÒªÑ­»·ÏÂÈ¥ÁË
-            }
-            else
-            {
-                right_border=j;//Ã»ÕÒµ½ÓÒ±ß½ç£¬°ÑÆÁÄ»×îÓÒ¸³Öµ¸øÓÒ±ß½ç
-                Right_Lost_Flag[i]=1; //ÓÒ¶ªÏßÊı×é£¬¶ªÏßÖÃ1£¬²»¶ªÏßÖÃ0
-            }
-        }
-        right_line_lost+=Right_Lost_Flag[i];
-        for(j=last_mid;j>1;j--)//Íù×ó±ßÉ¨Ãè
-        {
-            if(Bin_Image[i][j]==0xff&&Bin_Image[i][j-1]==0x00&&Bin_Image[i][j-2]==0x00)//ºÚºÚ°×ÈÏÎªµ½´ï×ó±ß½ç
-            {
-                left_border=j;
-                Left_Lost_Flag[i]=0; //×ó¶ªÏßÊı×é£¬¶ªÏßÖÃ1£¬²»¶ªÏßÖÃ0
-                break;//Ìø³ö£¬ÕÒµ½±¾ĞĞ±ß½ç¾ÍÃ»±ØÒªÑ­»·ÏÂÈ¥ÁË
-            }
-            else
-            {
-                left_border=j;//ÕÒµ½Í·¶¼Ã»ÕÒµ½±ß£¬¾Í°ÑÆÁÄ»×î×óÓÒµ±×ö±ß½ç
-                Left_Lost_Flag[i]=1; //×ó¶ªÏßÊı×é£¬¶ªÏßÖÃ1£¬²»¶ªÏßÖÃ0
-            }
-        }
-        left_line_lost+=Left_Lost_Flag[i];
-        mid=(left_border+right_border)/2;//ÖĞÏß×ø±ê
-        last_mid=mid;//ÖĞÏß²éÕÒ¿ªÊ¼µã£¬·½±ãÏÂÒ»´ÎÕÒÖĞÏß
-        imageOut[i][0]= (uint8_t)left_border ;      //×ó±ßÏßÏßÊı×é
-        imageOut[i][1]= (uint8_t)right_border;      //ÓÒ±ßÏßÏßÊı×é
-        Roadwide[i]=imageOut[i][1]-imageOut[i][0];
-    }
-}
-
-uint8_t ImageGetSide(uint8_t imageInput[LCDH][LCDW], uint8_t imageOut[LCDH][2], uint8_t imageOut_last[LCDH][2]) // »ñÈ¡×óÓÒ±ßÏß
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
+//void Find_Boundry(uint8_t imageOut[LCDH][2])//ä»ä¸­é—´å¾€ä¸¤è¾¹æœç´¢ä¸­çº¿
+//{
+//    int i,j;
+//    static int left_border=0,right_border=0,mid=LCDW/2,last_mid=LCDW/2;
+//    right_line_lost=0;
+//    left_line_lost=0;
+//    //èµ·å§‹ç‚¹åˆç†æ€§åˆ¤æ–­
+//    if(Bin_Image[MT9V03X_H-1][LCDW/2]==0x00)//å±å¹•ä¸­çº¿æ˜¯é»‘çš„è¯
+//    {
+//        if(Bin_Image[MT9V03X_H-1][LCDW/4]==0xff)//çœ‹çœ‹å·¦1/4æ˜¯ä¸æ˜¯ç™½
+//        {
+//            last_mid=LCDW/4;//æ›´æ”¹æœç´¢èµ·å§‹ç‚¹
+//        }
+//        else if(Bin_Image[MT9V03X_H-1][LCDW/4*3]==0xff)//çœ‹çœ‹å³1/4æ˜¯ä¸æ˜¯ç™½
+//        {
+//            last_mid=LCDW/4*3;//æ›´æ”¹æœç´¢èµ·å§‹ç‚¹
+//        }
+//    }
+//    //å¼€å§‹å·¡è¾¹
+//    for(i=MT9V03X_H-1;i>=0;i--)//ä»æœ€åº•ä¸‹å¾€ä¸Šæ‰«æ
+//    {
+//        for(j=last_mid;j<LCDW-3;j++)//å¾€å³æ‰«æ
+//        {
+//            if(Bin_Image[i][j]==0xff&&Bin_Image[i][j+1]==0x00&&Bin_Image[i][j+2]==0x00)//ç™½é»‘é»‘ï¼Œæ‰¾åˆ°å³è¾¹ç•Œ
+//            {
+//                right_border=j;
+//                Right_Lost_Flag[i]=0; //å³ä¸¢çº¿æ•°ç»„ï¼Œä¸¢çº¿ç½®1ï¼Œä¸ä¸¢çº¿ç½®0
+//                break;//è·³å‡ºï¼Œæ‰¾åˆ°æœ¬è¡Œè¾¹ç•Œå°±æ²¡å¿…è¦å¾ªç¯ä¸‹å»äº†
+//            }
+//            else
+//            {
+//                right_border=j;//æ²¡æ‰¾åˆ°å³è¾¹ç•Œï¼ŒæŠŠå±å¹•æœ€å³èµ‹å€¼ç»™å³è¾¹ç•Œ
+//                Right_Lost_Flag[i]=1; //å³ä¸¢çº¿æ•°ç»„ï¼Œä¸¢çº¿ç½®1ï¼Œä¸ä¸¢çº¿ç½®0
+//            }
+//        }
+//        right_line_lost+=Right_Lost_Flag[i];
+//        for(j=last_mid;j>1;j--)//å¾€å·¦è¾¹æ‰«æ
+//        {
+//            if(Bin_Image[i][j]==0xff&&Bin_Image[i][j-1]==0x00&&Bin_Image[i][j-2]==0x00)//é»‘é»‘ç™½è®¤ä¸ºåˆ°è¾¾å·¦è¾¹ç•Œ
+//            {
+//                left_border=j;
+//                Left_Lost_Flag[i]=0; //å·¦ä¸¢çº¿æ•°ç»„ï¼Œä¸¢çº¿ç½®1ï¼Œä¸ä¸¢çº¿ç½®0
+//                break;//è·³å‡ºï¼Œæ‰¾åˆ°æœ¬è¡Œè¾¹ç•Œå°±æ²¡å¿…è¦å¾ªç¯ä¸‹å»äº†
+//            }
+//            else
+//            {
+//                left_border=j;//æ‰¾åˆ°å¤´éƒ½æ²¡æ‰¾åˆ°è¾¹ï¼Œå°±æŠŠå±å¹•æœ€å·¦å³å½“åšè¾¹ç•Œ
+//                Left_Lost_Flag[i]=1; //å·¦ä¸¢çº¿æ•°ç»„ï¼Œä¸¢çº¿ç½®1ï¼Œä¸ä¸¢çº¿ç½®0
+//            }
+//        }
+//        left_line_lost+=Left_Lost_Flag[i];
+//        mid=(left_border+right_border)/2;//ä¸­çº¿åæ ‡
+//        last_mid=mid;//ä¸­çº¿æŸ¥æ‰¾å¼€å§‹ç‚¹ï¼Œæ–¹ä¾¿ä¸‹ä¸€æ¬¡æ‰¾ä¸­çº¿
+//        imageOut[i][0]= (uint8_t)left_border ;      //å·¦è¾¹çº¿çº¿æ•°ç»„
+//        imageOut[i][1]= (uint8_t)right_border;      //å³è¾¹çº¿çº¿æ•°ç»„
+//        Roadwide[i]=imageOut[i][1]-imageOut[i][0];
+//    }
+//}
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
+uint8_t ImageGetSide(uint8_t imageInput[LCDH][LCDW], uint8_t imageOut[LCDH][2], uint8_t imageOut_last[LCDH][2],uint8 mode) // è·å–å·¦å³è¾¹çº¿
 {
     uint8_t i = 0, j = 0;
-
-    RoadIsNoSide(imageInput, imageOut, ROAD_START_ROW); // £¿´æÒÉ
-    for (i = 0; i <= LCDH; i++)
+    uint8 centerline=0;
+    switch(mode)
     {
-        imageOut_last[i][0] = imageOut[i][0];
-        imageOut_last[i][1] = imageOut[i][1];
-    }
-
-    /* Àë³µÍ·½üµÄ40ĞĞ Ñ°ÕÒ±ßÏß */
-    for (i = ROAD_START_ROW - 1; i > ROAD_END_ROW; i--)
-    {
-        imageOut[i][0] = 0;
-        imageOut[i][1] = 159;
-
-        /* ¸ù¾İ±ß½çÁ¬ĞøÌØĞÔ Ñ°ÕÒ±ß½ç */
-        for (j = imageOut[i + 1][0] + 10; j > 0; j--)
-        {
-            if (!imageInput[i][j])
-            {
-                imageOut[i][0] = j;
-                break;
-            }
-        }
-        for (j = imageOut[i + 1][1] - 10; j < 160; j++)
-        {
-            if (!imageInput[i][j])
-            {
-                imageOut[i][1] = j;
-                break;
-            }
-        }
-
-        /* Èç¹û×ó±ß½ç ¼´½«³¬³öÖĞÏß Ôò¼ì²éÊÇ·ñÓÒ¶ªÏß */
-
-        if (imageOut[i][0] > (LCDW / 2 - 10) && imageOut[i][1] > (LCDW - 5))
-        {
-            // ÓÒ¶ªÏß´¦Àí
-            RoadNoSideProcess(imageInput, imageOut, 2, i); // £¿´æÒÉ
-
-            if (i > 70)
-            {
-                imageOut[i][0] += 50;
-            }
-            return 1;
-        }
-
-        /* Èç¹ûÓÒ±ß½ç ¼´½«³¬³öÖĞÏß Ôò¼ì²éÊÇ·ñ×ó¶ªÏß */
-
-        if (imageOut[i][1] < (LCDW / 2 + 10) && imageOut[i][0] < (5))
-        {
-            // ×ó¶ªÏß´¦Àí
-            RoadNoSideProcess(imageInput, imageOut, 1, i);
-
-            if (i > 70)
-            {
-                imageOut[i][1] -= 50;
-            }
-            return 2;
-        }
-
-        // ±ßÏßÊı×é·¢ÉúÍ»±ä
-        if ((imageOut_last[110][0] - imageOut[110][0]) > 20 && (imageOut_last[110][0] - imageOut[110][0]) < -20)
-        {
-            for (i = 0; i < LCDH; i++)
-            {
-                imageOut[i][0] = imageOut_last[i][0];
-                imageOut[i][1] = 158;
-            }
-        }
-        if (imageOut_last[110][1] - imageOut[110][1] > 20 && imageOut_last[110][1] - imageOut[110][1] < -20)
-        {
-            for (i = 0; i <= LCDH; i++)
-            {
-                imageOut[i][1] = imageOut_last[i][1];
-                imageOut[i][0] = 1;
-            }
-        }
-    }
-    return 0;
-}
-
-/*-----------------------------------------------------------------!
-  * @brief    »ñÈ¡±ßÏß
-  *
-  * @param    imageInput £º ¶şÖµÍ¼ÏñĞÅÏ¢
-  * @param    imageOut   £º ±ßÏßÊı×é
-  *
-  * @return   ÊÇ·ñ¶ªÏß
-  *
-  * @note     Ë¼Â·£º´Ó¾àÀë³µÍ·½Ï½üµÄĞĞ¿ªÊ¼´ÓÖĞ¼äÏòÁ½±ßËÑÏß
- ---------------------------------------------------------------------- */
-uint8_t ImageGetSide1(uint8_t imageInput[LCDH][LCDW], uint8_t imageOut[LCDH][2])
+        case 1:
+        RoadIsNoSide(imageInput, imageOut, ROAD_START_ROW); //
+/* ç¦»è½¦å¤´è¿‘çš„40è¡Œ å¯»æ‰¾è¾¹çº¿ */
+for (i = ROAD_START_ROW -1; i > ROAD_END_ROW; i--)
 {
-    uint8_t i = 0, j = 0, k = 0;
+    imageOut[i][0] = 0;
+    imageOut[i][1] = LCDW-1;
 
-    for (i = LCDH - 1; i > 0; i--)
+    // æ ¹æ®è¾¹ç•Œè¿ç»­ç‰¹æ€§ å¯»æ‰¾è¾¹ç•Œ
+    for (j = imageOut[i + 1][0] + 10; j > 0; j--)
     {
-        imageOut[i][0] = 1;
-        imageOut[i][1] = LCDW - 1;
-    }
-
-    // ÓÃ¾àÀëĞ¡³µ±È½Ï½üµÄĞĞ ÅĞ¶ÏÊÇ·ñ¶ªÏß
-    for (i = LCDW / 2; i > 1; i--)
-    {
-        if (!imageInput[LCDH - 1][i])
+        if (!imageInput[i][j])
         {
-            imageOut[LCDH - 1][0] = i;
+            imageOut[i][0] = j;
+            break;
+        }
+    }
+    for (j = imageOut[i + 1][1] - 10; j < LCDW-1; j++)
+    {
+        if (!imageInput[i][j])
+        {
+            imageOut[i][1] = j;
             break;
         }
     }
 
-    for (i = LCDW / 2 + 1; i < LCDW - 1; i++)
+
+    /* å¦‚æœå·¦è¾¹ç•Œ å³å°†è¶…å‡ºä¸­çº¿ åˆ™æ£€æŸ¥æ˜¯å¦å³ä¸¢çº¿ */
+
+    if (imageOut[i][0] > (LCDW / 2 - 10) && imageOut[i][1] > (LCDW - 5))
     {
-        if (!imageInput[LCDH - 1][i])
+        // å³ä¸¢çº¿å¤„ç†
+        RoadNoSideProcess(imageInput, imageOut, 2, i); // ï¼Ÿå­˜ç–‘
+
+        if (i > 70)
         {
-            imageOut[LCDH - 1][1] = i;
-            break;
+            imageOut[i][0] += 50;
         }
-    }
-    //-------------------------------------------------------------
-
-    // ±éÀúÃ¿ĞĞ
-    for (i = LCDH - 2; i > 0; i--)
-    {
-        // Ïò×óËÑÏß
-        for (j = imageOut[i + 1][0] + 10; j > 0; j--)
-        {
-            if (!imageInput[i][j])
-            {
-                imageOut[i][0] = j;
-                break;
-            }
-        }
-
-        if (imageOut[i][0] > LCDW / 2)
-        {
-            imageOut[i][0] = LCDW / 2;
-
-            for (k = i; k > 0; k--)
-            {
-                imageOut[k][0] = LCDW / 2;
-            }
-
-            break;
-        }
+        return 1;
     }
 
-    // ±éÀúÃ¿Ò»ĞĞ
-    for (i = LCDH - 2; i > 0; i--)
+    /* å¦‚æœå³è¾¹ç•Œ å³å°†è¶…å‡ºä¸­çº¿ åˆ™æ£€æŸ¥æ˜¯å¦å·¦ä¸¢çº¿ */
+
+    if (imageOut[i][1] < (LCDW / 2 + 10) && imageOut[i][0] < (5))
     {
-        // ÏòÓÒËÑÏß
-        for (j = imageOut[i + 1][1] - 10; j < LCDW - 1; j++)
+        // å·¦ä¸¢çº¿å¤„ç†
+        RoadNoSideProcess(imageInput, imageOut, 1, i);
+
+        if (i > 70)
         {
-            if (!imageInput[i][j])
-            {
-                imageOut[i][1] = j;
-                break;
-            }
+            imageOut[i][1] -= 50;
         }
-
-        if (imageOut[i][1] < LCDW / 2)
-        {
-            imageOut[i][1] = LCDW / 2;
-
-            for (k = i; k > 0; k--)
-            {
-                imageOut[k][1] = LCDW / 2;
-            }
-
-            break;
-        }
+        return 2;
     }
+
+
+}
+        break;
+        case 2:
+
+            for(i=LCDW/2;i>1;i--)
+            {
+                if (!imageInput[115][i])
+                {
+                    imageOut[115][0] = i;
+                    break;
+                }
+            }
+            for(i=LCDW/2;i<LCDW-1;i++)
+            {
+            if (!imageInput[115][i])
+               {
+                   imageOut[115][1] = i;
+                   break;
+               }
+            }
+            centerline=(imageOut[115][1]+ imageOut[115][0])>>1;
+            for(j=114;j>10;j--)
+            {
+                imageOut[j][0] = 0;
+                imageOut[j][1] = LCDW-1;
+                for(i=centerline;i>1;i--)
+                {
+                    if (!imageInput[j][i])
+                               {
+                                   imageOut[j][1] = i;
+                                   break;
+                               }
+                   }
+
+                for(i=centerline;i<LCDW-1;i++)
+                {
+                    if (!imageInput[j][i])
+                           {
+                               imageOut[j][1] = i;
+                               break;
+                           }
+                 }
+                centerline=(imageOut[j][1]+ imageOut[j][0])>>1;
+              }
+            break;
+            }
+
     return 0;
 }
-/*-----------------------------------------------------------------!
-  * @brief    dfs»ñÈ¡±ßÏß
-  *
-  * @param
-  * @param
-  *
-  * @return
-  *
-  * @note
- ---------------------------------------------------------------------- */
-//bool visited[LCDH][LCDW]={False};
-//void dfs(int i, int j, uint8 imageInput[LCDH][LCDW], int *num_points)
+
+void imageside(uint8 mode)
+{
+    switch (mode)
+    {
+    case 1:
+        ImageGetSide(Bin_Image, ImageSide, ImageSide_last,1);
+        break;
+    case 2:
+        enh_process();
+        break;
+    default:
+        break;
+    }
+
+}
+//----------------------------------------------------------
+//
+int windowSize = 3;
+//
+//
+//----------------------------------------------------------
+void triangularFilter(uint8_t edge[LCDH][2], uint8_t filteredEdge[LCDH][2], int windowSize) {
+    // ç¡®ä¿çª—å£å¤§å°æ˜¯å¥‡æ•°
+    if (windowSize % 2 == 0) {
+        windowSize++;
+    }
+
+    int halfWindowSize = windowSize / 2;
+    for (int i = 0; i < LCDH; i++) {
+        int sum = 0;
+        int weightSum = 0;
+
+        // åº”ç”¨ä¸‰è§’æƒé‡
+        for (int j = -halfWindowSize; j <= halfWindowSize; j++) {
+            int index = i + j;
+            if (index >= 0 && index < LCDH) {
+                int weight = abs(j) + 1; // æƒé‡ä»1åˆ°windowSizeé€’å¢
+                sum += edge[index][0] * weight;
+                weightSum += weight;
+            }
+        }
+
+        // è®¡ç®—åŠ æƒå¹³å‡å€¼
+        filteredEdge[i][0] = sum / weightSum;
+    }
+}
+
+
+
+//#define LCDH 120  // è¾¹çº¿æ•°æ®çš„é«˜åº¦
+//#define LCDW 160  // è¾¹çº¿æ•°æ®çš„å®½åº¦
+//#define SIGMA_SPATIAL 2.0  // ç©ºé—´åŸŸçš„æ ‡å‡†å·®
+//#define SIGMA_INTENSITY 0.1  // å¼ºåº¦åŸŸçš„æ ‡å‡†å·®
+//
+//// è®¡ç®—é«˜æ–¯æƒé‡
+//double gaussian(double x, double sigma) {
+//    return exp(-x * x / (2 * sigma * sigma));
+//}
+
+// åŒè¾¹æ»¤æ³¢
+//void bilateralFilterEdge(uint8_t edge[LCDH][2], uint8_t filteredEdge[LCDH][2])
 //{
-//    if (i < 0 || i >= LCDH || j < 0 || j >= LCDW || imageInput[i][j] == 255 || visited[i][j])
+////    double weightSum;
+////    int left, right;
+////
+////    // å¯¹æ¯ä¸ªè¾¹çº¿ç‚¹è¿›è¡ŒåŒè¾¹æ»¤æ³¢
+////    for (int i = 0; i < LCDH; i++) {
+////        // åˆå§‹åŒ–ç´¯ç§¯å˜é‡
+////        weightSum = 0.0;
+////        int filteredValue = 0;
+////
+////        // éå†è¾¹çº¿ç‚¹çš„é‚»åŸŸ
+////        for (int j = 0; j < LCDH; j++) {
+////            // è®¡ç®—ç©ºé—´åŸŸçš„é«˜æ–¯æƒé‡
+////            double spatialWeight = gaussian(fabs(i - j), SIGMA_SPATIAL);
+////
+////            // è®¡ç®—å¼ºåº¦åŸŸçš„é«˜æ–¯æƒé‡
+////            double intensityDifference = (double)edge[j][0] - (double)edge[i][0];
+////            double intensityWeight = gaussian(intensityDifference * intensityDifference, SIGMA_INTENSITY);
+////
+////            // è®¡ç®—æ€»æƒé‡
+////            double totalWeight = spatialWeight * intensityWeight;
+////
+////            // ç´¯åŠ åŠ æƒçš„å¼ºåº¦å€¼
+////            filteredValue += totalWeight * (double)edge[j][0];
+////            weightSum += totalWeight;
+////        }
+////
+////        // å½’ä¸€åŒ–å¾—åˆ°æœ€ç»ˆçš„æ»¤æ³¢å€¼
+////        filteredEdge[i][0] = (uint8_t)(filteredValue / weightSum);
+////    }
+//    const int windowSize = 3; // å®šä¹‰ä¸€ä¸ªè¾ƒå°çš„çª—å£å¤§å°
+//       double weightSum, totalWeight;
+//       int filteredValue;
+//       int left, right;
+//
+//       for (int i = 0; i < LCDH; i++) {
+//           weightSum = 0.0;
+//           filteredValue = 0;
+//
+//           for (int j = i - windowSize; j <= i + windowSize; j++) {
+//               if (j < 0 || j >= LCDH) continue; // è¾¹ç•Œæ£€æŸ¥
+//
+//               double spatialDistance = fabs(i - j);
+//               double spatialWeight = gaussian(spatialDistance, SIGMA_SPATIAL > spatialDistance ? SIGMA_SPATIAL : spatialDistance);
+//
+//               double intensityDifference = (double)edge[j][0] - (double)edge[i][0];
+//               double intensityWeight = gaussian(intensityDifference * intensityDifference, SIGMA_INTENSITY);
+//
+//               totalWeight = spatialWeight * intensityWeight;
+//
+//               filteredValue += totalWeight * (double)edge[j][0];
+//               weightSum += totalWeight;
+//           }
+//
+//           filteredEdge[i][0] = (uint8_t)(filteredValue / (weightSum > 0.0 ? weightSum : 1.0));
+//       }
+//}
+
+
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
+void medianFilterEdge(uint8_t imagein[LCDH][2], uint8_t imageOut[LCDH][2])
+{
+    uint8_t window[3][2];
+    for (int i = 1; i < LCDH - 1; i++) {
+        // é€‰æ‹©å½“å‰ç‚¹åŠå·¦å³ç‚¹ä½œä¸ºæ»¤æ³¢çª—å£
+        window[0][0] = imagein[i - 1][0];
+        window[1][0] = imagein[i][0];
+        window[2][0] = imagein[i + 1][0];
+
+        // å¯¹çª—å£å†…çš„ç‚¹è¿›è¡Œæ’åº
+        if (window[0][0] > window[1][0]) { uint8_t temp = window[0][0]; window[0][0] = window[1][0]; window[1][0] = temp; }
+        if (window[1][0] > window[2][0]) { uint8_t temp = window[1][0]; window[1][0] = window[2][0]; window[2][0] = temp; }
+        if (window[0][0]> window[1][0]) { uint8_t temp = window[0][0]; window[0][0] = window[1][0]; window[1][0] = temp; }
+
+        // å–ä¸­å€¼ä½œä¸ºæ»¤æ³¢åçš„ç»“æœ
+        imageOut[i][0] = window[1][0];
+
+
+               window[0][1] = imagein[i - 1][1];
+               window[1][1]= imagein[i][1];
+               window[2][1] = imagein[i + 1][1];
+
+               // å¯¹çª—å£å†…çš„ç‚¹è¿›è¡Œæ’åº
+               if (window[0][1] > window[1][1]) { uint8_t temp = window[0][1]; window[0][1] = window[1][1]; window[1][1] = temp; }
+               if (window[1][1] > window[2][1]) { uint8_t temp = window[1][1]; window[1][1] = window[2][1]; window[2][1] = temp; }
+               if (window[0][1]> window[1][1]) { uint8_t temp = window[0][1]; window[0][1] = window[1][1]; window[1][1] = temp; }
+
+               // å–ä¸­å€¼ä½œä¸ºæ»¤æ³¢åçš„ç»“æœ
+               imageOut[i][1] = window[1][1];
+    }
+    // è¾¹ç•Œå¤„ç†ï¼ˆç¬¬ä¸€ä¸ªå’Œæœ€åä¸€ä¸ªç‚¹ï¼‰
+    imageOut[0][0] = imagein[0][0];
+    imageOut[0][1] = imagein[0][1];
+    imageOut[LCDH - 1][0] = imagein[LCDH - 1][0];
+    imageOut[LCDH - 1][1] = imagein[LCDH - 1][1];
+}
+
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
+
+uint8_t UpdownSideGet(uint8_t imageInput[LCDH][LCDW], uint8_t imageOut[2][LCDW]) // è·å–ä¸Šä¸‹è¾¹çº¿
+{
+    uint8_t i = 0, j = 0;
+//    uint8_t last = 70;
+//
+//    imageOut[0][LCDW-1] = 0;
+//    imageOut[1][LCDW-1] = 119;
+//    /* ç”¨ä¸­çº¿æ¯”è¾ƒè¿‘çš„è¡Œ åˆ¤æ–­æ˜¯å¦ä¸¢çº¿ */
+//    for (i = last; i >= 0; i--)
 //    {
-//        return;
+//        if (!imageInput[i][80])
+//        {
+//            imageOut[0][80] = i;
+//            break;
+//        }
 //    }
 //
-//    visited[i][j] = true;
-//    ImageSide[*num_points][0] = i;
-//    ImageSide[*num_points][1] = j;
-//    (*num_points)++;
+//    for (i = last; i < 140; i++)
+//    {
+//        if (!imageInput[i][80])
+//        {
+//            imageOut[1][80] = i;
+//            break;
+//        }
+//    }
 //
-//    // ¶Ôµ±Ç°ÏñËØµÄ°Ë¸öÁÚÓò½øĞĞËÑË÷
-//    dfs(i - 1, j - 1, ImageSide, num_points);
-//    dfs(i - 1, j, ImageSide, num_points);
-//    dfs(i - 1, j + 1, ImageSide, num_points);
-//    dfs(i, j - 1, ImageSide, num_points);
-//    dfs(i, j + 1, ImageSide, num_points);
-//    dfs(i + 1, j - 1, ImageSide, num_points);
-//    dfs(i + 1, j, ImageSide, num_points);
-//    dfs(i + 1, j + 1, ImageSide, num_points);
-//}
-uint8_t UpdownSideGet(uint8_t imageInput[LCDH][LCDW], uint8_t imageOut[2][LCDW]) // »ñÈ¡ÉÏÏÂ±ßÏß
-{
-    uint8_t i = 0, j = 0;
-    uint8_t last = 60;
 
-    imageOut[0][159] = 0;
-    imageOut[1][159] = 119;
-    /* ÓÃÖĞÏß±È½Ï½üµÄĞĞ ÅĞ¶ÏÊÇ·ñ¶ªÏß */
-    for (i = last; i >= 0; i--)
-    {
-        if (!imageInput[i][80])
+
+
+       // imageOut[0][LCDW-1] = 0;
+        //imageOut[1][LCDW-1] = 119;
+        /* ç”¨ä¸­çº¿æ¯”è¾ƒè¿‘çš„è¡Œ åˆ¤æ–­æ˜¯å¦ä¸¢çº¿ */
+        for (i = 70; i >= 0; i--)//5.6 å…­åå˜ä¸ƒå
         {
-            imageOut[0][80] = i;
-            break;
-        }
-    }
-
-    for (i = last; i < 120; i++)
-    {
-        if (!imageInput[i][80])
-        {
-            imageOut[1][80] = i;
-            break;
-        }
-    }
-
-    /* ÖĞÏßÍù×ó Ñ°ÕÒ±ßÏß */
-    for (i = 80 - 1; i > 0; i--)
-    {
-        imageOut[0][i] = 0;
-        imageOut[1][i] = 119;
-
-        /* ¸ù¾İ±ß½çÁ¬ĞøÌØĞÔ Ñ°ÕÒ±ß½ç */
-        for (j = imageOut[0][i + 1] + 10; j > 0; j--)
-        {
-            if (!imageInput[j][i])
+            if (!imageInput[i][0])
             {
-                imageOut[0][i] = j;
+                imageOut[0][0] = i;
                 break;
             }
         }
-        for (j = imageOut[1][i + 1] - 10; j < 120; j++)
+        for (i = 70; i >= 0; i--)//5.6 å…­åå˜ä¸ƒå
+               {
+                   if (!imageInput[i][LCDW-1])
+                   {
+                       imageOut[0][LCDW-1] = i;
+                       break;
+                   }
+               }
+//        for (i = 60; i < 120; i++)//5.6æ³¨é‡Šæ‰ï¼Œä¼¼ä¹ä¸ºä¸‹è¾¹çº¿
+//        {
+//            if (!imageInput[i][0])
+//            {
+//                imageOut[1][0] = i;
+//                break;
+//            }
+//        }
+        for(i=1;i<LCDW/2;i++)
         {
-            if (!imageInput[j][i])
-            {
-                imageOut[1][i] = j;
-                break;
-            }
+            for (j = imageOut[0][i - 1] + 10; j > 0; j--)
+               {
+                   if (!imageInput[j][i])
+                   {
+                       imageOut[0][i] = j;
+                       break;
+                   }
+               }
         }
-    }
-    /*ÖĞÏßÍùÓÒ Ñ°ÕÒ±ßÏß*/
-    for (i = 80 + 1; i < 159; i++)
-    {
-        imageOut[0][i] = 0;
-        imageOut[1][i] = 119;
+        for(i=LCDW-2;i>=LCDW/2;i--)
+                {
+                    for (j = imageOut[0][i + 1] + 10; j > 0; j--)
+                       {
+                           if (!imageInput[j][i])
+                           {
+                               imageOut[0][i] = j;
+                               break;
+                           }
+                       }
+                }
+//    /* ä¸­çº¿å¾€å·¦ å¯»æ‰¾è¾¹çº¿ */
+//    for (i = 90 - 1; i > 0; i--)//åŸæœ¬æ˜¯90
+//    {
+//        imageOut[0][i] = 0;
+//        imageOut[1][i] = 119;
+//
+//        /* æ ¹æ®è¾¹ç•Œè¿ç»­ç‰¹æ€§ å¯»æ‰¾è¾¹ç•Œ */
+//        for (j = imageOut[0][i + 1] + 10; j > 0; j--)
+//        {
+//            if (!imageInput[j][i])
+//            {
+//                imageOut[0][i] = j;
+//                break;
+//            }
+//        }
+//        for (j = imageOut[1][i + 1] - 10; j < 120; j++)
+//        {
+//            if (!imageInput[j][i])
+//            {
+//                imageOut[1][i] = j;
+//                break;
+//            }
+//        }
+//    }
+//    /*ä¸­çº¿å¾€å³ å¯»æ‰¾è¾¹çº¿*/
+//    for (i = 90 + 1; i < LCDW-1; i++)
+//    {
+//        imageOut[0][i] = 0;
+//        imageOut[1][i] = 119;
+//
+//        /* æ ¹æ®è¾¹ç•Œè¿ç»­ç‰¹æ€§ å¯»æ‰¾è¾¹ç•Œ */
+//        for (j = imageOut[0][i - 1] + 10; j > 0; j--)
+//        {
+//            if (!imageInput[j][i])
+//            {
+//                imageOut[0][i] = j;
+//                break;
+//            }
+//        }
+//        for (j = imageOut[1][i - 1] - 10; j < 120; j++)
+//        {
+//            if (!imageInput[j][i])
+//            {
+//                imageOut[1][i] = j;
+//                break;
+//            }
+//        }
+//    }
 
-        /* ¸ù¾İ±ß½çÁ¬ĞøÌØĞÔ Ñ°ÕÒ±ß½ç */
-        for (j = imageOut[0][i - 1] + 10; j > 0; j--)
-        {
-            if (!imageInput[j][i])
-            {
-                imageOut[0][i] = j;
-                break;
-            }
-        }
-        for (j = imageOut[1][i - 1] - 10; j < 120; j++)
-        {
-            if (!imageInput[j][i])
-            {
-                imageOut[1][i] = j;
-                break;
-            }
-        }
-    }
+
+
     return 0;
 }
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
 uint8_t GetRoadWide(uint8_t imageInput[LCDH][2], uint8_t imageOut[LCDH])
 {
     uint8_t i = 0;
@@ -1119,93 +1157,136 @@ uint8_t GetRoadWide(uint8_t imageInput[LCDH][2], uint8_t imageOut[LCDH])
         {
             imageOut[i] = 160;
         }
+//        printf("%d\n",imageOut[i]);
     }
     return 0;
 }
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
 void ips200_bin_roadside(uint8_t imageOut[LCDH][2])
 {
+
     uint8_t i = 0;
-    for (i = 0; i < 115; i++)
+    for (i = 0; i < LCDH; i++)
     {
-        ips200_draw_point(imageOut[i][0], i, RGB565_GREEN);
-        ips200_draw_point(imageOut[i][1], i, RGB565_RED);
+        ips200_draw_point(imageOut[i][0], i, RGB565_RED);
+        ips200_draw_point( imageOut[i][1],i, RGB565_RED);
     }
 }
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
 void ips200_bin_updownside(uint8_t imageOut[2][LCDW])
 {
+
     uint8_t i = 0;
     for (i = 0; i < LCDW; i++)
     {
-        ips200_draw_point(i, imageOut[0][i], RGB565_YELLOW);
-        ips200_draw_point(i, imageOut[1][i], RGB565_BLUE);
+        ips200_draw_point(i, imageOut[0][i], RGB565_BLACK);
+        //ips200_draw_point(i, imageOut[1][i], RGB565_GREEN);
     }
 }
 
+extern float error_servo;
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
 void Show_Camera_Info(void)
 {
 
-    ips200_show_gray_image(0, 0, ImageSide[0], LCDW, LCDH, LCDW, LCDH, Threshold);
-    // ips200_draw_line(80, 0, 80, 119, RGB565_PURPLE);
+//    ips200_show_gray_image(0, 0, Image_Use[0], LCDW, LCDH, LCDW, LCDH,Threshold);//Threshold
+    ips200_bin_roadside(ImageSide);
+//    ips200_bin_updownside(UpdowmSide);
+    // ips200_show_side_image(0,0,LCDW, LCDH);
 
-    //ips200_bin_roadside(ImageSide);
-     //ips200_bin_updownside(UpdowmSide);
-}
 
-void FindCarbarn(uint8_t imageInput[LCDH][LCDW], uint8_t *Flag) // °ßÂíÏß
-{
-    uint8_t i, Flag_number;
-    Flag_number = 0;
-    for (i = 5; i <= LCDW - 5; i++)
-    {
-        if (imageInput[50][i] != imageInput[50][i + 1])
-        {
-            Flag_number++;
-        }
-    }
-    if (Flag_number > 10)
-    {
-        *Flag = 1;
-    }
+
+
+
 }
-void ZebraProcess(uint8_t imageSide[LCDH][2], uint8_t state, uint8_t *motor)
-{
-    static uint16_t count = 0;
-    count++;
-    if (state == 1)
-    {
-        imageSide[ROAD_MAIN_ROW][0] = 0;
-        imageSide[ROAD_MAIN_ROW][1] = LCDW / 2;
-    }
-    else
-    {
-        imageSide[ROAD_MAIN_ROW][0] = LCDW / 2;
-        imageSide[ROAD_MAIN_ROW][1] = LCDW - 1;
-    }
-    if (count > 100)
-    {
-        *motor = 0;
-        while (1)
-            ;
-    }
-}
-void Carbarn(uint8_t imageInput[LCDH][LCDW], uint8_t imageSide[LCDH][2], uint8_t *motor_flag, uint8_t *Flag)
-{
-    switch (*Flag)
-    {
-    case 0:
-        FindCarbarn(imageInput, &*Flag); // ³µ¿âÊ¶±ğ
-        break;
-    case 1:
-        ZebraProcess(imageSide, 1, &*motor_flag); // ½øÈë³µ¿â
-        break;
-    }
-}
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
+//void FindCarbarn(uint8_t imageInput[LCDH][LCDW], uint8_t *Flag) // æ–‘é©¬çº¿
+//{
+//    uint8_t i, Flag_number;
+//    Flag_number = 0;
+//    for (i = 5; i <= LCDW - 5; i++)
+//    {
+//        if (imageInput[50][i] != imageInput[50][i + 1])
+//        {
+//            Flag_number++;
+//        }
+//    }
+//    if (Flag_number > 10)
+//    {
+//        *Flag = 1;
+//    }
+//}
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
+//void ZebraProcess(uint8_t imageSide[LCDH][2], uint8_t state, uint8_t *motor)
+//{
+//    static uint16_t count = 0;
+//    count++;
+//    if (state == 1)
+//    {
+//        imageSide[ROAD_MAIN_ROW][0] = 0;
+//        imageSide[ROAD_MAIN_ROW][1] = LCDW / 2;
+//    }
+//    else
+//    {
+//        imageSide[ROAD_MAIN_ROW][0] = LCDW / 2;
+//        imageSide[ROAD_MAIN_ROW][1] = LCDW - 1;
+//    }
+//    if (count > 100)
+//    {
+//        *motor = 0;
+//        while (1)
+//            ;
+//    }
+//}
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
+//void Carbarn(uint8_t imageInput[LCDH][LCDW], uint8_t imageSide[LCDH][2], uint8_t *motor_flag, uint8_t *Flag)
+//{
+//    switch (*Flag)
+//    {
+//    case 0:
+//        FindCarbarn(imageInput, &*Flag); // è½¦åº“è¯†åˆ«
+//        break;
+//    case 1:
+//        ZebraProcess(imageSide, 1, &*motor_flag); // è¿›å…¥è½¦åº“
+//        break;
+//    }
+//}
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
+
 /*!
- * @brief    ÅĞ¶Ï±ßÏßÊÇ·ñ´æÔÚ»¡ĞÎ
+ * @brief    åˆ¤æ–­è¾¹çº¿æ˜¯å¦å­˜åœ¨å¼§å½¢
  *
- * @param    imageInput £º ¶şÖµÍ¼ÏñĞÅÏ¢
- * @param    imageOut   £º ±ßÏßÊı×é
- * @param    status     £º 1£º×ó±ßÏß  2£ºÓÒ±ßÏß
+ * @param    imageInput ï¼š äºŒå€¼å›¾åƒä¿¡æ¯
+ * @param    imageOut   ï¼š è¾¹çº¿æ•°ç»„
+ * @param    status     ï¼š 1ï¼šå·¦è¾¹çº¿  2ï¼šå³è¾¹çº¿
  *
  * @return
  *
@@ -1213,98 +1294,140 @@ void Carbarn(uint8_t imageInput[LCDH][LCDW], uint8_t imageSide[LCDH][2], uint8_t
  *
  * @see
  *
- * @date     2020/6/23 ĞÇÆÚ¶ş
+ * @date     2020/6/23 æ˜ŸæœŸäºŒ
  */
-uint8_t RoundaboutGetArc(uint8_t imageSide[LCDH][2], uint8_t status, uint8_t num, uint8_t *index)
+uint8_t RoundaboutGetArc(uint8_t imageSide[LCDH][2], uint8_t status, uint8_t num, uint8_t *index,uint8 start)
 {
-    int i = 0;
-    uint8_t inc = 0, dec = 0, n = 0;
+//    uint8 i = 0;
+//    uint8_t inc = 0, dec = 0, n = 0;
+    uint8 first_catch=0;
     switch (status)
     {
     case 1:
-        for (i = ROAD_START_ROW - 1; i > ROAD_END_ROW; i--)
-        {
-            if (imageSide[i][0] != 0 && imageSide[i + 1][0] != 0)
-            {
-                if (imageSide[i][0] == imageSide[i + 1][0])
-                {
-                    n++;
-                    continue;
-                }
-                if (imageSide[i][0] > imageSide[i + 1][0])
-                {
-                    inc++;
-                    inc += n;
-                    n = 0;
-                }
-                else
-                {
-                    dec++;
-                    dec += n;
-                    n = 0;
-                }
-                /* ÓĞ»¡Ïß */
-                if (inc > num && dec > num)
-                {
-                    *index = i + num;
-                    return 1;
-                }
-            }
-            else
-            {
-                inc = 0;
-                dec = 0;
-                n = 0;
-            }
-        }
+//        for (i = ROAD_START_ROW - 1; i > ROAD_END_ROW;i--)
+//        {
+//            if (imageSide[i][0] != 0 && imageSide[i + 1][0] != 0)
+//            {
+//                if (imageSide[i][0] == imageSide[i + 1][0])
+//                {
+//                    n++;
+//                    continue;
+//                }
+//                if (imageSide[i][0] > imageSide[i + 1][0])
+//                {
+//                    inc++;
+//                    inc += n;
+//                    n = 0;
+//                }
+//                else
+//                {
+//                    dec++;
+//                    dec += n;
+//                    n = 0;
+//                }
+//                /* æœ‰å¼§çº¿ */
+//                if (inc > num && dec > num)
+//                {
+//                    *index = i + num;
+//                    return 1;
+//                }
+//            }
+//            else
+//            {
+//                inc = 0;
+//                dec = 0;
+//                n = 0;
+//            }
+//        }
+        for (uint8 i =start ;i >10;  i--)
+                       {
+                                if(first_catch==0&&imageSide[i][0] >imageSide[i+5][0]&&imageSide[i][0]>imageSide[i-5][0]&&
+                                   imageSide[i][0]>imageSide[i+4][0]&&imageSide[i] [0]>imageSide[i-4][0]&&
+                                   imageSide[i][0]>=imageSide[i+3][0]&&imageSide[i][0]>=imageSide[i-3][0]&&
+                                   imageSide[i][0]>=imageSide[i+2][0]&&imageSide[i][0]>=imageSide[i-2][0]&&
+                                   imageSide[i][0]>=imageSide[i+1][0]&&imageSide[i][0]>=imageSide[i-1][0]&&
+                                   imageSide[i][0]>30&&imageSide[i-1][0]>25&&imageSide[i+1][0]>25)
+
+                           {
+//                                    ips200_draw_line(ImageSide[i][0], i, LCDW-1,i, RGB565_GREEN);
+                                    //ips200_show_uint(60,180,i,3);
+                                    first_catch=1;
+                               *index = i;
+                               return 1;
+                           }
+                       }
         break;
 
     case 2:
-        for (i = ROAD_START_ROW - 1; i > ROAD_END_ROW; i--)
-        {
-            if (imageSide[i][1] != 159 && imageSide[i + 1][1] != 159)
-            {
-                if (imageSide[i][1] == imageSide[i + 1][1])
-                {
-                    n++;
-                    continue;
-                }
-                if (imageSide[i][1] > imageSide[i + 1][1])
-                {
-                    inc++;
-                    inc += n;
-                    n = 0;
-                }
-                else
-                {
-                    dec++;
-                    dec += n;
-                    n = 0;
-                }
-                /* ÓĞ»¡Ïß */
-                if (inc > num && dec > num)
-                {
-                    *index = i + num;
-                    return 1;
-                }
-            }
-            else
-            {
-                inc = 0;
-                dec = 0;
-                n = 0;
-            }
-        }
+//        for (i = ROAD_START_ROW - 1; i > ROAD_END_ROW;i--)
+//        {
+//            if (imageSide[i][1] != LCDW-1 && imageSide[i + 1][1] != LCDW-1)
+//            {
+//                if (imageSide[i][1] == imageSide[i + 1][1])
+//                {
+//                    n++;
+//                    continue;
+//                }
+//                if (imageSide[i][1] > imageSide[i + 1][1])
+//                {
+//                    inc++;
+//                    inc += n;
+//                    n = 0;
+//                }
+//                else
+//                {
+//                    dec++;
+//                    dec += n;
+//                    n = 0;
+//                }
+//                /* æœ‰å¼§çº¿ */
+//                if (inc > num && dec > num)
+//                {
+//                    *index = i + num;
+//                    return 1;
+//                }
+//            }
+//            else
+//            {
+//                inc = 0;
+//                dec = 0;
+//                n = 0;
+//            }
+//        }
+//        break;
+//    }
+        for (uint8 i =start; i >10 ;i--)
+                              {
+                                       if(
+                                               first_catch==0&&imageSide[i][1] <imageSide[i+5][1]&&imageSide[i][1]<imageSide[i-5][1]&&
+                                               imageSide[i][1] <imageSide[i+4][1]&&imageSide[i][1] <imageSide[i-4][1]&&
+                                               imageSide[i][1]<=imageSide[i+3][1]&&imageSide[i][1]<=imageSide[i-3][1]&&
+                                               imageSide[i][1]<=imageSide[i+2][1]&&imageSide[i][1]<=imageSide[i-2][1]&&
+                                               imageSide[i][1]<=imageSide[i+1][1]&&imageSide[i][1]<=imageSide[i-1][1]&&
+                                               imageSide[i][1]<140&&imageSide[i-1][1]<145&&imageSide[i+1][1]<145 )//
+
+                                  {
+                                           //ips200_draw_line(ImageSide[i][1], i, LCDW-1,i, RGB565_GREEN);
+                                           //ips200_show_uint(50,220,ImageSide[i][1],3);
+                                           first_catch=1;
+                                      *index = i;
+                                      return 1;
+                                  }
+
+
+                              }
+
+
         break;
     }
     return 0;
 }
 /*!
- * @brief    ÅĞ¶Ï±ßÏßÊÇ·ñ´æÔÚ»¡ĞÎ
+ * @brief    åˆ¤æ–­è¾¹çº¿æ˜¯å¦å­˜åœ¨å¼§å½¢
  *
- * @param    SideInput £º ÉÏ±ßÏßÊı×é
- * @param    num       £º ¼ì²â·ù¶È
- * @param    index     £º ×îµÍµã
+ * @param    SideInput ï¼š ä¸Šè¾¹çº¿æ•°ç»„
+ * @param    num       ï¼š æ£€æµ‹å¹…åº¦
+ * @param    index     ï¼š æœ€ä½ç‚¹
  *
  * @return
  *
@@ -1312,238 +1435,659 @@ uint8_t RoundaboutGetArc(uint8_t imageSide[LCDH][2], uint8_t status, uint8_t num
  *
  * @see
  *
- * @date     2021/12/01 ĞÇÆÚÈı
+ * @date     2021/12/01 æ˜ŸæœŸä¸‰
  */
 uint8_t UpSideErr(uint8_t SideInput[2][LCDW], uint8_t status, uint8_t num, uint8_t *index)
 {
-    uint8_t dec = 0, inc = 0, i;
-    // ÉÏÏßÊÇ·ñÓÒÍ»Æğ
-    switch (status)
-    {
+//    uint8_t dec = 0, inc = 0, i;
+//    // ä¸Šçº¿æ˜¯å¦å³çªèµ·
+//    switch (status)
+//    {
+//    case 1:
+//        for (i = LCDW-1 - 1; i > 0; i--)
+//        {
+//            if (UpdowmSide[0][i] > 1 && UpdowmSide[0][i + 1] > 1)
+//            {
+//                if (UpdowmSide[0][i] >= UpdowmSide[0][i + 1])
+//                    inc++;
+//                else
+//                    dec++;
+//                /* æœ‰å¼§çº¿ */
+//                if (inc > num && dec > num)
+//                {
+//                    *index = i + num;
+//                    return 1;
+//                }
+//            }
+//            else
+//            {
+//                inc = 0;
+//                dec = 0;
+//            }
+//        }
+//        break;
+//    // ä¸‹è¾¹çº¿
+//    case 2:
+//        for (i = LCDW-1 - 1; i > 0; i--)
+//        {
+//            if (UpdowmSide[1][i] != 1 && UpdowmSide[1][i + 1] != 1)
+//            {
+//                if (UpdowmSide[1][i] >= UpdowmSide[1][i + 1])
+//                    inc++;
+//                else
+//                    dec++;
+//                /* æœ‰å¼§çº¿ */
+//                if (inc > num && dec > num)
+//                {
+//                    *index = i + num;
+//                    return 1;
+//                }
+//            }
+//            else
+//            {
+//                inc = 0;
+//                dec = 0;
+//            }
+//        }
+//        break;
+//    }
+switch(status)
+{
     case 1:
-        for (i = 159 - 1; i > 0; i--)
-        {
-            if (UpdowmSide[0][i] > 1 && UpdowmSide[0][i + 1] > 1)
-            {
-                if (UpdowmSide[0][i] >= UpdowmSide[0][i + 1])
-                    inc++;
-                else
-                    dec++;
-                /* ÓĞ»¡Ïß */
-                if (inc > num && dec > num)
-                {
-                    *index = i + num;
-                    return 1;
-                }
-            }
-            else
-            {
-                inc = 0;
-                dec = 0;
-            }
-        }
-        break;
-    // ÏÂ±ßÏß
+   for (uint8 i =LCDW/2+10 ;i >20 - 1;  i--)
+                           {
+                                    if(
+                                            SideInput[0][i] >SideInput[0][i+5]&&SideInput[0][i]>SideInput[0][i-5]&&
+                                            SideInput[0][i]>SideInput[0][i+4]&&SideInput[0][i]>SideInput[0][i-4]&&
+                                            SideInput[0][i]>=SideInput[0][i+3]&&SideInput[0][i]>=SideInput[0][i-3]&&
+                                            SideInput[0][i]>=SideInput[0][i+2]&&SideInput[0][i]>=SideInput[0][i-2]&&
+                                            SideInput[0][i]>=SideInput[0][i+1]&&SideInput[0][i]>=SideInput[0][i-1]&&
+                                            SideInput[0][i]>30&&SideInput[0][i-1]>15&&SideInput[0][i+1]>15
+                                       )
+
+                               {
+    //                                    ips200_draw_line(ImageSide[i][0], i, LCDW-1,i, RGB565_GREEN);
+                                        //ips200_show_uint(60,180,i,3);
+                                   *index = i;
+                                   return 1;
+                               }
+                           }
+   break;
     case 2:
-        for (i = 159 - 1; i > 0; i--)
-        {
-            if (UpdowmSide[1][i] != 1 && UpdowmSide[1][i + 1] != 1)
-            {
-                if (UpdowmSide[1][i] >= UpdowmSide[1][i + 1])
-                    inc++;
-                else
-                    dec++;
-                /* ÓĞ»¡Ïß */
-                if (inc > num && dec > num)
-                {
-                    *index = i + num;
-                    return 1;
-                }
-            }
-            else
-            {
-                inc = 0;
-                dec = 0;
-            }
-        }
+        for (uint8 i =LCDW/2 ;i <LCDW-20;  i++)
+                                {
+                                         if(
+                                                 SideInput[0][i] >SideInput[0][i+5]&&SideInput[0][i]>SideInput[0][i-5]&&
+                                                 SideInput[0][i]>SideInput[0][i+4]&&SideInput[0][i]>SideInput[0][i-4]&&
+                                                 SideInput[0][i]>=SideInput[0][i+3]&&SideInput[0][i]>=SideInput[0][i-3]&&
+                                                 SideInput[0][i]>=SideInput[0][i+2]&&SideInput[0][i]>=SideInput[0][i-2]&&
+                                                 SideInput[0][i]>=SideInput[0][i+1]&&SideInput[0][i]>=SideInput[0][i-1]&&
+                                                 SideInput[0][i]>30&&SideInput[0][i-1]>15&&SideInput[0][i+1]>15
+                                            )
+
+                                    {
+         //                                    ips200_draw_line(ImageSide[i][0], i, LCDW-1,i, RGB565_GREEN);
+                                             //ips200_show_uint(60,180,i,3);
+                                        *index = i;
+                                        return 1;
+                                    }
+                                }
         break;
-    }
+
+
+}
+
+
     return 0;
 }
 /*!
- * @brief    Ñ°ÕÒ¶Ïµã
+ * @brief    å¯»æ‰¾æ–­ç‚¹
  *
- * @param    start_point £º ¿ªÊ¼µã
- * @param    end_point   £º ½áÊøµã
- * @param    UpdowmSide  £º ±ßÏßÊı×é
- * @param    *pointup[2] £º ¶Ïµã×ø±êÊı×é
- *
- * @return   void
- *
- * @note
- *
- * @see         ¿ªÊ¼µãĞ¡ÓÚ½áÊøµã
- *
- * @date     2022/12/13
- */
-void X_Find_Point(uint8_t start_point, uint8_t end_point, uint8_t UpdowmSide[2][LCDW], uint8_t pointup[2])
-{
-    uint8_t i = 0;
-    for (i = start_point; i <= end_point; i++)
-    {
-        if ((abs(UpdowmSide[0][i - 1] - UpdowmSide[0][i - 2] < 3 && abs(UpdowmSide[0][i - 1] - UpdowmSide[0][i + 1]) > 3) && abs(UpdowmSide[0][i + 1] - UpdowmSide[0][i + 2]) < 3) || (abs(UpdowmSide[0][i - 1] - UpdowmSide[0][i - 3] < 5 && abs(UpdowmSide[0][i - 2] - UpdowmSide[0][i + 2]) > 5) && abs(UpdowmSide[0][i + 1] - UpdowmSide[0][i + 3]) < 5))
-        {
-            pointup[0] = i;
-            pointup[1] = UpdowmSide[0][i];
-            break;
-        }
-        else
-        {
-            pointup[0] = 0;
-            pointup[1] = 0;
-        }
-    }
-}
-/*!
- * @brief    Ñ°ÕÒ»·µºÖĞ¹Õµã
- *
- * @param    start_row £º ¿ªÊ¼ĞĞ
- * @param    end_row   £º ½áÊøĞĞ
- * @param    imageSide  £º ±ßÏßÊı×é
- * @param    *pointup[2] £º ¹Õµã×ø±êÊı×é
+ * @param    start_point ï¼š å¼€å§‹ç‚¹
+ * @param    end_point   ï¼š ç»“æŸç‚¹
+ * @param    UpdowmSide  ï¼š è¾¹çº¿æ•°ç»„
+ * @param    *pointup[2] ï¼š æ–­ç‚¹åæ ‡æ•°ç»„
  *
  * @return   void
  *
  * @note
  *
- * @see         ¿ªÊ¼µãĞ¡ÓÚ½áÊøµã
+ * @see         å¼€å§‹ç‚¹å°äºç»“æŸç‚¹
  *
  * @date     2022/12/13
+ */
+//void X_Find_Point(uint8_t start_point, uint8_t end_point, uint8_t UpdowmSide[2][LCDW], uint8_t pointup[2])
+//{
+//    uint8_t i = 0;
+//    for (i = start_point; i <= end_point; i++)
+//    {
+//        if ((abs(UpdowmSide[0][i - 1] - UpdowmSide[0][i - 2] < 3 && abs(UpdowmSide[0][i - 1] - UpdowmSide[0][i + 1]) > 3) && abs(UpdowmSide[0][i + 1] - UpdowmSide[0][i + 2]) < 3) || (abs(UpdowmSide[0][i - 1] - UpdowmSide[0][i - 3] < 5 && abs(UpdowmSide[0][i - 2] - UpdowmSide[0][i + 2]) > 5) && abs(UpdowmSide[0][i + 1] - UpdowmSide[0][i + 3]) < 5))
+//        {
+//            pointup[0] = i;
+//            pointup[1] = UpdowmSide[0][i];
+//            break;
+//        }
+//        else
+//        {
+//            pointup[0] = 0;
+//            pointup[1] = 0;
+//        }
+//    }
+//}
 
-void Find_m_Point(uint8_t start_row, uint8_t end_row, uint8_t imageSide[LCDH][2], uint8_t pointup[2])
+//Flag 0:å·¦è¾¹çº¿ 1å³è¾¹çº¿
+typedef struct
+{
+        uint8_t cross_left_up_X;
+        uint8_t cross_left_up_Y;
+        uint8_t cross_left_down_X;
+        uint8_t cross_left_down_Y;
+        uint8_t cross_right_down_X;
+        uint8_t cross_right_down_Y;
+        uint8_t cross_right_up_X;
+        uint8_t cross_right_up_Y; // ä¿®æ”¹è¿™é‡Œï¼Œå°†ç¬¬äºŒæ¬¡é‡å¤çš„ cross_right_up_X æ”¹ä¸º cross_right_up_Y
+        uint8_t cross_flag;
+} cross_struct;
+cross_struct cross;
+uint8_t line_miss(uint8_t imageIn[LCDH][2], uint8_t Flag,uint8 starty)
 {
     uint8_t i = 0;
-    for (i = ROAD_START_ROW; i > ROAD_END_ROW; i--)
-    {
-        if ((imageSide[i][0] > imageSide[i + 1][0]) && (imageSide[i + 1][0] > imageSide[i + 2][0]) && (imageSide[i][0] > imageSide[i - 1][0]) && (imageSide[i - 1][0] > imageSide[i - 2][0]) && (abs(imageSide[i + 1][0] - imageSide[i - 1][0]) < 3) && (abs(imageSide[i + 2][0] - imageSide[i - 2][0]) < 3))
-        {
-            pointup[0] = i;
-            pointup[1] = imageSide[i][0];
-            break;
-        }
-        else
-        {
-            pointup[0] = 0;
-            pointup[1] = 0;
-        }
-    }
-    for (i = ROAD_START_ROW; i > ROAD_END_ROW; i--)
-    {
-        if ((imageSide[i][1] > imageSide[i + 1][1]) && (imageSide[i + 1][1] > imageSide[i + 2][1]) && (imageSide[i][1] > imageSide[i - 1][1]) && (imageSide[i - 1][1] > imageSide[i - 2][1]) && (abs(imageSide[i + 1][1] - imageSide[i - 1][1]) < 3) && (abs(imageSide[i + 2][1] - imageSide[i - 2][1]) < 3))
-        {
-            pointup[0] = i;
-            pointup[1] = imageSide[i][1];
-            break;
-        }
-        else
-        {
-            pointup[0] = 0;
-            pointup[1] = 0;
-        }
-    }
-}
- */
+    uint8_t misi_number=0;
 
-void Crossroad_Find(uint8_t UpdowmSide[2][LCDW], uint8_t imageSide[LCDH][2], uint8_t Roadwide[LCDH], uint8_t *Flag)
-{
-    uint8_t i, j, flag, flag_number;
-    flag = 0;
-    flag_number = 0;
-    X_Find_Point(10, 70, UpdowmSide, leftup);
-    X_Find_Point(90, 158, UpdowmSide, rightup);
-    for (i = 5; i < 100; i++)
+    if (Flag == 0)
     {
-        if ((UpdowmSide[0][i] - UpdowmSide[0][i + 4]) > 8 && UpdowmSide[0][i] < 80)
+        for (i = starty; i < LCDH; i++)
         {
-            for (j = i; j < 155; j++)
-            {
-                if ((UpdowmSide[0][j] - UpdowmSide[0][j + 4]) < -8)
+            if (imageIn[i][0] < 10)
+                misi_number++;
+
+        }
+    }
+    if (Flag == 1)
+    {
+        for (i = starty; i < LCDH; i++)
+        {
+            if (imageIn[i][1] > LCDW-5)//ä¸¢çº¿ä¸¥é‡ï¼Œä»-10å˜ä¸º-5
+                misi_number++;
+        }
+    }
+    return misi_number;
+
+
+//if(misi_number>=5&&misi_number1>=5)cross.cross_flag=1;
+//    return misi_number;
+}
+uint8_t cross_flag;
+void cross_process(uint8_t imageIn[LCDH][2])
+{
+
+
+
+
+//    leftmiss=line_miss(imageIn,0);
+//    rightmiss=line_miss(imageIn,1);
+    for(uint8_t i=120-1;i>=20;i--)
+    {
+        if(abs(ImageSide[i][0]-ImageSide[i+1][0])<3&&abs(ImageSide[i][0]-ImageSide[i-1][0])>5&&ImageSide[i][0]<70&&i<50)
+        {
+            cross.cross_left_down_X=ImageSide[i][0];//x
+            cross.cross_left_down_Y=i;//y
+            ips200_show_char(0,150,'a');
+            break;
+        }
+    }
+    for(uint8_t i=120-1;i>=20;i--)
+    {
+        if(abs(ImageSide[i][1]-ImageSide[i+1][1])<3&&abs(ImageSide[i][1]-ImageSide[i-1][1])>5&&ImageSide[i][1]>90&&i<50)
                 {
-                    flag = 1;
+                    cross.cross_right_down_X=ImageSide[i][1];//x
+                    cross.cross_right_down_Y=i;//y
+                    ips200_show_char(0,160,'b');
                     break;
                 }
-            }
-        }
-        if (flag == 1)
+    }
+
+    for(uint8_t i=120-1;i>=20;i--)
+    {
+    if(abs(ImageSide[i][0]-ImageSide[i-1][0])>5&&abs(ImageSide[i-1][0]-ImageSide[i-2][0])<4&&ImageSide[i-1][0]<70&&i-1>50)
+    {
+        cross.cross_left_up_X=ImageSide[i-1][0];
+        cross.cross_left_up_Y=i-1;
+        ips200_show_char(0,190,'d');
+
+        break;
+    }
+
+    }
+    for(uint8_t i=120-1;i>=20;i--)
+    {
+    if(abs(ImageSide[i][1]-ImageSide[i-1][1])>5&&abs(ImageSide[i-1][1]-ImageSide[i-2][1])<4&&ImageSide[i-1][0]>90&&(i-1>50))
+        {
+
+            cross.cross_right_up_X=ImageSide[i-1][1];
+            cross.cross_right_up_Y=i-1;
+            cross.cross_flag=3;
+            ips200_show_char(0,200,'e');
             break;
-    }
-    for (i = 100; i >= 40; i--)
-    {
-        if (imageSide[i][0] < 3 && imageSide[i][1] > 157)
-        {
-            flag_number++;
-        }
-        if (flag_number > 50 && flag == 0)
-        {
-            flag = 2;
-            break;
-        }
-        else if (flag_number > 50 && flag == 1)
-        {
-            flag = 3;
-            break;
+
         }
     }
-    if (flag == 1 && motor_flag == 1)
-    {
-        *Flag = 1;
-    }
-    if (flag == 2 && motor_flag == 1)
-    {
-        *Flag = 2;
-        if (leftup[0] != 0 && rightup[0] != 0)
-        {
-            ImageAddingLine(imageSide, 1, leftup[0], leftup[1], 5, 110);
-            ImageAddingLine(imageSide, 2, rightup[0], rightup[1], 155, 110);
-        }
-        else
-        {
-            ImageAddingLine(imageSide, 1, 80, 10, 5, 110);
-            ImageAddingLine(imageSide, 2, 80, 10, 155, 110);
-        }
-    }
-    if (flag == 3 && motor_flag == 1)
-    {
-        *Flag = 3;
-        if (leftup[0] != 0 && rightup[0] != 0)
-        {
-            ImageAddingLine(imageSide, 1, leftup[0], leftup[1], 5, 110);
-            ImageAddingLine(imageSide, 2, rightup[0], rightup[1], 155, 110);
-        }
-        else
-        {
-            ImageAddingLine(imageSide, 1, 80, 10, 5, 110);
-            ImageAddingLine(imageSide, 2, 80, 10, 155, 110);
-        }
-    }
-    if (flag == 0)
-    {
-        *Flag = 0;
-    }
+
+         ImageAddingLine(imageIn, 1, cross.cross_left_up_X, cross.cross_left_up_Y, cross.cross_left_down_X, cross.cross_left_down_Y);
+         ImageAddingLine(imageIn, 2, cross.cross_right_up_X, cross.cross_right_up_Y, cross.cross_right_down_X, cross.cross_right_down_Y);
+         cross.cross_flag=0;
+
+
 }
+uint8_t r_up_guaiflag;
+uint8_t l_up_guaiflag;
+uint8_t r_down_guaiflag;
+uint8_t l_down_guaiflag;
+uint8_t guai_Flag = 0;
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
+int  left_down_guai(uint8_t imageSide[LCDH][2],int start,int end, uint8_t *flag)
+{
+    int i,t;
+    int left_down_line=0;
+    if(start<end)//ä»å›¾åƒå¾€ä¸Šéå†
+       {
+           t=start;
+           start=end;
+           end=t;
+       }
+    if(start>=LCDH-1-5)//ä¸‹é¢5è¡Œæ•°æ®ä¸ç¨³å®šï¼Œä¸èƒ½ä½œä¸ºè¾¹ç•Œç‚¹æ¥åˆ¤æ–­ï¼Œèˆå¼ƒ
+            start=LCDH-1-5;
+    if(end<=5)
+            end=5;
+
+    for(i=start;i>=end;i--)
+    {
+        if( left_down_line==0&&
+                (imageSide[i][0] - imageSide[i + 1][0]) <= 5 &&
+                (imageSide[i + 1][0] - imageSide[i + 2][0]) <= 5 &&
+                (imageSide[i + 2][0] - imageSide[i + 3][0]) <= 5 &&
+                (imageSide[i][0] - imageSide[i - 2][0]) >= 5 &&
+                (imageSide[i][0] - imageSide[i - 3][0]) >= 10 &&
+                (imageSide[i][0] - imageSide[i - 4][0]) >= 10  )
+        {
+            left_down_line = i;
+            *flag = 1;
+            break;
+
+        }
+        else
+            *flag = 0;
+
+    }
+    return left_down_line;
+}
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
+int right_down_guai(uint8_t imageSide[LCDH][2],int start,int end, uint8_t *flag)
+{
+    int i,t;
+    int right_down_line=0;
+    if(start<end)//ä»å›¾åƒå¾€ä¸Šéå†
+       {
+           t=start;
+           start=end;
+           end=t;
+       }
+    if(start>=LCDH-1-5)//ä¸‹é¢5è¡Œæ•°æ®ä¸ç¨³å®šï¼Œä¸èƒ½ä½œä¸ºè¾¹ç•Œç‚¹æ¥åˆ¤æ–­ï¼Œèˆå¼ƒ
+            start=LCDH-1-5;
+    if(end<=5)
+            end=5;
+
+    for(i=start;i>=end;i--)               //ä¾¿åˆ©æ¯ä¸€è¡ŒæŸ¥çœ‹æ˜¯å¦æ»¡è¶³æ¡ä»¶
+    {
+        if( right_down_line==0&&
+                (imageSide[i][1] - imageSide[i + 1][1]) >= -5 &&
+                (imageSide[i + 1][1] - imageSide[i + 2][1]) >= -5 &&
+                (imageSide[i + 2][1] - imageSide[i + 3][1]) >= -5 &&
+                (imageSide[i][1] - imageSide[i - 2][1]) <= -5 &&
+                (imageSide[i][1] - imageSide[i - 3][1]) <= -10 &&
+                (imageSide[i][1] - imageSide[i - 4][1]) <= 10  )
+        {
+            right_down_line = i;
+            *flag = 1;
+            break;
+
+        }
+        else  *flag = 0;
+
+
+    }
+    return right_down_line;
+}
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
+int left_up_guai(uint8_t imageSide[LCDH][2],int start,int end, uint8_t *flag)
+{
+
+    int i,t;
+    int left_up_line=0;
+    if(start > end)  //ç”±ä¸Šå¾€ä¸‹æ‰«çº¿
+    {
+        t=start;
+        start=end;
+        end=t;
+    }
+    if(start <= 5)
+    {
+        start = 5;
+    }
+    if(end >= LCDH - 5 )
+    {
+        end = LCDH - 5;
+    }
+    for(i=start;i<=end;i++)
+    {
+        if(left_up_line==0 &&
+        (imageSide[i][0] - imageSide[i - 1][0]) >= -5 &&
+        (imageSide[i - 1][0] - imageSide[i - 2][0]) >= -5 &&
+        (imageSide[i - 2][0] - imageSide[i - 3][0]) >= -5 &&
+        (imageSide[i][0] - imageSide[i + 2][0]) >= 5 &&
+        (imageSide[i][0] - imageSide[i + 3][0]) >= 10 &&
+        (imageSide[i][0] - imageSide[i + 4][0]) >= 10  )
+        {
+            left_up_line = i;
+            *flag = 1;
+            break;
+        }
+        else
+            *flag = 0;
+    }
+    return left_up_line;
+}
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
+int right_up_guai(uint8_t imageSide[LCDH][2],int start,int end, uint8_t *flag)
+{
+    int i,t;
+    int right_up_line=0;
+    if(start > end)  //ç”±ä¸Šå¾€ä¸‹æ‰«çº¿
+    {
+        t=start;
+        start=end;
+        end=t;
+    }
+    if(start <= 5)
+    {
+        start = 5;
+    }
+    if(end >= LCDH - 5 )
+    {
+        end = LCDH - 5;
+    }
+    for(i=start;i<=end;i++)
+       {
+           if(right_up_line==0 &&
+           (imageSide[i][1] - imageSide[i - 1][1]) <= 5 &&
+           (imageSide[i - 1][1] - imageSide[i - 2][1]) <= 5 &&
+           (imageSide[i - 2][1] - imageSide[i - 3][1]) <= 5 &&
+           (imageSide[i][1] - imageSide[i + 2][1]) <= -5 &&
+           (imageSide[i][1] - imageSide[i + 3][1]) <= -10 &&
+           (imageSide[i][1] - imageSide[i + 4][1]) <= -10  )
+       // if (1)
+           {
+//            printf("+++++ 1 = %d\n",(imageSide[i][1] - imageSide[i - 1][1]) );
+//            printf("2 = %d\n",(imageSide[i - 1][1] - imageSide[i - 2][1]));
+//            printf("3 = %d\n",(imageSide[i - 2][1] - imageSide[i - 3][1]));
+//            printf("4 = %d\n", (imageSide[i][1] - imageSide[i + 2][1]));--
+//            printf("5 = %d\n",(imageSide[i][1] - imageSide[i + 3][1]) );
+//            printf("6 = %d\n",(imageSide[i][1] - imageSide[i + 4][1]));
+////            printf("+++++ 1 = %d\n",(imageSide[i][1] ) );
+////                  printf("2 = %d\n",(imageSide[i - 1][1] ));
+////                  printf("3 = %d\n",(imageSide[i - 2][1] ));
+////                  printf("4 = %d\n", (imageSide[i + 2][1]));
+////                  printf("5 = %d\n",(imageSide[i + 3][1]) );
+////                  printf("6 = %d\n",(imageSide[i + 4][1]));
+
+               right_up_line = i;
+               *flag = 1;
+               break;
+
+           }
+           else
+               *flag = 0;
+
+       }
+    return right_up_line;
+}
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
+
+//void Crossroad_Find(uint8_t UpdowmSide[2][LCDW], uint8_t imageSide[LCDH][2], uint8_t Roadwide[LCDH], uint8_t *Flag)
+//{
+//    uint8_t i,  flag=0, flag_number;//j,
+////    flag = 0;
+////    int i = 15;
+//    flag_number = 0;
+//   // X_Find_Point(10, 70, UpdowmSide, leftup);
+////    X_Find_Point(90, 158, UpdowmSide, rightup);
+//    int r_up = right_up_guai(ImageSide,ROAD_END_ROW+15,110, &r_up_guaiflag);
+//    int l_up = left_up_guai(ImageSide,ROAD_END_ROW+15,110, &l_up_guaiflag);
+//    int r_d = right_down_guai(ImageSide,110,ROAD_END_ROW+5, &r_down_guaiflag);
+//    int l_d = left_down_guai(ImageSide,110,ROAD_END_ROW+5, &l_down_guaiflag);
+////    ImageAddingLine(imageSide, 1, leftup[0], leftup[1], 5, 110);
+////    ImageAddingLine(imageSide, 2, rightup[0], rightup[1], 155, 110);
+//        for (i = 100; i >= 40; i--)
+//        {
+//            if (imageSide[i][0] < 5 && imageSide[i][1] > 155)   //åˆ¤æ–­ä¸¤ç«¯ä¸¢çº¿ åˆ°è¾¾20åˆ™ä¸¢
+//            {
+//                flag_number++;
+//            }
+////
+////                    if (flag_number > 20 && ((r_up_guaiflag == 1 && l_up_guaiflag == 0 && r_down_guaiflag == 0 && l_down_guaiflag == 1) ||
+////                            (r_up_guaiflag == 0 && l_up_guaiflag == 1 && r_down_guaiflag == 1 && l_down_guaiflag == 0)))
+////                    {
+////                        flag = 2;             //åªæ»¡è¶³ä¸¢å…ˆ
+////                        printf("æŠ½è±¡æƒ…å†µä¸”ä¸¢çº¿\n");
+////            //printf("åªæ»¡è¶³ä¸¢å…ˆ\n");
+////                        break;
+////                    }
+//                    if(flag_number > 20 && r_up_guaiflag == 1 && l_up_guaiflag == 1 && r_down_guaiflag == 1 && l_down_guaiflag == 1 && r_up < r_d && l_up < r_d)
+//
+//                    {
+//                        flag = 3;
+//                        printf("ç›´å…¥\n");
+//                        ips200_draw_line((uint16)ImageSide[r_up][1],   (uint16)r_up,(uint16)ImageSide[r_d][1], (uint16)r_d, RGB565_BLACK);
+//                        ips200_draw_line((uint16)ImageSide[l_up][0],   (uint16)l_up,(uint16)ImageSide[l_d][0], (uint16)l_d, RGB565_BLACK);
+//                        ImageAddingLine(ImageSide,1,(uint16)ImageSide[l_up][0],   (uint16)l_up,(uint16)ImageSide[l_d][0], (uint16)l_d);
+//                        ImageAddingLine(ImageSide,2,(uint16)ImageSide[r_up][1],   (uint16)r_up,(uint16)ImageSide[r_d][1], (uint16)r_d);
+//
+//                        break;
+//
+//                    }
+//                    if(flag_number > 20 && r_up_guaiflag == 1 && l_up_guaiflag == 1 && r_down_guaiflag == 0 && l_down_guaiflag == 0 && flag !=3)
+//                    {
+//                        printf("åªæœ‰ä¸Šæ‹ç‚¹\n");
+//                        ips200_draw_line((uint16)ImageSide[r_up][1],   (uint16)r_up,155, 110, RGB565_BLACK);
+//                        ips200_draw_line((uint16)ImageSide[l_up][0],   (uint16)l_up,5, 110, RGB565_BLACK);
+//                        ImageAddingLine(ImageSide,1,(uint16)ImageSide[l_up][0],   (uint16)l_up,5, 110);
+//                        ImageAddingLine(ImageSide,2,(uint16)ImageSide[r_up][1],   (uint16)r_up,155, 110);
+//                        break;
+//                    }
+//
+//        }
+//}
+uint8 round_found_flag=0;
+uint8 Crossroad_Find(uint8_t UpdowmSide[2][LCDW], uint8_t imageSide[LCDH][2], uint8_t Roadwide[LCDH], uint8_t *Flag)
+{
+    if(round_found_flag)
+        return 0;
+    uint8_t i,flag_number;//j,flag,
+    uint8_t zuodiuxian = 0;
+    uint8_t youdiuxian = 0;
+
+    flag_number = 0;
+
+    int r_up = right_up_guai(ImageSide,ROAD_END_ROW+25,110, &r_up_guaiflag);
+    int l_up = left_up_guai(ImageSide,ROAD_END_ROW+25,110, &l_up_guaiflag);
+    int r_d = right_down_guai(ImageSide,110,ROAD_END_ROW+25, &r_down_guaiflag);
+    int l_d = left_down_guai(ImageSide,110,ROAD_END_ROW+25, &l_down_guaiflag);
+        for (i = 100; i >= 40; i--)
+        {
+            if (imageSide[i][0] < 5 && imageSide[i][1] > 155)   //åˆ¤æ–­ä¸¤ç«¯ä¸¢çº¿ åˆ°è¾¾20åˆ™ä¸¢
+            {
+                flag_number++;
+            }
+            if (imageSide[i][0] < 5)
+            {
+                zuodiuxian ++;
+            }
+            if (imageSide[i][1] > 155)
+            {
+                youdiuxian ++;
+            }
+                    if(flag_number > 20 && r_up_guaiflag == 1 && l_up_guaiflag == 1 && r_down_guaiflag == 1 && l_down_guaiflag == 1 && r_up < r_d && l_up < r_d)
+
+                    {
+                        *Flag = 3;
+
+                        ImageAddingLine(ImageSide,1,(uint16)ImageSide[l_up][0]+9,   (uint16)l_up,(uint16)ImageSide[l_d][0]+9, (uint16)l_d);
+                        ImageAddingLine(ImageSide,2,(uint16)ImageSide[r_up][1],   (uint16)r_up,(uint16)ImageSide[r_d][1], (uint16)r_d);
+
+                        break;
+
+                    }
+                    if(flag_number > 20 && r_up_guaiflag == 1 && l_up_guaiflag == 1 && r_down_guaiflag == 0 && l_down_guaiflag == 0 )
+                    {
+
+                        ImageAddingLine(ImageSide,1,(uint16)ImageSide[l_up][0]+9,   (uint16)l_up,5+9, 110);
+                        ImageAddingLine(ImageSide,2,(uint16)ImageSide[r_up][1],   (uint16)r_up,155, 110);
+                        break;
+                    }
+                    if((flag_number > 20 || youdiuxian > 20) && l_up_guaiflag == 1&& r_up_guaiflag == 0 && l_down_guaiflag == 0 && r_down_guaiflag == 0 && l_up >10 )
+                    {
+
+                        ImageAddingLine(ImageSide,1,(uint16)ImageSide[l_up][0],   (uint16)l_up,1,115);
+
+                        break;
+                    }
+                    if((flag_number > 20 || zuodiuxian > 20) && r_up_guaiflag == 1&& l_up_guaiflag == 0 && l_down_guaiflag == 0 && r_down_guaiflag == 0 && r_up > 10 )
+                    {
+
+                        ImageAddingLine(ImageSide,2,(uint16)ImageSide[r_up][1],   (uint16)r_up,159, 115);
+
+                        break;
+                    }
+        }
+
+
+return 1;
+}
+//void Crossroad_Find(uint8_t UpdowmSide[2][LCDW], uint8_t imageSide[LCDH][2], uint8_t Roadwide[LCDH], uint8_t *Flag)
+//{
+//    uint8_t i, j, flag, flag_number;
+//    flag = 0;
+//    flag_number = 0;
+//    X_Find_Point(10, 70, UpdowmSide, leftup);
+//    X_Find_Point(90, 158, UpdowmSide, rightup);
+//
+//    for (i = 5; i < 100; i++)
+//    {
+//        if ((UpdowmSide[0][i] - UpdowmSide[0][i + 4]) > 10 && UpdowmSide[0][i] < 80)
+//        {
+//            for (j = i; j < 155; j++)
+//            {
+//                if ((UpdowmSide[0][j] - UpdowmSide[0][j + 4]) < -10)
+//                {
+//                    flag = 1;
+//
+//                    break;
+//                }
+//            }
+//        }
+//        if (flag == 1)
+//            break;
+//    }
+//    for (i = 100; i >= 40; i--)
+//    {
+//        if (imageSide[i][0] < 5 && imageSide[i][1] > 155)
+//        {
+//            flag_number++;
+//        }
+//        if (flag_number > 20 && flag == 0)
+//        {
+//            flag = 2;
+//
+//            break;
+//        }
+//        else if (flag_number > 20 && flag == 1)
+//        {
+//            flag = 3;
+//
+//            break;
+//        }
+//    }
+//    if (flag == 1&& motor_flag == 1)//
+//    {
+//        *Flag = 1;
+//    }
+//    if (flag == 2&& motor_flag == 1 )//
+//    {
+//        *Flag = 2;
+//        if (leftup[0] != 0 && rightup[0] != 0)
+//        {
+//            ImageAddingLine(imageSide, 1, leftup[0], leftup[1], 5, 110);
+//            ImageAddingLine(imageSide, 2, rightup[0], rightup[1], 155, 110);
+//        }
+//        else
+//        {
+//            ImageAddingLine(imageSide, 1, 80, 10, 5, 110);
+//            ImageAddingLine(imageSide, 2, 80, 10, 155, 110);
+//        }
+//    }
+//    if (flag == 3&& motor_flag == 1 )//
+//    {
+//        *Flag = 3;
+//        if (leftup[0] != 0 && rightup[0] != 0)
+//        {
+//            ImageAddingLine(imageSide, 1, leftup[0], leftup[1], 5, 110);
+//            ImageAddingLine(imageSide, 2, rightup[0], rightup[1], 155, 110);
+//        }
+//        else
+//        {
+//            ImageAddingLine(imageSide, 1, 80, 10, 5, 110);
+//            ImageAddingLine(imageSide, 2, 80, 10, 155, 110);
+//        }
+//    }
+//    if (flag == 0)
+//    {
+//        *Flag = 0;
+//    }
+//    //ips200_show_int(0,250,Crossroad_Flag,3);
+//}
 /*!
- * @brief    ²¹Ïß´¦Àí
+ * @brief    è¡¥çº¿å¤„ç†
  *
- * @param    imageSide  : ±ßÏß
- * @param    status     : 1£º×ó±ßÏß²¹Ïß   2£ºÓÒ±ßÏß²¹Ïß
- * @param    startX     : ÆğÊ¼µã ÁĞÊı
- * @param    startY     : ÆğÊ¼µã ĞĞÊı
- * @param    endX       : ½áÊøµã ÁĞÊı
- * @param    endY       : ½áÊøµã ĞĞÊı
+ * @param    imageSide  : è¾¹çº¿
+ * @param    status     : 1ï¼šå·¦è¾¹çº¿è¡¥çº¿   2ï¼šå³è¾¹çº¿è¡¥çº¿
+ * @param    startX     : èµ·å§‹ç‚¹ åˆ—æ•°
+ * @param    startY     : èµ·å§‹ç‚¹ è¡Œæ•°
+ * @param    endX       : ç»“æŸç‚¹ åˆ—æ•°
+ * @param    endY       : ç»“æŸç‚¹ è¡Œæ•°
  *
  * @return
  *
- * @note     endY Ò»¶¨Òª´óÓÚ startY
+ * @note     endY ä¸€å®šè¦å¤§äº startY
  *
  * @see
  *
@@ -1552,11 +2096,11 @@ void Crossroad_Find(uint8_t UpdowmSide[2][LCDW], uint8_t imageSide[LCDH][2], uin
 void ImageAddingLine(uint8_t imageSide[LCDH][2], uint8_t status, uint8_t startX, uint8_t startY, uint8_t endX, uint8_t endY)
 {
     int i = 0;
-    /* Ö±Ïß x = ky + b*/
+    /* ç›´çº¿ x = ky + b*/
     float k = 0.0f, b = 0.0f;
     switch (status)
     {
-    case 1: // ×ó²¹Ïß
+    case 1: // å·¦è¡¥çº¿
     {
         k = (float)((float)endX - (float)startX) / (float)((float)endY - (float)startY);
         b = (float)startX - (float)startY * k;
@@ -1567,7 +2111,7 @@ void ImageAddingLine(uint8_t imageSide[LCDH][2], uint8_t status, uint8_t startX,
         }
         break;
     }
-    case 2: // ÓÒ²¹Ïß
+    case 2: // å³è¡¥çº¿
     {
         k = (float)((float)endX - (float)startX) / (float)((float)endY - (float)startY);
         b = (float)startX - (float)startY * k;
@@ -1580,18 +2124,54 @@ void ImageAddingLine(uint8_t imageSide[LCDH][2], uint8_t status, uint8_t startX,
     }
     }
 }
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
+void ImageAddingray(uint8_t imageSide[LCDH][2], uint8_t status, uint8_t startX, uint8_t startY, uint8_t endX, uint8_t endY)
+{
+    int i = 0;
+    /* ç›´çº¿ x = ky + b*/
+    float k = 0.0f, b = 0.0f;
+    switch (status)
+    {
+    case 1: // å·¦è¡¥çº¿
+    {
+        k = (float)((float)endX - (float)startX) / (float)((float)endY - (float)startY);
+        b = (float)startX - (float)startY * k;
+
+        for (i = 1; i < endY; i++)
+        {
+            imageSide[i][0] = (uint8_t)(k * i + b);
+        }
+        break;
+    }
+    case 2: // å³è¡¥çº¿
+    {
+        k = (float)((float)endX - (float)startX) / (float)((float)endY - (float)startY);
+        b = (float)startX - (float)startY * k;
+
+        for (i = 1; i < endY; i++)
+        {
+            imageSide[i][1] = (uint8_t)(k * i + b);
+        }
+        break;
+    }
+    }
+}
 /*!
- * @brief    ÅĞ¶ÏÊÇ·ñÊÇÖ±µÀ
+ * @brief    åˆ¤æ–­æ˜¯å¦æ˜¯ç›´é“
  *
- * @param    image £º ×óÓÒ±ßÏß
+ * @param    image ï¼š å·¦å³è¾¹çº¿
  *
- * @return   0£º²»ÊÇÖ±µÀ£¬ 1£ºÖ±µÀ
+ * @return   0ï¼šä¸æ˜¯ç›´é“ï¼Œ 1ï¼šç›´é“
  *
- * @note     Ë¼Â·£ºÁ½±ß±ßÏß¶¼µ¥µ÷
+ * @note     æ€è·¯ï¼šä¸¤è¾¹è¾¹çº¿éƒ½å•è°ƒ
  *
  * @see
  *
- * @date     2022/11/29 ĞÇÆÚ¶ş
+ * @date     2022/11/29 æ˜ŸæœŸäºŒ
  */
 uint8_t leftState = 0, rightState = 0;
 uint8_t RoadIsStraight(uint8_t imageSide[LCDH][2])
@@ -1600,7 +2180,7 @@ uint8_t RoadIsStraight(uint8_t imageSide[LCDH][2])
     leftState = 0;
     rightState = 0;
 
-    /* ×ó±ßÏßÊÇ·ñµ¥µ÷ */
+    /* å·¦è¾¹çº¿æ˜¯å¦å•è°ƒ */
     for (i = ROAD_START_ROW - 1; i > ROAD_END_ROW; i--)
     {
         if ((imageSide[i][0] >= imageSide[i + 1][0]) && (imageSide[i][0] > 10))
@@ -1608,10 +2188,10 @@ uint8_t RoadIsStraight(uint8_t imageSide[LCDH][2])
             leftState++;
         }
     }
-    /* ÓÒ±ßÏßÊÇ·ñµ¥µ÷ */
+    /* å³è¾¹çº¿æ˜¯å¦å•è°ƒ */
     for (i = ROAD_START_ROW - 1; i > ROAD_END_ROW; i--)
     {
-        if ((imageSide[i][1] <= imageSide[i + 1][1]) && (imageSide[i][1] < 155))
+        if ((imageSide[i][1] <= imageSide[i + 1][1]) && (imageSide[i][1] < LCDW-5))
         {
             rightState++;
         }
@@ -1623,66 +2203,104 @@ uint8_t RoadIsStraight(uint8_t imageSide[LCDH][2])
     return 0;
 }
 /*!
- * @brief    ÅĞ¶Ï×óÓÒ±ßÏßÊÇ·ñµ¥µ÷
+ * @brief    åˆ¤æ–­å·¦å³è¾¹çº¿æ˜¯å¦å•è°ƒ
  * @param
  * @param
- * @param    imageIn £º ±ßÏßÊı×é    Flag 0:×ó±ßÏß 1ÓÒ±ßÏß
+ * @param    imageIn ï¼š è¾¹çº¿æ•°ç»„    Flag 0:å·¦è¾¹çº¿ 1å³è¾¹çº¿
  *
- * @return   0£º²»µ¥µ÷ 1£ºµ¥µ÷
+ * @return   0ï¼šä¸å•è°ƒ 1ï¼šå•è°ƒ
  *
  * @note
  *
  * @see
  *
- * @date     2021/11/30 ĞÇÆÚ¶ş
+ * @date     2021/11/30 æ˜ŸæœŸäºŒ
  */
 #define straight 1
 #define NOstraight 0
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
 uint8_t RoadImageSide_Mono(uint8_t imageSide[LCDH][2], uint8_t Flag)
 {
     uint8_t i = 0;
     uint8_t State;
     State = 0;
-    /* ×ó±ßÏßÊÇ·ñµ¥µ÷ */
+//    /* å·¦è¾¹çº¿æ˜¯å¦å•è°ƒ */
+//    if (Flag == 0)
+//    {
+//
+//        /*ä»è¿™é‡Œå†™ç›´çº¿åˆ¤æ–­*/
+//        for (i = 110 - 1; i > 30; i--)
+//                {
+//                    if (abs(imageSide[i][0]-imageSide[i+1][0])<=2&&imageSide[i][0]>=imageSide[i+1][0]&&imageSide[i][0]>10)
+//                    {
+//                        State++;
+//                    }
+//                }
+//    }
+//    /* å³è¾¹çº¿æ˜¯å¦å•è°ƒ */
+//    if (Flag == 1)
+//    {
+//
+//        for (i = 110 - 1; i > 30; i--)
+//                        {
+//                            if (abs(imageSide[i][1]-imageSide[i+1][1])<=2&&imageSide[i][1]<=imageSide[i+1][1])//&&(imageSide[i][1]<LCDW-10)
+//                            {
+//                                State++;
+//                            }
+//                        }
+//    }
+//    if (State > (110 - 30) * 0.7)
+//        return 1;
+//    else
+//        return 0;
     if (Flag == 0)
     {
-        for (i = ROAD_START_ROW - 1; i > ROAD_END_ROW; i--)
-        {
-            if ((my_abs(imageSide[i][0] - imageSide[i + 1][0]) <= 1) && (imageSide[i][0] > 10))
-            {
-                State++;
-            }
-        }
+        for(i=110;i>=30;i--)
+               {
+                   if(abs(imageSide[i][0]-imageSide[i-1][0])>=5)//è¿ç»­æ€§é˜ˆå€¼æ˜¯5ï¼Œå¯æ›´æ”¹
+                  {
+                       State=i;
+                       break;
+                  }
+               }
+
     }
-    /* ÓÒ±ßÏßÊÇ·ñµ¥µ÷ */
     if (Flag == 1)
     {
-        for (i = ROAD_START_ROW - 1; i > ROAD_END_ROW; i--)
+         for(i=110;i>=30;i--)
         {
-            if ((my_abs(imageSide[i][1] - imageSide[i + 1][1]) <= 1) && (imageSide[i][1] < 155))
-            {
-                State++;
-            }
+            if(abs(imageSide[i][1]-imageSide[i-1][1])>=5)//è¿ç»­æ€§é˜ˆå€¼æ˜¯5ï¼Œå¯æ›´æ”¹
+           {
+                State=i;
+                break;
+           }
         }
+
     }
-    if (State > (ROAD_START_ROW - ROAD_END_ROW) * 0.7)
-        return 1;
-    else
-        return 0;
+
+    return State;
 }
+
+
+
+
 /*!
- * @brief    ÅĞ¶ÏÉÏ±ßÏßÊÇ·ñµ¥µ÷
- * @param    X1 :ÆğÊ¼Xµã
- * @param    X2 :ÖÕÖ¹Xµã              X1 < X2
- * @param    imageIn £º ±ßÏßÊı×é
+ * @brief    åˆ¤æ–­ä¸Šè¾¹çº¿æ˜¯å¦å•è°ƒ
+ * @param    X1 :èµ·å§‹Xç‚¹
+ * @param    X2 :ç»ˆæ­¢Xç‚¹              X1 < X2
+ * @param    imageIn ï¼š è¾¹çº¿æ•°ç»„
  *
- * @return   0£º²»µ¥µ÷or´íÎó£¬ 1£ºµ¥µ÷µİÔö£¬ 2£ºµ¥µ÷µİ¼õ
+ * @return   0ï¼šä¸å•è°ƒoré”™è¯¯ï¼Œ 1ï¼šå•è°ƒé€’å¢ï¼Œ 2ï¼šå•è°ƒé€’å‡
  *
  * @note
  *
  * @see
  *
- * @date     2021/11/30 ĞÇÆÚ¶ş
+ * @date     2021/11/30 æ˜ŸæœŸäºŒ
  */
 uint8_t RoadUpSide_Mono(uint8_t X1, uint8_t X2, uint8_t imageIn[2][LCDW])
 {
@@ -1709,158 +2327,721 @@ uint8_t RoadUpSide_Mono(uint8_t X1, uint8_t X2, uint8_t imageIn[2][LCDW])
     return 0;
 }
 
-/*!
- * @brief    Ô²ĞÎ´¦Àí
- *
- */
 
-void Round_process(uint8_t imageSide[LCDH][2], uint8_t UpImageSide[2][LCDW], uint8_t *L_Flag, uint8_t *R_Flag)
+
+//uint8_t RoadIsRoundabout(uint8_t Upimage[2][LCDW],  uint8_t image[LCDH][2], uint8_t *flag)
+//{
+//
+//    uint8_t errL=0, errR=0;
+//    uint8_t leftState = 0, rightState = 0;
+//    uint8_t count = 0,num=0;
+//    uint8_t  py=0;
+//
+//
+//    for(uint8 i=80;i<100;i++)
+//    {
+//        if(Upimage[0][i]>10)//æš‚æ—¶ä¿®æ”¹ä¸ºåˆ¤æ–­å¤§äº10è¶…è¿‡åäº”ä¸ªç‚¹å¤§äºåå°±æ˜¯ï¼ˆå¼¯é“ï¼‰ 2
+//        {
+//            num++;
+//        }
+//    }
+//    if(num>10)
+//         {
+//            num=0;
+//            return 0;
+//
+//         }
+//    if(RoadUpSide_Mono(20, LCDW-10, Upimage))//ï¼ˆå¼¯é“ï¼‰æ˜¯å•è°ƒçš„ 1
+//        return 0;
+//    if(Crossroad_Flag==1)
+//        return 0;
+//    leftState=RoadImageSide_Mono(image, 0);//å·¦è¾¹ç•Œ
+//    rightState=RoadImageSide_Mono(image, 1);//å³è¾¹ç•Œ
+//
+//    errL = RoundaboutGetArc(image, 1, 5, &py);
+//    errR = RoundaboutGetArc(image, 2,5, &py);
+//
+//    if(leftState == 1 && rightState == 0 && errR ==1)//&&l_state==1
+//    {
+//        count = 0;
+//
+//        if(RoundaboutGetArc(image, 2, 5, &count))//youæ£€æµ‹ (5ä¸ªè¿ç»­å¢ ä¸” 5ä¸ªè¿ç»­å‡)
+//        {
+//
+//            *flag = 1;
+//            return 1;
+//        }
+//
+//    }
+//
+//    // å³è¾¹å•è°ƒï¼Œ æ£€æµ‹å·¦ä¾§æ˜¯å¦æ˜¯ç¯å²›
+//    if(rightState == 1 && leftState == 0&&errL==1)//
+//    {
+//        count = 0;
+//        if(RoundaboutGetArc(image, 1, 5, &count))//å·¦åœ†å¼§æ£€æµ‹ (5ä¸ªè¿ç»­å¢ ä¸” 5ä¸ªè¿ç»­å‡)
+//        {
+//
+//            *flag = 2;
+//            return 2;
+//        }
+//    }
+//    return 0;
+//
+//}
+/*-------------------------------------------------------------------------------------------------------------------
+  @brief     å³ä¸‹è§’ç‚¹æ£€æµ‹
+  @param     èµ·å§‹ç‚¹ï¼Œç»ˆæ­¢ç‚¹
+  @return    è¿”å›è§’ç‚¹æ‰€åœ¨çš„è¡Œæ•°ï¼Œæ‰¾ä¸åˆ°è¿”å›0
+  Sample     Find_Right_Down_Point(int start,int end);
+  @note      è§’ç‚¹æ£€æµ‹é˜ˆå€¼å¯æ ¹æ®å®é™…å€¼æ›´æ”¹
+-------------------------------------------------------------------------------------------------------------------*/
+int Find_Down_Point(uint8 state)//æ‰¾å››ä¸ªè§’ç‚¹ï¼Œè¿”å›å€¼æ˜¯è§’ç‚¹æ‰€åœ¨çš„è¡Œæ•°
+{
+    int i=0;
+    int right_down_line=0;
+    int left_down_line=0;
+    switch(state)//1å·¦2å³
+    {
+        case 1:
+                for(i=LCDH-5;i>=40;i--)
+                {
+                    if(left_down_line==0&&//åªæ‰¾ç¬¬ä¸€ä¸ªç¬¦åˆæ¡ä»¶çš„ç‚¹
+                            abs(ImageSide[i][0]-ImageSide[i+1][0])<=5&&//è§’ç‚¹çš„é˜ˆå€¼å¯ä»¥æ›´æ”¹,å°†è§’ç‚¹çš„é˜ˆå€¼ä»2åˆ°5
+                            abs(ImageSide[i+1][0]-ImageSide[i+2][0])<=5&&
+                            abs(ImageSide[i+2][0]-ImageSide[i+3][0])<=5&&
+                            (ImageSide[i][0]-ImageSide[i-2][0])>5&&
+                            (ImageSide[i][0]-ImageSide[i-3][0])>=10&&
+                            (ImageSide[i][0]-ImageSide[i-4][0])>=10)
+                    {
+                        left_down_line=i;//è·å–è¡Œæ•°å³å¯
+//                        ips200_draw_line(ImageSide[i][0], i, LCDW-1,i, RGB565_BLACK);
+
+                        break;
+                    }
+                }
+                return left_down_line;
+            break;
+        case 2:
+            for(i=LCDH-5;i>=40;i--)
+            {
+                if(right_down_line==0&&//åªæ‰¾ç¬¬ä¸€ä¸ªç¬¦åˆæ¡ä»¶çš„ç‚¹
+                        abs(ImageSide[i][1]-ImageSide[i+1][1])<=5&&//è§’ç‚¹çš„é˜ˆå€¼å¯ä»¥æ›´æ”¹
+                        abs(ImageSide[i+1][1]-ImageSide[i+2][1])<=5&&
+                        abs(ImageSide[i+2][1]-ImageSide[i+3][1])<=5&&
+                        (ImageSide[i][1]-ImageSide[i-2][1])<-5&&
+                        (ImageSide[i][1]-ImageSide[i-3][1])<=-10&&
+                        (ImageSide[i][1]-ImageSide[i-4][1])<=-10)
+                {
+                    right_down_line=i;//è·å–è¡Œæ•°å³å¯
+                    //ips200_draw_line(ImageSide[right_down_line][1], right_down_line, LCDW-1,right_down_line, RGB565_BLACK);
+                    //ips200_show_uint(50,240,ImageSide[right_down_line][1],3);
+                    break;
+                }
+            }
+            return right_down_line;
+            break;
+    }
+return 0;
+}
+uint8 left_roadonetime=0;
+uint8_t RoadIsRoundabout(uint8_t Upimage[2][LCDW],  uint8_t image[LCDH][2], uint8_t *flag)
+{
+
+    uint8_t errL=0, errR=0;
+    uint8_t leftState = 0, rightState = 0;
+    uint8_t  l_py=0,l_px=0,r_py=0,r_px=0;
+    int left_down_x=0,left_down_y=0;
+    int right_down_x=0,right_down_y=0;
+    uint8 miss_number=0,miss_number1=0;
+//    if(RoadUpSide_Mono(50, 130, Upimage))//ï¼ˆå¼¯é“ï¼‰
+//        return 0;
+    //è¿ç»­
+    leftState=RoadImageSide_Mono(image, 0);//å·¦è¾¹ç•Œ è¿ç»­åº”è¯¥è¿”å›0
+    rightState=RoadImageSide_Mono(image, 1);//å³è¾¹ç•Œ
+
+    //ä¸¢çº¿è¡Œ
+    miss_number=line_miss(image, 0,30);//ç”±äºä¸Šç«¯ä¸¢çº¿è¡Œè¾ƒä¸ºä¸¥é‡ï¼Œå¯¼è‡´ä¸¢çº¿æ•°å¤§äº10ï¼Œ20å˜ä¸º30å¾€ä¸‹æŸ¥ä¸¢çº¿è¡Œ
+    miss_number1=line_miss(image, 1,30);
+
+//å³ç¯å²›
+    if(leftState == 0  &&(miss_number<25))//15->20
+    {
+        right_down_y=Find_Down_Point(2);
+        errR = RoundaboutGetArc(image, 2,5, &r_py,right_down_y-5);
+        r_px=image[r_py][1];
+        right_down_x=image[right_down_y][1];
+        if( errR ==1&&right_down_y!=0&&((r_py-right_down_y)<-10))//&&r_px>85&&right_down_x>100æš‚æ—¶å–æ¶ˆå¯¹ç‚¹çš„èŒƒå›´é™åˆ¶
+        {
+            *flag = 1;
+            seektype=left;
+            return 1;
+        }
+
+    }
+    // å·¦ç¯å²›
+    if(rightState == 0 &&(miss_number1<30))//å—å°å·¦ç¯å½±å“ï¼Œä¸¢çº¿å˜ä¸ºLCDW-3//ä¸¢çº¿æ•°å˜ä¸º<30
+    {
+        left_down_y=Find_Down_Point(1);
+        errL = RoundaboutGetArc(image, 1, 5, &l_py,left_down_y-5);
+        l_px=image[l_py][0];
+        left_down_x=image[left_down_y][0];
+
+        if(errL==1 &&left_down_y!=0&&((l_py-left_down_y)<-10))//åŸæœ¬åªè·‘ä¸€æ¬¡å·¦ç¯å²›ï¼Œç°åœ¨å–æ¶ˆåªè·‘ä¸€æ¬¡&&left_roadonetime==0//&&l_px<90&&left_down_x<70æš‚æ—¶å–æ¶ˆå¯¹ç‚¹çš„èŒƒå›´é™åˆ¶
+        {
+              *flag = 2;
+              seektype=right;
+              //left_roadonetime=1;  å–æ¶ˆæ³¨é‡Šå°±åªè·‘ä¸€æ¬¡å·¦ç¯å²›
+            return 2;
+        }
+    }
+    return 0;
+
+}
+#define sideoffset 0//ä¸ºä¸€æ—¶ ä½¿ç”¨è¾¹çº¿åç§»çš„åŠå…¥ç¯
+#define try 0
+
+uint8 offsetbasis=20;
+//----------------------------------------------------------
+//è¢«ç”¨æ¥æŠ“åœ†ç¯ä¸Šæ‹ç‚¹ï¼Œforå¾ªç¯è¢«æ”¹å˜
+//
+//
+//----------------------------------------------------------
+uint8_t ImageGetHop(uint8_t imageSide[LCDH][2], uint8_t state, uint8_t *x, uint8_t *y)
+{
+    int i = 0;
+    uint8_t px = 0, py = 0;
+    uint8_t count = 0;
+    switch(state)
+    {
+      case 1:
+        /* å¯»æ‰¾è·³å˜ç‚¹ */
+        for(i = 70-1; i > ROAD_END_ROW; i--)
+        {
+            if(imageSide[i][0] <10 && i > (ROAD_END_ROW + 5))
+            {
+                count++;
+
+                if(count > 10)
+                {
+                    if(imageSide[i-1][0] > (imageSide[i][0] + 20))
+                    {
+                        py = i - 1;
+                        px = imageSide[py][0];
+                        break;
+                    }
+                    if(imageSide[i-2][0] > (imageSide[i-1][0] + 15))
+                    {
+                        py = i - 2;
+                        px = imageSide[py][0];
+                        break;
+                    }
+                    if(imageSide[i-3][0] > (imageSide[i-2][0] + 15))
+                    {
+                        py = i - 3;
+                        px = imageSide[py][0];
+                        break;
+                    }
+                    if(imageSide[i-4][0] > (imageSide[i-3][0] + 15))
+                    {
+                        py = i - 4;
+                        px = imageSide[py][0];
+                        break;
+                    }
+
+                }
+
+            }
+            else
+            {
+                count = 0;
+            }
+        }
+
+        if(py != 0)
+        {
+            *x = px;
+            *y = py;
+            return 1;
+        }
+
+        break;
+
+
+      case 2:
+        /* å¯»æ‰¾è·³å˜ç‚¹ */
+        for(i = 70-1; i > ROAD_END_ROW; i--)
+        {
+            if(imageSide[i][1] >LCDW-10 && i > (ROAD_END_ROW + 5))
+            {
+                count++;
+
+                if(count > 10)
+                {
+                    if(imageSide[i-1][1] < (imageSide[i][1] - 20))
+                    {
+                        py = i - 1;
+                        px = imageSide[py][1];
+                        break;
+                    }
+                    if(imageSide[i-2][1] < (imageSide[i-1][1] - 20))
+                    {
+                        py = i - 2;
+                        px = imageSide[py][1];
+                        break;
+                    }
+                    if(imageSide[i-3][1] < (imageSide[i-2][1] - 20))
+                    {
+                        py = i - 3;
+                        px = imageSide[py][1];
+                        break;
+                    }
+                    if(imageSide[i-4][1] < (imageSide[i-3][1] - 20))
+                    {
+                        py = i - 4;
+                        px = imageSide[py][1];
+                        break;
+                    }
+
+                }
+
+            }
+            else
+            {
+                count = 0;
+            }
+        }
+
+        if(py != 0)
+        {
+            *x = px;
+            *y = py;
+            return 1;
+        }
+
+        break;
+    }
+
+    return 0;
+
+}
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
+void RoundaboutGetSide(uint8_t imageInput[LCDH][LCDW], uint8_t imageSide[LCDH][2], uint8_t status)
+{
+    uint8_t i = 0, j = 0;
+
+    switch(status)
+    {
+
+        /* å·¦ç¯å²› */
+      case 1:
+        {
+            /* é‡æ–°ç¡®å®šå·¦è¾¹ç•Œ */
+            for(i = ROAD_START_ROW; i > ROAD_END_ROW; i--)
+            {
+                for(j = LCDW/2; j > 0; j--)
+                {
+                    if(!imageInput[i][j])
+                    {
+                        imageSide[i][0] = j;
+                        break;
+                    }
+                }
+            }
+            break;
+        }
+
+      case 2:
+        {
+            /* é‡æ–°ç¡®å®šå³è¾¹ç•Œ */
+            for(i = ROAD_START_ROW; i > ROAD_END_ROW; i--)
+            {
+                for(j = LCDW/2; j < LCDW; j++)
+                {
+                    if(!imageInput[i][j])
+                    {
+                        imageSide[i][1] = j;
+                        break;
+                    }
+                }
+            }
+            break;
+        }
+    }
+}
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
+void Roundabout_Get_UpDowmSide(uint8_t imageInput[LCDH][LCDW], uint8_t imageSide[2][LCDW], uint8_t status)//é‡æ–°è·å–ä¸Šè¾¹çº¿
+{
+    uint8_t i = 0, j = 0;
+
+    switch(status)
+    {
+      case 1:
+        {
+            /* é‡æ–°ç¡®å®šä¸Šè¾¹ç•Œ */
+            for(i = LCDW-1; i > 0; i--)
+            {
+                for(j = LCDH/2+10; j > 0; j--)
+                {
+                    if(!imageInput[j][i])
+                    {
+                        imageSide[0][i] = j;
+                        break;
+                    }
+                }
+            }
+            break;
+        }
+
+      case 2:
+        {
+            /* é‡æ–°ç¡®å®šä¸‹è¾¹ç•Œ */
+            for(i = LCDW-1; i > 0; i--)
+            {
+                for(j = LCDH/2; j < LCDH; j++)
+                {
+                    if(!imageInput[j][i])
+                    {
+                        imageSide[1][i] = j;
+                        break;
+                    }
+                }
+            }
+            break;
+        }
+    }
+}
+
+float previous_yaw=0;
+extern uint8_t gyro_flag;
+float relative_difference=0;
+uint8 const_y=0;
+//å®½åº¦ä»30åˆ°110
+uint8 roadwide[80]={0};
+uint8 numadd=5;
+//----------------------------------------------------------
+//
+uint8 nodownflag=0;
+uint8 out_flag=0;
+//
+//
+//----------------------------------------------------------
+void roundabout(uint8_t imageInput[LCDH][LCDW], uint8_t imageSide[LCDH][2], uint8_t UpdowmSide[2][LCDW], uint8_t* state)
+
 {
     uint8_t errL = 0,
             errR = 0,
-            i = 0,
-            inc = 0,
-            dec = 0;
+//            i = 0,
+//            j=0,
+            num=0;
+//            inc = 0,
+//            dec = 0,
+          //uint8 a=0,b=0;
     Lpointx = 0, Lpointy = 0;
-    Rpointx = 0, Rpointy = 0;
-    static uint8_t finderr = 0;
-    uint8_t flag = 0, Down_flag = 0;
-    switch (*R_Flag)
-    { // ÆæÊıÓÒÔ²»·
-    case 1:
-        leftState = RoadImageSide_Mono(imageSide, 0);
+   uint8 miss_number=0,miss_number1=0;
 
-        errR = RoundaboutGetArc(imageSide, 2, 5, &Rpointy);
-        if (errR)
-        {
-            Rpointx = imageSide[Rpointy][1];
-            ImageAddingLine(imageSide, 2, Rpointx, Rpointy, 159, 119);
-            finderr = 1;
-        }
-        else
-        {
-            if (finderr)
-                *R_Flag = 3; // ×¼±¸½øÈë»·µº
-        }
-        break;
-
-    case 3:
-
-        for (i = 1; i < 119; i++)
-        {
-            ImageSide[i][0] = ImageSide[i][0] + 50;
-        }
-        if (RoadUpSide_Mono(30, 159, UpImageSide) == 1) // ÉÏÏßµ¥µ÷Ôö½øÈëÏÂÒ»²½
-            *R_Flag = 5;
-        break;
-
-    case 5:
-        errL = RoundaboutGetArc(imageSide, 1, 10, &Rpointy); // ÓÒÔ²»·ÔÙÒª³ö»·µº´¦£¬ÊÇ×ó²à´æÔÚ»¡Ïß£¬½«µÚ¶ş¸öĞÎ²Î¸ÄÎª1
-
-        // ¼ì²éÏÂÏß
-        for (i = 159; i > 0; i--)
-        {
-            if (UpdowmSide[1][i] == 119)
-                inc++;
-            else
-                dec++;
-            if (dec <= 15)
-            {
-                Down_flag = 1;
-                break;
-            }
-        }
-        flag = RoadUpSide_Mono(20, 120, UpImageSide);
-
-        if (flag && errL && Down_flag)
-        {
-            *R_Flag = 7;
-        }
-        break;
-
-    case 7:
-
-        ImageAddingLine(imageSide, 1, 80, 10, 0, 119);
-        flag = RoadUpSide_Mono(50, 120, UpImageSide);
-
-        if (flag == 0)
-        {
-
-            *R_Flag = 0;
-            finderr = 0;
-            errR = 0;
-        }
-        break;
-    }
-    switch (*L_Flag)
+    //uint8 ldownpointx=0,ldownpointy=0;
+    uint8 luppointx=0,luppointy=0,ruppointx=0,ruppointy=0;
+    switch(* state)//å¶æ•°å·¦ç¯å²›ï¼ˆ2 4 6 8 10ï¼‰ \å¥‡æ•°å³ç¯å²›ï¼ˆ1 3 5 7 9ï¼‰
     {
-    case 2:
-        rightState = RoadImageSide_Mono(imageSide, 1);
-        errL = RoundaboutGetArc(imageSide, 1, 5, &Lpointy);
-        if (errL)
-        {
-            Lpointx = imageSide[Lpointy][0];
-            ImageAddingLine(imageSide, 1, Lpointx, Lpointy, 1, 119);
-            finderr = 1;
-        }
-        else
-        {
-            if (finderr)
-                *L_Flag = 4; // ×¼±¸½øÈë»·µº
-        }
-        break;
-    case 4:
-        for (i = 1; i < 119; i++)
-        {
-            ImageSide[i][1] = ImageSide[i][1] - 50;
-        }
-        if (RoadUpSide_Mono(30, 159, UpImageSide) == 2) // ÉÏÏßµ¥µ÷¼õ½øÈëÏÂÒ»²½
-            *L_Flag = 6;
-        break;
+        case 1:     //å½“ä¸Šæ‹ç‚¹å¤§äºæŸä¸ªå€¼å°±å¯ä»¥æ‹å¼¯
+            ruppointx=0,ruppointy=0;
+           // ips200_show_char(20,200,'a');
+                  UpSideErr(UpdowmSide,2,1,&ruppointx);
+                  ruppointy=UpdowmSide[0][ruppointx];
+                  if(ruppointy>45&&ruppointx<125&&ruppointy<70)//120->100
+                  {
+                      *state = 3;//å‡†å¤‡è¿›å…¥ç¯å²›,æš‚æ—¶å±è”½è§‚å¯Ÿæ•°æ®
+                      ImageAddingray(imageSide, 1, Rpointx+8, Rpointy+5, 45, 95);
+                      gyro_flag=1;
+                      seektype=normal;
+                      previous_yaw=eulerAngle.yaw;
+                  }
 
-    case 6:
-        errR = RoundaboutGetArc(imageSide, 2, 10, &Lpointy);
-        // ¼ì²éÏÂÏß
-        for (i = 159; i > 0; i--)
-        {
-            if (UpdowmSide[1][i] == 119)
-                inc++;
-            else
-                dec++;
-            if (dec <= 15)
-            {
-                Down_flag = 1;
+        break;
+                ///å¶æ•°å·¦ç¯å²›
+        case 2 :
+                //ips200_show_char(0,200,'A');//
+                UpSideErr(UpdowmSide,1,1,&luppointx);
+                luppointy=UpdowmSide[0][luppointx];
+                if(luppointy>45&&luppointx>40)
+                {
+                   *state = 4;//å‡†å¤‡è¿›å…¥ç¯å²›,æš‚æ—¶å±è”½è§‚å¯Ÿæ•°æ®
+                  // ImageAddingray(imageSide, 2, luppointx, luppointy, LCDW-11, 100);//115->90
+                   gyro_flag=1;
+                  seektype=normal;
+                   previous_yaw=eulerAngle.yaw;
+                }
                 break;
+         case 3://è¿›è¡Œæ‹å¼¯å¦‚æœé™€èºä»ªåäº†25å°±æ¢å¤æ­£å¸¸å·¡çº¿ï¼Œä¸ç„¶å°±æ˜¯ä¸€ç›´æ‹å¼¯
+                            //ips200_show_char(20,220,'b');
+                            Rpointx=0;
+                            Rpointy=0;
+                            UpSideErr(UpdowmSide,2,1,&Rpointx);
+                            Rpointy=UpdowmSide[0][Rpointx];
+            relative_difference = eulerAngle.yaw - previous_yaw;
+               // è°ƒæ•´ç›¸å¯¹å·®å€¼çš„å‘¨æœŸæ€§
+               if (relative_difference < 0)
+               {
+                   relative_difference += 360; // ç¡®ä¿ç›¸å¯¹å·®å€¼åœ¨0åˆ°360åº¦ä¹‹é—´
+               }
+                if(relative_difference <= 330&&relative_difference>250)//335->330
+                  {
+                    *state = 5;
+                    seektype=normal;
+                   // ips200_show_char(20,240,'c');
+                  }
+                 else
+                 {
+                  ImageAddingray(imageSide, 1, Rpointx+5, Rpointy, 40, 100);//è¡¥çº¿å…¥ç¯
+
+                 }
+                 break;
+        case 4:
+                              //     ips200_show_char(0,220,'B');//è¡¥çº¿å…¥ç¯ï¼Œæ‰¾ä¸Šè¾¹ç•Œæœ€ä½ç‚¹è¡¥çº¿è¿›å…¥
+             UpSideErr(UpdowmSide,1,1,&Lpointx);
+             Lpointy=UpdowmSide[0][Lpointx];
+
+            relative_difference = eulerAngle.yaw - previous_yaw;
+            // è°ƒæ•´ç›¸å¯¹å·®å€¼çš„å‘¨æœŸæ€§
+            if (relative_difference < 0)
+            {
+                relative_difference += 360; // ç¡®ä¿ç›¸å¯¹å·®å€¼åœ¨0åˆ°360åº¦ä¹‹é—´
             }
-        }
-        flag = RoadUpSide_Mono(20, 120, UpImageSide);
-        if (flag && errR && Down_flag)
-        {
-            *L_Flag = 8;
-        }
+             if(relative_difference >= 35&&relative_difference<100)//40->35
+               {
+                 *state = 6;
+                 seektype=normal;
+               //  ips200_show_char(0,240,'C');
+               }
+              else
+              {
+               ImageAddingray(imageSide, 2, Lpointx+5, Lpointy, LCDW-11, 100);//è¡¥çº¿å…¥ç¯
+
+              }
         break;
-    case 8:
-        ImageAddingLine(imageSide, 2, 80, 10, 0, 119);
-        flag = RoadUpSide_Mono(50, 120, UpImageSide);
-        if (flag == 0)
+                case 5: //æ‰¾ç‚¹æ‰¾å¾—åˆ°å°±æ‹‰çº¿ï¼Œæ‰¾ä¸åˆ°å°±å›ºå®š
+                    Rpointy= 0;
+                    Rpointx = 0;
+                  relative_difference = eulerAngle.yaw - previous_yaw;
+                                // è°ƒæ•´ç›¸å¯¹å·®å€¼çš„å‘¨æœŸæ€§
+                              if (relative_difference < 0)
+                              {
+                                relative_difference += 360; // ç¡®ä¿ç›¸å¯¹å·®å€¼åœ¨0åˆ°360åº¦ä¹‹é—´
+                               }
+                              //å¯»æ‰¾æ–­ç‚¹
+                               if(relative_difference <= 150)
+                                {
+
+                                   Rpointy=(uint8)Find_Down_Point(1);
+                                   Rpointx=imageSide[Rpointy][1];
+                                   if(Rpointy!=0)
+                                   {
+                                      ImageAddingLine(imageSide, 1, 155, 5,Rpointx+25, Rpointy);
+                                //      ips200_show_char(20,260,'d');//å‡ºç¯
+                                   }
+                                   else
+                                   {
+                                       if(relative_difference<140&&relative_difference>60)
+                                                             {
+                                                                 ImageAddingLine(imageSide, 1, 145, 5, 50, 90);
+                                                             }
+                                   }
+                                }
+                               if(relative_difference <= 50)
+                               {
+                                   *state = 7;
+                               }
+                             break;
+        case 6:
+            Lpointy=0;
+            Lpointx=0;
+            relative_difference = eulerAngle.yaw - previous_yaw;
+               // è°ƒæ•´ç›¸å¯¹å·®å€¼çš„å‘¨æœŸæ€§
+             if (relative_difference < 0)
+             {
+               relative_difference += 360; // ç¡®ä¿ç›¸å¯¹å·®å€¼åœ¨0åˆ°360åº¦ä¹‹é—´
+              }
+             //å¯»æ‰¾æ–­ç‚¹ï¼Œè¡¥å°„çº¿ï¼Œæ²¡æœ‰æˆ–è€…250å¼ºåˆ¶å‡ºç¯
+              if(relative_difference >= 238)
+               {
+                  Lpointy=(uint8)Find_Down_Point(2);
+                  Lpointx=imageSide[Lpointy][1];
+                  if(Lpointy!=0)
+                  {
+                      ImageAddingLine(imageSide, 2, 30, 5, Lpointx+5, Lpointy);//åŸæœ¬+10ï¼Œ+10
+//                      ImageAddingLine(imageSide, 2, 10, 5, Lpointx-4, Lpointy+5);//åŸæœ¬+10ï¼Œ+10
+                 //    ips200_show_char(0,260,'D');//å‡ºç¯
+                  }
+                  else
+                  {
+                      if(relative_difference >= 250)
+                      {
+                           ImageAddingLine(imageSide, 2, 30, 5, LCDW-25, 100);//LCDW-17
+
+                      }
+                  }
+
+               }
+              if(relative_difference >= 340)////320
+              {
+                  *state = 8;
+                  seektype=right;
+              }
+            break;
+                    case 7: //æ‰¾ä¸Šæ‹ç‚¹æ‹‰çº¿ï¼Œå½“ä¸Šæ‹ç‚¹å¤§äºæŸä¸ªå€¼æˆ–è€…é™€èºä»ªå°äºæŸä¸ªå€¼å°±ç»“æŸ
+
+                        relative_difference = eulerAngle.yaw - previous_yaw;
+                                      // è°ƒæ•´ç›¸å¯¹å·®å€¼çš„å‘¨æœŸæ€§
+                                    if (relative_difference < 0)
+                                    {
+                                      relative_difference += 360; // ç¡®ä¿ç›¸å¯¹å·®å€¼åœ¨0åˆ°360åº¦ä¹‹é—´
+                                    }
+//                                    if(relative_difference<45)
+//                                          {
+//                                         //ImageAddingLine(imageSide, 2, 110, 15, LCDW-2, 119);
+//                                      //   ips200_show_char(20,280,'e');
+//
+//                                          }
+                                    errR = (uint8)right_up_guai(ImageSide,20,90, &num);
+                                    if(errR)
+                                    {
+                                        ImageAddingray(imageSide, 2, imageSide[errR][0]-10, errL,imageSide[errR][0]+10, 119);
+
+                                    }
+                                    if(errR>70||relative_difference<15)
+                                               {
+
+                                                   *state=0;
+                                                   gyro_flag=0;
+
+                                               }
+
+                    break;
+        case 8:
+
+//            relative_difference = eulerAngle.yaw - previous_yaw;
+//              // è°ƒæ•´ç›¸å¯¹å·®å€¼çš„å‘¨æœŸæ€§
+//            if (relative_difference < 0)
+//            {
+//              relative_difference += 360; // ç¡®ä¿ç›¸å¯¹å·®å€¼åœ¨0åˆ°360åº¦ä¹‹é—´
+//            }
+////            if(relative_difference >= 320||relative_difference <35)
+////                  {
+////
+////                // ips200_show_char(0,280,'E');
+////                 }
+//
+//            errL = (uint8)left_up_guai(ImageSide,20,90, &num);
+//
+//            if(errL)
+//            {
+//                ImageAddingLine(imageSide, 1, imageSide[errL][0]+17, errL,50, 119);
+//
+//
+//            }
+//            if(errL>90||(relative_difference>355||relative_difference<10))
+//            {
+//
+//                *state=0;
+//                seektype=normal;
+//                gyro_flag=0;
+//
+//            }
+            miss_number=line_miss(ImageSide, 0,30);
+           // miss_number1=line_miss(ImageSide, 1,30);
+            if(miss_number<35)
+            {
+                        *state=0;
+                        seektype=normal;
+                        gyro_flag=0;
+            }
+            break;
+
+}
+}
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
+void zebra_panduan(unsigned char bin_image[LCDH][LCDW])
+{
+    //ç”±ä¸Šå¾€ä¸‹æ‰¾çº¿
+    unsigned int count = 0;
+    unsigned int count1 = 0;
+    unsigned int count2 = 0;
+    unsigned int count3 = 0;
+    unsigned int count4 = 0;
+    unsigned int count5 = 0;
+    unsigned int count6 = 0;
+    unsigned int tiaobiancishu =8;
+
+static unsigned int stop = 0;
+    for(int i = 0; i < LCDW - 6;i++)
+    {
+
+        if(bin_image[45][i - 1] == 0 && bin_image[45][i] == 1)
         {
-            *L_Flag = 0;
-            finderr = 0;
-            errR = 0;
+             count++;
         }
-        break;
+        if(bin_image[40][i - 1] == 0 && bin_image[40][i] == 1)
+               {
+                    count1++;
+               }
+        if(bin_image[35][i - 1] == 0 && bin_image[35][i] == 1)
+               {
+                    count2++;
+               }
+        if(bin_image[50][i - 1] == 0 && bin_image[50][i] == 1)
+               {
+                    count3++;
+               }
+        if(bin_image[55][i - 1] == 0 && bin_image[55][i] == 1)
+               {
+                    count4++;
+               }
+        if(bin_image[100][i - 1] == 0 && bin_image[100][i] == 1)
+               {
+                    count5++;
+               }
+        if(bin_image[90][i - 1] == 0 && bin_image[90][i] == 1)
+                      {
+                           count6++;
+                      }
+        if(count == tiaobiancishu || count1 == tiaobiancishu || count2 == tiaobiancishu  || count3 == tiaobiancishu || count4 == tiaobiancishu
+                || count5 == tiaobiancishu  || count6 == tiaobiancishu)
+        {
+            stop = 1;
+            motor_flag = 2;
+            break;
+        }
     }
 }
-void cameracar(void) // ÔÚÖĞ¶ÏÀï´¦Àí
+
+
+
+extern volatile sint16 Target_Speed1;
+extern volatile sint16 Target_Speed2;
+uint8 detect_round=1;
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
+void cameracar(void) // åœ¨ä¸­æ–­é‡Œå¤„ç†
 {
-    /*Ê®×Ö´¦Àíº¯Êı*/
-    //Crossroad_Find(UpdowmSide, ImageSide, Roadwide, &Crossroad_Flag);
-    /*»·µº´¦Àíº¯Êı*/
-    //Round_process(ImageSide, UpdowmSide, &L_CircleFlag, &R_CircleFlag);
-    Get_Errand();
+
 }
 /*!
- * @brief    ¸ù¾İÖ÷ÅÜĞĞ£¬ÇóÈ¡¶æ»úÆ«²î
+ * @brief    æ ¹æ®ä¸»è·‘è¡Œï¼Œæ±‚å–èˆµæœºåå·®
  *
  * @param
  *
@@ -1868,72 +3049,344 @@ void cameracar(void) // ÔÚÖĞ¶ÏÀï´¦Àí
  *
  * @note
  *
- * @see    Çó¼¸¸öÆ«²îÖµ£¬È»ºóÇóÆ½¾ùÖµ
+ * @see    æ±‚å‡ ä¸ªåå·®å€¼ï¼Œç„¶åæ±‚å¹³å‡å€¼
  *
  * @date     2022/11/25
  */
-int16_t RoadGetSteeringError(uint8_t imageSide[LCDH][2], uint8_t lineIndex)
-{
-    int16_t sum = 0;
-    sum = (imageSide[lineIndex][0] + imageSide[lineIndex][1] - 159) +
-          (imageSide[lineIndex - 6][0] + imageSide[lineIndex - 6][1] - 159) +
-          (imageSide[lineIndex - 12][0] + imageSide[lineIndex - 12][1] - 159) +
-          (imageSide[lineIndex - 18][0] + imageSide[lineIndex - 18][1] - 159) +
-          (imageSide[lineIndex - 24][0] + imageSide[lineIndex - 24][1] - 159);
-    sum = sum / 5;
-    return sum;
-}
-int16_t midlineerror(uint8_t imageSide[LCDH][2], uint8_t lineIndex)
-{
-    int16_t sum = 0;
-    int e1,e2,e3,e4,e5=0;
-    e1=(imageSide[lineIndex][0]+ imageSide[lineIndex][1])/2;
-    e2=(imageSide[lineIndex - 6][0] + imageSide[lineIndex - 6][1])/2;
-    e3=(imageSide[lineIndex - 12][0] + imageSide[lineIndex - 12][1])/2;
-    e4=(imageSide[lineIndex - 18][0] + imageSide[lineIndex - 18][1])/2;
-    e5=(imageSide[lineIndex - 24][0] + imageSide[lineIndex - 24][1])/2;
-    sum=(80-e1)+(80-e2)+(80-e3)+(80-e4)+(80-e5);
-    sum=sum/5;
-    return sum;
+//int16_t RoadGetSteeringError(uint8_t imageSide[LCDH][2], uint8_t lineIndex)
+//{
+//    int16_t sum = 0;
+//    sum = (imageSide[lineIndex][0] + imageSide[lineIndex][1] - LCDW-1) +
+//          (imageSide[lineIndex - 6][0] + imageSide[lineIndex - 6][1] - LCDW-1) +
+//          (imageSide[lineIndex - 12][0] + imageSide[lineIndex - 12][1] - LCDW-1) +
+//          (imageSide[lineIndex - 18][0] + imageSide[lineIndex - 18][1] - LCDW-1) +
+//          (imageSide[lineIndex - 24][0] + imageSide[lineIndex - 24][1] - LCDW-1);
+//    sum = sum / 5;
+//    return sum;
+//}
 
-}
+//int16_t midlineerror(uint8_t imageSide[LCDH][2], uint8_t lineIndex)
+//{
+//
+//    int16_t sum = 0;
+//       int e1,e2,e3,e4,e5=0;
+//    e1=(imageSide[lineIndex][0]+ imageSide[lineIndex][1])/2;
+//    e2=(imageSide[lineIndex - 6][0] + imageSide[lineIndex - 6][1])/2;
+//    e3=(imageSide[lineIndex - 12][0] + imageSide[lineIndex - 12][1])/2;
+//    e4=(imageSide[lineIndex - 18][0] + imageSide[lineIndex - 18][1])/2;
+//    e5=(imageSide[lineIndex - 24][0] + imageSide[lineIndex - 24][1])/2;
+//    sum=(80-e1)+(80-e2)+(80-e3)+(80-e4)+(80-e5);
+//    sum=sum/5;
+//    return sum;
+//
+//}
 /*************************************************************************
- *  º¯ÊıÃû³Æ£ºvoid Get_Errand(void)
- *  ¹¦ÄÜËµÃ÷£º»ñµÃÍ¼ÏñÆ«²î
- *  ²ÎÊıËµÃ÷£ºÎŞ
- *  º¯Êı·µ»Ø£ºÎŞ
- *  ĞŞ¸ÄÊ±¼ä£º2022Äê12ÔÂ21ÈÕ
- *  ±¸   ×¢£º
+ *  å‡½æ•°åç§°ï¼švoid Get_Errand(void)
+ *  åŠŸèƒ½è¯´æ˜ï¼šè·å¾—å›¾åƒåå·®
+ *  å‚æ•°è¯´æ˜ï¼šæ— 
+ *  å‡½æ•°è¿”å›ï¼šæ— 
+ *  ä¿®æ”¹æ—¶é—´ï¼š2022å¹´12æœˆ21æ—¥
+ *  å¤‡   æ³¨ï¼š
  *************************************************************************/
+//åŠ æƒæ§åˆ¶
+const uint8 Weight_list[LCDH]=
+{
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,              //å›¾åƒæœ€è¿œç«¯00 â€”â€”09 è¡Œæƒé‡
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,               //å›¾åƒæœ€è¿œç«¯10 â€”â€”19 è¡Œæƒé‡
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,              //å›¾åƒæœ€è¿œç«¯20 â€”â€”29 è¡Œæƒé‡
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,              //å›¾åƒæœ€è¿œç«¯30 â€”â€”39 è¡Œæƒé‡
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,              //å›¾åƒæœ€è¿œç«¯40 â€”â€”49 è¡Œæƒé‡
+        1, 0, 0, 0, 0, 0, 0, 0, 0, 0,              //å›¾åƒæœ€è¿œç«¯50 â€”â€”59 è¡Œæƒé‡
+        3, 0, 0, 0, 0, 0, 0, 0, 0, 0,              //å›¾åƒæœ€è¿œç«¯60 â€”â€”69 è¡Œæƒé‡
+        4, 0, 0, 0, 0, 0, 0, 0, 0, 0,              //70-79
+        3, 0, 0, 0, 0, 0, 0, 0, 0, 0,               //80-89
+        2, 0, 0, 0, 0, 0, 0, 0, 0, 0,               //90-99
+        1, 0, 0, 0, 0, 0, 0, 0, 0, 0,               //100-119
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+};
+const uint8 Weight_list1[LCDH]=
+{
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,              //å›¾åƒæœ€è¿œç«¯00 â€”â€”09 è¡Œæƒé‡
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,               //å›¾åƒæœ€è¿œç«¯10 â€”â€”19 è¡Œæƒé‡
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,              //å›¾åƒæœ€è¿œç«¯20 â€”â€”29 è¡Œæƒé‡
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,              //å›¾åƒæœ€è¿œç«¯30 â€”â€”39 è¡Œæƒé‡
+        1, 0, 0, 0, 0, 0, 0, 0, 0, 0,              //å›¾åƒæœ€è¿œç«¯40 â€”â€”49 è¡Œæƒé‡
+        3, 0, 0, 0, 0, 0, 0, 0, 0, 0,              //å›¾åƒæœ€è¿œç«¯50 â€”â€”59 è¡Œæƒé‡
+        4, 0, 0, 0, 0, 0, 0, 0, 0, 0,              //å›¾åƒæœ€è¿œç«¯60 â€”â€”69 è¡Œæƒé‡
+        3, 0, 0, 0, 0, 0, 0, 0, 0, 0,              //70-79
+        2, 0, 0, 0, 0, 0, 0, 0, 0, 0,               //80-89
+        1, 0, 0, 0, 0, 0, 0, 0, 0, 0,               //90-99
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,               //100-119
+        0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+};
+//è¯¯å·®é€‰å–çš„èŒƒå›´è·ç¦»è½¦è¶Šè¿‘ï¼Œè½¦æ¨¡ååº”è¶Šæ…¢ï¼Œä»è€Œè¶Šåˆ‡å¤–ï¼›
+//é€‰å–çš„èŒƒå›´è¶Šè¿œï¼Œååº”è¶Šæå‰ï¼Œè½¦æ¨¡è¶Šåˆ‡å†…
+//----------------------------------------------------------
+const uint8 ROADWIDE[101]={20,
+        22,
+        23,
+        24,
+        26,
+        27,
+        29,
+        29,
+        31,
+        33,
+        33,
+        35,
+        39,
+        41,
+        41,
+        40,
+        41,
+        42,
+        43,
+        45,
+        46,
+        49,
+        49,
+        51,
+        53,
+        53,
+        55,
+        57,
+        57,
+        59,
+        61,
+        61,
+        63,
+        64,
+        65,
+        67,
+        68,
+        69,
+        70,
+        71,
+        73,
+        73,
+        75,
+        77,
+        77,
+        79,
+        81,
+        81,
+        83,
+        84,
+        85,
+        87,
+        88,
+        89,
+        91,
+        92,
+        93,
+        95,
+        96,
+        97,
+        99,
+        100,
+        101,
+        103,
+        104,
+        105,
+        106,
+        108,
+        109,
+        110,
+        112,
+        112,
+        114,
+        115,
+        116,
+        118,
+        119,
+        120,
+        122,
+        122,
+        124,
+        125,
+        126,
+        128,
+        128,
+        130,
+        132,
+        132,
+        134,
+        135,
+        137,
+        138,
+        138,
+        140,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145};
+//è·å–ä¸­çº¿
+//å˜é‡
+uint8 midline[LCDH]={0};
+
+//
+//----------------------------------------------------------
+void get_midline(void)
+{
+
+    if(seektype==normal)
+    {
+            for(uint8 i=LCDH-1;i>=1;i--)//å¸¸è§„è¯¯å·®è®¡ç®—
+        {
+        midline[i]=(ImageSide[i][0]+ImageSide[i][1])>>1;//å³ç§»1ä½ï¼Œç­‰æ•ˆé™¤2
+
+        }
+    }
+   if(seektype==right)
+   {
+           for(uint8 i=LCDH-20;i>=10;i--)
+    {
+        midline[i]=ImageSide[i][1]-(ROADWIDE[i]>>1)+10;
+    }
+   }
+   if(seektype==left)
+   {
+       for(uint8 i=LCDH-20;i>=10;i--)
+           {
+               midline[i]=ImageSide[i][0]+(ROADWIDE[i]>>1)-5;
+           }
+   }
+
+    //ä¸è¡¥çº¿å¯»å•è¾¹
+
+}
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
+float Err_Sum(void)
+{
+    int i;
+    float err=0;
+    float weight_count=0;
+
+         //å¸¸è§„è¯¯å·®
+    for(i=LCDH-1;i>=1;i--)//å¸¸è§„è¯¯å·®è®¡ç®—
+    {
+        err+=(LCDW/2-(midline[i]))*Weight_list[i];//å³ç§»1ä½ï¼Œç­‰æ•ˆé™¤2
+        weight_count+=Weight_list[i];
+    }
 
 
+
+    err=err/weight_count;
+    return err;
+}
+extern volatile sint16 Target_Speed1;
+extern volatile sint16 Target_Speed2;
+//----------------------------------------------------------
+//
+//
+//
+//----------------------------------------------------------
 void Get_Errand(void)
 {
 
-    g_sSteeringError = midlineerror(ImageSide, ROAD_MAIN_ROW);
-//    int a=0;
-//    a=(int)g_sSteeringError;
-//    ips200_show_int(0, 150, a, 3);
-    // Æ«²î·Å´ó
+
+            g_sSteeringError = Err_Sum();//ImageSide, ROAD_MAIN_ROW
     if ((g_sSteeringError < 60) && (g_sSteeringError > -60))
     {
-        if ((g_sSteeringError < 20) && (g_sSteeringError > -20))
+        if ((g_sSteeringError < 30) && (g_sSteeringError > -30))
         {
             Servo_P = 11;
+//            Target_Speed1=130;
+//            Target_Speed2=130;
         }
         else
         {
             Servo_P = 14;
+//            Target_Speed1=100;
+//            Target_Speed2=100;
         }
     }
     else
     {
         Servo_P = 11;
+//        Target_Speed1=90;
+//        Target_Speed2=90;
     }
     error_servo = g_sSteeringError * Servo_P / 10;
-    // Æ«²îÏŞ·ù
+    // åå·®é™å¹…
     if (error_servo > 100)
         error_servo = 100;
     if (error_servo < -100)
         error_servo = -100;
+
 }
+////----------------------------------------------------------
+////é™å¹…å‡½æ•°
+////
+////
+////----------------------------------------------------------
+//int clip(int x, int low, int up) {
+//    return x > up ? up : x < low ? low : x;
+//}
+
+////----------------------------------------------------------
+////ç‚¹é›†ä¸‰è§’æ»¤æ³¢
+////
+////
+////----------------------------------------------------------
+//void blur_points(float pts_in[][2], int num, float pts_out[][2], int kernel)
+//{
+//
+//    //å·¦è¾¹çº¿
+//    int half = kernel / 2;
+//    for (int i = 0; i < num; i++)
+//    {
+//        pts_out[i][0] = pts_out[i][1] = 0;
+//        for (int j = -half; j <= half; j++)
+//        {
+//            pts_out[i][0] += pts_in[clip(i + j, 0, num - 1)][0] * (half + 1 - abs(j));
+//            pts_out[i][1] += pts_in[clip(i + j, 0, num - 1)][1] * (half + 1 - abs(j));
+//        }
+//        pts_out[i][0] /= (2 * half + 2) * (half + 1) / 2;
+//        pts_out[i][1] /= (2 * half + 2) * (half + 1) / 2;
+//    }
+//}
+
+////----------------------------------------------------------
+//
+////----------------------------------------------------------
+
+////----------------------------------------------------------
+//
+//
+////----------------------------------------------------------
+//
+////----------------------------------------------------------
+////æœç´¢è¾¹çº¿
+////
+////
+////----------------------------------------------------------
+
+////----------------------------------------------------------
+//// å…«é‚»åŸŸè·å–å·¦å³è¾¹çº¿
+////
+////
+////----------------------------------------------------------
+
+
+////----------------------------------------------------------
+//// å…«é‚»åŸŸæ€»çš„å¤„ç†å‡½æ•°
+////
+////
+////----------------------------------------------------------
+
+////----------------------------------------------------------
+////
+////
+////
+////----------------------------------------------------------
+
+
+
+

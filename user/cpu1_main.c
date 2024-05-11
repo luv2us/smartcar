@@ -39,6 +39,7 @@
 
 extern unsigned char Image_Use[LCDH][LCDW];
 extern unsigned char Bin_Image[LCDH][LCDW];
+int a,b;
 // **************************** 代码区域 ****************************
 /*
 core1用来处理摄像头数据，暂不在此显示图像
@@ -47,13 +48,13 @@ core1用来处理摄像头数据，暂不在此显示图像
 // 本例程是开源库空工程 可用作移植或者测试各类内外设
 // 本例程是开源库空工程 可用作移植或者测试各类内外设
 // 本例程是开源库空工程 可用作移植或者测试各类内外设
-
+#define use8neighbor 1
 void core1_main(void)
 {
     disable_Watchdog();         // 关闭看门狗
     interrupt_global_enable(0); // 打开全局中断
     // 初始化
-
+    system_start();
     pit_init(CCU60_CH1, 10000); // 摄像头元素处理10ms定时中断
     cpu_wait_event_ready();     // 等待所有核心初始化完毕
     while (TRUE)
@@ -61,15 +62,16 @@ void core1_main(void)
 
         if (mt9v03x_finish_flag)
         {
+
+//            a = system_getval();
             Get_Use_Image();
             Get_Bin_Image(1);
-            Bin_Image_Filter();
-            //
-            //Find_Boundry(ImageSide);
-            ImageGetSide(Bin_Image, ImageSide, ImageSide_last); // 提取赛道左右边线
-            // ImageGetSide1(Bin_Image, ImageSide);
-            UpdownSideGet(Bin_Image, UpdowmSide); // 上下边线
-            //
+            //Bin_Image_Filter();
+            image_filter();
+//            b = system_getval();
+            imageside(2);
+         //   ImageGetSide(Bin_Image, ImageSide, ImageSide_last,1); //
+            UpdownSideGet(Bin_Image, UpdowmSide); //
             GetRoadWide(ImageSide, Roadwide); // 赛道宽度
             mt9v03x_finish_flag = 0;
         }

@@ -14,4 +14,10 @@ void motor_control_dir(sint32 motorR,sint32 motorL);
 
 void motor_init(void);
 
+
+//void Change_V(void);
+
+
+
+
 #endif /* USER_MOTOR_SERVO_CONTRL_H_ */

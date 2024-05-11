@@ -36,45 +36,110 @@
 #include "isr_config.h"
 #include "isr.h"
 float error_servo = 0;
-unsigned char motor_flag;
+unsigned char motor_flag=0;
 int angle_servo=0;
 
 extern volatile sint16 encoder_R;
 extern volatile sint16 encoder_L;
 extern int16 OUT_PWM;
+float targetspeedL=60;
+float targetspeedR=60;
 extern sint16 MotorDuty1; // 电机驱动占空比数值
 extern sint16 MotorDuty2; // 电机驱动占空比数值
-
+uint8_t gyro_flag=0;
+extern unsigned char Bin_Image[LCDH][LCDW];
+extern uint8_t Crossroad_Flag;
 // 对于TC系列默认是不支持中断嵌套的，希望支持中断嵌套需要在中断内使用 interrupt_global_enable(0); 来开启中断嵌套
 // 简单点说实际上进入中断后TC系列的硬件自动调用了 interrupt_global_disable(); 来拒绝响应任何的中断，因此需要我们自己手动调用 interrupt_global_enable(0); 来开启中断的响应。
-
+uint16_t time;
+uint8_t num;
+extern euler_param_t eulerAngle;
+extern uint8 detect_round;
+extern uint8 round_found_flag;
 // **************************** PIT中断函数 ****************************
 IFX_INTERRUPT(cc60_pit_ch0_isr, 0, CCU6_0_CH0_ISR_PRIORITY)
 {
     interrupt_global_enable(0); // 开启中断嵌套
     pit_clear_flag(CCU60_CH0);
 
-
     encoder_R = encoder_get_count(ENCODER_DIR);
     encoder_L = -encoder_get_count(ENCODER_QUADDEC);
 
-
-
-    angle_servo = PD_Camera(0, error_servo);
-    //servo_set(angle_servo);
+    angle_servo = PD_Camera(0,error_servo);//error_servo
+    if(gyro_flag)//获取陀螺仪数据
+    {
+        ICM_getEulerianAngles();
+    }
     pwm_set_duty(ATOM1_CH1_P33_9, SERVO_MID + angle_servo);//舵机输出
+    if(motor_flag==1)
+    {
+        Pid_Value();
+        MotorDuty1 = (sint16)PidIncCtrl(&LSpeed_PID, (float)(Target_Speed1 - encoder_L)); // 速度闭环
+        MotorDuty2 = (sint16)PidIncCtrl(&RSpeed_PID, (float)(Target_Speed2- encoder_R)); // 速度闭环
 
+    if (MotorDuty1 > 5000)
+            MotorDuty1 = 5000;
+    else if (MotorDuty1 < -5000)
+            MotorDuty1 = 5000;
+    if (LSpeed_PID.out > 5000)
+            LSpeed_PID.out = 5000;
+    else if (LSpeed_PID.out < -5000)
+            LSpeed_PID.out = -5000;
+    if (MotorDuty2 >5000)
+            MotorDuty2 = 5000;
+    else if (MotorDuty2 < -5000)
+            MotorDuty2 = -5000;
+    if (RSpeed_PID.out >5000)
+            RSpeed_PID.out = 5000;
+    else if (RSpeed_PID.out < -5000)
+            RSpeed_PID.out = -5000;
+    }
+    else if(motor_flag==0)                          //电机关闭，将速度环置为0并且pwm输出0
+    {
+     Pid_Value_stop();
+     MotorDuty1=0;
+     MotorDuty2=0;
+    }
+  motor_control_dir(MotorDuty2,  MotorDuty1 );
 
-
-    encoder_clear_count(ENCODER_QUADDEC); // 清空编码器计数
-    encoder_clear_count(ENCODER_DIR);     // 清空编码器计
+    encoder_clear_count(ENCODER_QUADDEC);           //清空编码器计数
+    encoder_clear_count(ENCODER_DIR);               //清空编码器计数
 }
 
 IFX_INTERRUPT(cc60_pit_ch1_isr, 0, CCU6_0_CH1_ISR_PRIORITY)
 {
     interrupt_global_enable(0); // 开启中断嵌套
     pit_clear_flag(CCU60_CH1);
-    cameracar();
+
+    Crossroad_Find(UpdowmSide, ImageSide, Roadwide, &Crossroad_Flag);
+        if(detect_round)
+        {
+
+        if(round_found_flag)
+        {
+            roundabout(Bin_Image,ImageSide,UpdowmSide,&round_found_flag);
+        }
+        if(round_found_flag==0)
+        {
+             RoadIsRoundabout(UpdowmSide,ImageSide,&round_found_flag);
+        }
+        }
+    zebra_panduan(Bin_Image);
+        if(motor_flag==2)
+            {
+                ImageAddingLine(ImageSide,1,(uint16)ImageSide[100][0],   100,90, 10);
+                ImageAddingLine(ImageSide,2,(uint16)ImageSide[100][1],   100,90, 10);
+                Pid_Value_stop();
+                static int hi = 0;
+                hi++;
+                if(hi==90)
+                    {
+                        MotorDuty1=0;
+                        MotorDuty2=0;
+                    }
+            }
+    get_midline();
+    Get_Errand();
 }
 
 IFX_INTERRUPT(cc61_pit_ch0_isr, 0, CCU6_1_CH0_ISR_PRIORITY)

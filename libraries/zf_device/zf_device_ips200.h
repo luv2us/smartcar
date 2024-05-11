@@ -185,7 +185,9 @@ void    ips200_show_rgb565_image        (uint16 x, uint16 y, const uint16 *image
 void    ips200_show_wave                (uint16 x, uint16 y, const uint16 *wave, uint16 width, uint16 value_max, uint16 dis_width, uint16 dis_value_max);                // IPS200 显示波形
 void    ips200_show_chinese             (uint16 x, uint16 y, uint8 size, const uint8 *chinese_buffer, uint8 number, const uint16 color);                                 // IPS200 汉字显示
 
-void    ips200_init                     (ips200_type_enum type_select);                                                         // 2寸 IPS液晶初始化
+void    ips200_init    (ips200_type_enum type_select);                                                         // 2寸 IPS液晶初始化
+
+void ips200_show_side_image (uint16 x, uint16 y,   uint16 dis_width, uint16 dis_height);
 //==================================================声明 IPS200 基础函数================================================
 
 

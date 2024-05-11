@@ -429,6 +429,7 @@ void seekfree_assistant_data_analysis (void)
                 // 和校验成功保存数据
                 seekfree_assistant_parameter[receive_packet->channel - 1] = receive_packet->data;
                 seekfree_assistant_parameter_update_flag[receive_packet->channel - 1] = 1;
+
             }
             else
             {

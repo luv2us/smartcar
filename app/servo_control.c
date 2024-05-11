@@ -14,9 +14,13 @@ sint16 MotorDuty1 = 500; // 电机驱动占空比数值
 sint16 MotorDuty2 = 500; // 电机驱动占空比数值
 sint16 MotorDuty_L = 0;  // 左轮总PWM
 sint16 MotorDuty_R = 0;  // 右轮总PWM
+pid_servo_t servo={1.085,0.085};
 
-volatile sint16 Target_Speed1 = 95; // 目标速度全局变量
-volatile sint16 Target_Speed2 = 95; // 目标速度全局变量
+//float P =  1;//1.98;
+//float D =  0  ;//1.632;
+
+volatile sint16 Target_Speed1 =80; // 目标速度全局变量
+volatile sint16 Target_Speed2 =80; // 目标速度全局变量
 void encoder_init(void)
 {
     encoder_quad_init(ENCODER_QUADDEC, ENCODER_QUADDEC_A, ENCODER_QUADDEC_B); // 初始化编码器模块与引脚 正交解码编码器模式
@@ -48,14 +52,13 @@ void servo_init(void)
 int PD_Camera(float expect_val, float err) // 舵机PD调节
 {
     float u;
-    float P =  0.65;//1.98; // 参数需自行整定，这里仅作为参考
-    float D =  0  ;//1.632;
+
     volatile static float error_current, error_last;
     float ek, ek1;
     error_current = err - expect_val;
     ek = error_current;
     ek1 = error_current - error_last;
-    u = P * ek + D * ek1;
+    u = servo.kp * ek + servo.kd * ek1;
     error_last = error_current;
 
     return (int)u;

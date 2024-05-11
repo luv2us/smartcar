@@ -210,6 +210,9 @@ uint32 wireless_uart_read_buffer (uint8 *buff, uint32 len)
 //              由串口中断服务函数调用 wireless_module_uart_handler() 函数
 //              再由 wireless_module_uart_handler() 函数调用本函数
 //-------------------------------------------------------------------------------------------------------------------
+uint8_t command[8]={0};
+uint8_t flag=0;
+extern unsigned char motor_flag;
 void wireless_uart_callback (void)
 {
     uart_query_byte(WIRELESS_UART_INDEX, &wireless_uart_data);
@@ -221,6 +224,7 @@ void wireless_uart_callback (void)
         wireless_auto_baud_flag = WIRELESS_UART_AUTO_BAUD_RATE_GET_ACK;
         fifo_read_buffer(&wireless_uart_fifo, (uint8 *)wireless_auto_baud_data, (uint32 *)&wireless_auto_baud_count, FIFO_READ_AND_CLEAN);
     }
+
 #endif
 }
 

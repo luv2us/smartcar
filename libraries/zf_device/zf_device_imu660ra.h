@@ -174,5 +174,39 @@ uint8 imu660ra_init                 (void);                                     
 #define imu660ra_gyro_transition(gyro_value)    ((float)gyro_value / imu660ra_transition_factor[1])
 //================================================声明 IMU660RA 拓展函数================================================
 
+typedef struct {
+    float Xdata;
+    float Ydata;
+    float Zdata;
+} gyro_param_t;
+typedef struct {
+    float q0;
+    float q1;
+    float q2;
+    float q3;
+} quater_param_t;
+typedef struct {
+    float pitch;
+    float roll;
+    float yaw;
+} euler_param_t;
+typedef struct {
+    float gyro_x;
+    float gyro_y;
+    float gyro_z;
+    float acc_x;
+    float acc_y;
+    float acc_z;
+} icm_param_t;
+uint8_t gyroOffset_init(void);
+//float param_Kp = 0.17;   // 加速度计的收敛速率比例增益
+//float param_Ki = 0.004;   //陀螺仪收敛速率的积分增益 0.004
+float fast_sqrt(float x) ;
+void ICM_getValues();
+#define delta_T     0.005f  //5ms计算一次
+#define M_PI        3.1415926f
+extern euler_param_t eulerAngle;
+void ICM_getEulerianAngles(void) ;
+
 #endif
 

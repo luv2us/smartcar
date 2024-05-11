@@ -44,7 +44,9 @@ extern volatile sint16 Target_Speed1; // 目标速度全局变量
 extern volatile sint16 Target_Speed2; // 目标速度全局变量
 extern sint16 MotorDuty_L;            // 左轮总PWM
 extern sint16 MotorDuty_R;            // 右轮总PWM
-
+extern float targetspeedL;
+extern float targetspeedR;
+extern unsigned char motor_flag;
 extern volatile sint16 encoder_R;
 extern volatile sint16 encoder_L;
 extern int16 OUT_PWM;

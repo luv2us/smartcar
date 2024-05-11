@@ -117,6 +117,7 @@
 #include "motor_servo_contrl.h"
 #include "servo_pid.h"
 #include "servo_control.h"
+#include "ENA.h"
 //=====================================================”√ªß≤„======================================================
 
 #endif

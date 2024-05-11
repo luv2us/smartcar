@@ -1283,4 +1283,41 @@ void ips200_init (ips200_type_enum type_select)
     ips200_clear();                                                             // ³õÊ¼»¯Îª°×ÆÁ
     ips200_debug_init();
 }
+#define LCDH 120
+extern uint8_t ImageSide[LCDH][2];//ips200_pencolor
+void ips200_show_side_image (uint16 x, uint16 y,   uint16 dis_width, uint16 dis_height)
+{
+    uint16 color_buffer[dis_width];
+    uint16 i = 0, j = 0;
 
+    if(IPS200_TYPE_SPI == ips200_display_type)
+    {
+        IPS200_CS(0);
+    }
+    ips200_set_region(0, 0, dis_width - 1, dis_height - 1);
+    for (j = 0; j < dis_height; j ++)
+    {
+    for(i = 0; i < dis_width; i ++)
+    {
+        if(i==ImageSide[j][0])
+        {
+            color_buffer[i]=ips200_pencolor;
+        }
+        else if((i==ImageSide[j][1]))
+        {
+            color_buffer[i]=ips200_pencolor;
+        }
+        else
+        {
+              color_buffer[i] = ips200_bgcolor;
+        }
+
+    }
+
+        ips200_write_16bit_data_array(color_buffer, dis_width);
+    }
+    if(IPS200_TYPE_SPI == ips200_display_type)
+    {
+        IPS200_CS(1);
+    }
+}

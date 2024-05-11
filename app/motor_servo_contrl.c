@@ -5,10 +5,11 @@
  *      Author: 凌纪哲
  */
 #include "motor_servo_contrl.h"
+extern int angle_servo;
+
 
 void motor_control_dir(sint32 motorR,sint32 motorL)//差速轮控制
 {
-
 if(motorR>=0)
     {
         gpio_set_level(P02_6,1);           //右轮正转
@@ -30,7 +31,6 @@ else
         pwm_set_duty(ATOM1_CH7_P02_7,-motorL);
     }
 }
-
 void motor_init(void)    //电机初始化
 {
 pwm_init(ATOM1_CH5_P02_5,17000,0);
@@ -39,5 +39,20 @@ pwm_init(ATOM1_CH7_P02_7,17000,0);
 gpio_init(P02_4,GPO,0,GPO_PUSH_PULL);
 gpio_init(P02_6,GPO,0,GPO_PUSH_PULL);
 
-
 }
+//void Change_V(void)
+//{
+//    if(angle_servo <= 45 && angle_servo >= -45){
+////        Target_Speed1 = 120;
+////        Target_Speed2 = 150;
+//
+//    }
+//    else if((angle_servo <= 90 && angle_servo >45) || (angle_servo >= -90 && angle_servo < -45 )){
+//        Target_Speed1 -= 30;
+//        Target_Speed2 -= 30;
+//    }
+//    else if((angle_servo <= 125 && angle_servo >90) || (angle_servo >= -125 && angle_servo < -90 )){
+//        Target_Speed1-= 40;
+//        Target_Speed2= 40;
+//    }
+//}

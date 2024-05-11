@@ -47,6 +47,6 @@ float PidIncCtrl(pid_param_t * pid, float error);
 
 void Pid_Value(void);
 
-
+void Pid_Value_stop(void);
 
 #endif /* APP_PID_H_ */

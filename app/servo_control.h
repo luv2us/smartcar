@@ -10,8 +10,15 @@
 
 #include "zf_common_headfile.h"
 
-#define SERVO_MID 675
+#define SERVO_MID 676//
 
+typedef struct
+{
+    float                kp;         //P
+    float                kd;         //D
+
+}pid_servo_t;
+extern pid_servo_t servo;
 void servo_set(int angle);
 void servo_init(void);
 void encoder_init(void);
